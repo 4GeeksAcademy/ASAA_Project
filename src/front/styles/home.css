@@ -5,7 +5,18 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
+
+.contenedor{
+    background: linear-gradient(to bottom right,  rgb(43, 46, 61),rgb(154, 154, 154));
+}
 .contenedor12{
     width: 50%;
     height: 400px;
+ 
 }
+.contenedor2{
+    width: 100%;
+}
+.contenedor {
+    overflow-y: auto; /* o overflow-y: scroll; */
+  }
