@@ -1,68 +1,63 @@
 
 body {
-    background-color: #1d1d1f;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    font-family: 'Open Sans', sans-serif;
-    margin:0;
-  }
-  
- 
+  background-color: #1d1d1f;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+  margin:0;
+}
 
 .phone {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) ;
+  position: relative;
+  margin: auto; /* Centra horizontalmente */
+  transform: scale(0.4) rotate(25deg); /* Reducir el tamaño a la mitad */
+ 
 }
-@media screen and (max-width: 1400px) {
-    .phone {
-      transform: translate(-50%, -50%) rotate(-330deg) skewX(-30deg) scale(0.4) scaleX(-1); /* Modifica la escala */
-    }
-  }
-  
-    
-  .phone-back {
-    position: absolute;
-    top: -3px;
-    transform: translate(-50%, -50%);
-    height: 734px;
-    width: 430px;
-    background-image: linear-gradient(to bottom, #3a3b3f 70%, #1d1d1f);
-    border-radius: 74px 40px 84px 50px;
-    box-shadow: -26px 8px 8px -10px rgba(0,0,0,0.3), -6px 6px 6px 0 rgba(0,0,0,0.6), -30px 14px 10px -10px rgba(0,0,0,0.5), -20px 40px 8px 0 rgba(0,0,0,0.1), -20px 30px 8px 0 rgba(0,0,0,0.1), inset 20px 0 15px -6px rgba(0,0,0,0.6), inset 2px 0 4px -2px rgba(0,0,0,0.6), inset 2px 0 1px -2px rgba(255,255,255,0.1), inset 0 -15px 10px -10px rgba(255,255,255,0.15);
-  }
-  .phone-back:before {
-    content: "";
-    display: block;
-    height: 300px;
-    width: 100px;
-    position: absolute;
-    background-color: #fff;
-    left: 16px;
-    bottom: 40px;
-    border-radius: 20px;
-    filter: blur(5px);
-    opacity: 0.1;
-    transform: rotate(4deg);
-  }
-  .phone-back:after {
-    content: "";
-    display: block;
-    height: 300px;
-    width: 100px;
-    position: absolute;
-    background-color: #fff;
-    left: 26px;
-    bottom: 40px;
-    border-radius: 20px;
-    filter: blur(4px);
-    opacity: 0.25;
-    transform: rotate(2deg);
-  }
+
+.phone-back {
+  position: absolute;
+  top: -3px;
+  transform: translate(-50%, -50%);
+  height: 734px;
+  width: 430px;
+  background-image: linear-gradient(to bottom, #3a3b3f 70%, #1d1d1f);
+  border-radius: 74px 40px 84px 50px;
+  box-shadow: -26px 8px 8px -10px rgba(0,0,0,0.3), -6px 6px 6px 0 rgba(0,0,0,0.6), -30px 14px 10px -10px rgba(0,0,0,0.5), -20px 40px 8px 0 rgba(0,0,0,0.1), -20px 30px 8px 0 rgba(0,0,0,0.1), inset 20px 0 15px -6px rgba(0,0,0,0.6), inset 2px 0 4px -2px rgba(0,0,0,0.6), inset 2px 0 1px -2px rgba(255,255,255,0.1), inset 0 -15px 10px -10px rgba(255,255,255,0.15);
+}
+
+.phone-back:before {
+  content: "";
+  display: block;
+  height: 300px;
+  width: 100px;
+  position: absolute;
+  background-color: #fff;
+  left: 16px;
+  bottom: 40px;
+  border-radius: 20px;
+  filter: blur(5px);
+  opacity: 0.1;
+  transform: rotate(4deg);
+}
+
+.phone-back:after {
+  content: "";
+  display: block;
+  height: 300px;
+  width: 100px;
+  position: absolute;
+  background-color: #fff;
+  left: 26px;
+  bottom: 40px;
+  border-radius: 20px;
+  filter: blur(4px);
+  opacity: 0.25;
+  transform: rotate(2deg);
+}
+
   .phone-screen {
     position: absolute;
     top: -16px;
@@ -380,17 +375,12 @@ body {
     overflow: hidden;
     background-color: #000000;
     filter: blur(2.5px);
-    animation: holographic 1.5s infinite alternate;
   }
   
-  @keyframes holographic {
-    to {
-      box-shadow: -10px -10px 15px rgba(0, 252, 252, 0.75),
-                   -15px -15px 20px rgba(0, 252, 252, 0.75),
-                   -25px -25px 25px rgba(0, 252, 252, 0.75),
-                   -35px -35px 30px rgba(0, 252, 252, 0.85),
-                   -45px -45px 35px rgba(0, 252, 252, 0.95),
-                   -65px -65px 40px #00fcfc,
-                   -75px -75px 50px #00fcfc;
-    }
-  }
+  
+  
+  .phone-content {
+    width: 100%; /* O ajusta el ancho según tu diseño */
+    height: 100%; /* O ajusta la altura según tu diseño */
+    border: 2px solid #000; /* Agregamos un borde para que tenga las mismas dimensiones visuales que contenedor1.1 */
+}
