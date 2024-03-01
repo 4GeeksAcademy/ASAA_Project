@@ -91,15 +91,9 @@ export const LandingPage = () => {
                 </div>
                 <div className="phone-charger"></div>
                 <div className="phone-screw right">
-                  <div></div>
+                  
                 </div>
                 <div className="bottom-speaker right">
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
                 </div>
                 <div className="phone-antena right"></div>
               </div>
@@ -111,8 +105,8 @@ export const LandingPage = () => {
               </div>
               <div className="display-content  ">
                 <h1 className="mt-5 p-5 ">
-                  No pierdas el tiempo,el cual no podras recuperar. Con nuestro
-                  servicio tendras tiempo y comodidad.
+                  <span className="p-3">Quick Qr Pay!</span>
+                 <img className="qr" src="https://hporro.com/wp-content/uploads/2020/05/qrdemo.png"/>
                 </h1>
               </div>
             </div>
@@ -121,7 +115,7 @@ export const LandingPage = () => {
       </div>
       {/*como funciona segunda parte del landing page*/}
       <div className="contenedor2   text-white">
-      <div className="moving-border w-100 bg1"></div>
+     
         <h5 className="text-center my-4 titular">Como funciona</h5>
         <div className="d-flex flex-wrap justify-content-around">
           <div className="col-lg-6 my-4  ">
@@ -210,7 +204,6 @@ export const LandingPage = () => {
         </div>
       </div>
       {/*Ventajas tercera parte del landing page*/}
-      <div className="moving-border w-100 bg-black"></div>
       <div className="contenedor3 text-white w-100 " >
         <div>
           <h5 className="text-center my-4 titular borderAnimado">
