@@ -14,8 +14,8 @@ export const LandingPage = () => {
 
   return (
     <div className="d-flex flex-wrap justify-content-center align-items-center text-white contenedor">
-      <div className="background1 w-100 d-flex">
-        <div className="contenedor1 col-lg-6   d-flex flex-column">
+      <div className="background1 w-100 d-flex flex-lg-row flex-column ">
+        <div className="contenedor1 col-lg-6  ">
           <div className="p-2">
             <div className="contenedor11">
               <span>SCAN-ORDER-ENJOY-PAY</span>
@@ -55,7 +55,7 @@ export const LandingPage = () => {
                 </ul>
                 <span>
                   <FontAwesomeIcon
-                    className="me-1"
+                    className="me-4 mt-5 sombreado"
                     icon={faPlay}
                     style={{ color: "#ffffff" }}
                   />
@@ -65,7 +65,7 @@ export const LandingPage = () => {
             </div>
           </div>
         </div>
-        <div className="contenedor12 col-lg-6   p-2 d-flex justify-content-center align-items-center mb-3">
+        <div className="contenedor12 col-lg-6 p-2 mb-3 ">
           <div className="phone ">
             {/* Contenido del teléfono */}
             <div className="phone-back">
@@ -79,12 +79,6 @@ export const LandingPage = () => {
               <div className="phone-bottom">
                 <div className="phone-antena"></div>
                 <div className="bottom-speaker">
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
                 </div>
                 <div className="phone-screw">
                   <div></div>
