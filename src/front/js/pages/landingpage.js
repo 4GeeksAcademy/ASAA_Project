@@ -20,7 +20,7 @@ export const LandingPage = () => {
             <div className="contenedor11">
               <span>SCAN-ORDER-ENJOY-PAY</span>
 
-              <div>
+              <div className="titular">
                 <h1>Quick Pay QR</h1>
               </div>
               <div>
@@ -121,7 +121,8 @@ export const LandingPage = () => {
       </div>
       {/*como funciona segunda parte del landing page*/}
       <div className="contenedor2   text-white">
-        <h5 className="text-center my-4">Como funciona</h5>
+      <div className="moving-border w-100 bg1"></div>
+        <h5 className="text-center my-4 titular">Como funciona</h5>
         <div className="d-flex flex-wrap justify-content-around">
           <div className="col-lg-6 my-4  ">
             <div className="card-body">
@@ -209,18 +210,17 @@ export const LandingPage = () => {
         </div>
       </div>
       {/*Ventajas tercera parte del landing page*/}
-      <div className="contenedor3 text-white w-100">
+      <div className="moving-border w-100 bg-black"></div>
+      <div className="contenedor3 text-white w-100 " >
         <div>
-          <h5 className="text-center my-4">
+          <h5 className="text-center my-4 titular borderAnimado">
             Ventajas para usuarios y empresas.
           </h5>
         </div>
-        <div className="d-flex justify-content-around">
-          <FontAwesomeIcon className="mb-4" icon={faUser} size="2xl" />
-          <FontAwesomeIcon className="mb-4" icon={faCity} size="2xl" />
-        </div>
         <div className="row">
+     
           <div className="col-md-6 p-2">
+          <FontAwesomeIcon className="mb-4 ms-5" icon={faCity} size="2xl" />
             <div className="p-5">
               <h6>Pago rapido y comodo desde el movil.</h6>
               <p>
@@ -243,7 +243,8 @@ export const LandingPage = () => {
               </p>
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6 ">
+          <FontAwesomeIcon className="mb-4 ms-5" icon={faUser} size="2xl" />
           <div className="p-5">
               <h6>Pago rapido y comodo desde el movil.</h6>
               <p>

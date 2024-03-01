@@ -32,3 +32,46 @@
 
   
 }
+.titular {
+    background: linear-gradient(to right, #464180, #00d042);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 30px;
+    animation: shine 1s infinite linear;
+  }
+  
+  @keyframes shine {
+    0% {
+      background-position: -200%;
+    }
+    100% {
+      background-position: 200%;
+    }
+  }
+  
+
+  .moving-border {
+    width: fit-content; /* Ajusta el ancho según sea necesario */
+    padding: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .moving-border::before,
+  .moving-border::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, #032146, #C3F2FF, #b00);
+    animation: rotate 10s linear infinite;
+  }
+  
+  .moving-border::after {
+    filter: blur(10px);
+  }
+  
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+ 
