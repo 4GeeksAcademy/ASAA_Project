@@ -6,17 +6,29 @@
     on that page only (the ones not reused in other pages).
 */
 
-.contenedor{
-    background: linear-gradient(to bottom right,  rgb(43, 46, 61),rgb(154, 154, 154));
+.background1 {
+    background: linear-gradient(to top right, #6A0DAD 40%, #000000 60%);
 }
-.contenedor12{
+
+
+
+.contenedor12 {
+
     width: 50%;
     height: 400px;
- 
+
 }
-.contenedor2{
+
+.contenedor2 {
     width: 100%;
+    background: linear-gradient(to bottom right, #6A0DAD 40%, #000000 60%);
 }
-.contenedor {
-    overflow-y: auto; /* o overflow-y: scroll; */
-  }
+.contenedor3 {
+    width: 100%;
+    background: 
+        radial-gradient(circle at top left, #6A0DAD 5%, transparent 20%) top left,
+        radial-gradient(circle at bottom right, #6A0DAD 10%, transparent 40%) top right,
+        linear-gradient(to bottom right, #000000, #000000);
+
+  
+}
