@@ -260,7 +260,7 @@ export const LandingPage = () => {
         </div>
       </div>
 
-      // ContactForm
+      {/*ContactForm*/}
 
       <ContactForm/>
     </div>
