@@ -8,12 +8,15 @@ import { faX } from "@fortawesome/free-solid-svg-icons";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { faCity } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import ContactForm from "../component/contactForm";
+import NavigationBar from "../component/navbar";
 
 export const LandingPage = () => {
   const { store, actions } = useContext(Context);
 
   return (
     <div className="d-flex flex-wrap justify-content-center align-items-center text-white contenedor">
+      <NavigationBar />
       <div className="background1 w-100 d-flex flex-lg-row flex-column ">
         <div className="contenedor1 col-lg-6  ">
           <div className="p-2">
@@ -256,6 +259,10 @@ export const LandingPage = () => {
           </div>
         </div>
       </div>
+
+      // ContactForm
+
+      <ContactForm/>
     </div>
   );
 };
