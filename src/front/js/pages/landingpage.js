@@ -8,19 +8,22 @@ import { faX } from "@fortawesome/free-solid-svg-icons";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { faCity } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import ContactForm from "../component/contactForm";
+import NavigationBar from "../component/navbar";
 
 export const LandingPage = () => {
   const { store, actions } = useContext(Context);
 
   return (
     <div className="d-flex flex-wrap justify-content-center align-items-center text-white contenedor">
-      <div className="background1 w-100 d-flex">
-        <div className="contenedor1 col-lg-6   d-flex flex-column">
+      <NavigationBar />
+      <div className="background1 w-100 d-flex flex-lg-row flex-column ">
+        <div className="contenedor1 col-lg-6  ">
           <div className="p-2">
             <div className="contenedor11">
               <span>SCAN-ORDER-ENJOY-PAY</span>
 
-              <div>
+              <div className="titular">
                 <h1>Quick Pay QR</h1>
               </div>
               <div>
@@ -55,7 +58,7 @@ export const LandingPage = () => {
                 </ul>
                 <span>
                   <FontAwesomeIcon
-                    className="me-1"
+                    className="me-4 mt-5 sombreado"
                     icon={faPlay}
                     style={{ color: "#ffffff" }}
                   />
@@ -65,7 +68,7 @@ export const LandingPage = () => {
             </div>
           </div>
         </div>
-        <div className="contenedor12 col-lg-6   p-2 d-flex justify-content-center align-items-center mb-3">
+        <div className="contenedor12 col-lg-6 p-2 mb-3 ">
           <div className="phone ">
             {/* Contenido del teléfono */}
             <div className="phone-back">
@@ -79,27 +82,15 @@ export const LandingPage = () => {
               <div className="phone-bottom">
                 <div className="phone-antena"></div>
                 <div className="bottom-speaker">
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
                 </div>
                 <div className="phone-screw">
                   <div></div>
                 </div>
                 <div className="phone-charger"></div>
                 <div className="phone-screw right">
-                  <div></div>
+                  
                 </div>
                 <div className="bottom-speaker right">
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
                 </div>
                 <div className="phone-antena right"></div>
               </div>
@@ -111,8 +102,8 @@ export const LandingPage = () => {
               </div>
               <div className="display-content  ">
                 <h1 className="mt-5 p-5 ">
-                  No pierdas el tiempo,el cual no podras recuperar. Con nuestro
-                  servicio tendras tiempo y comodidad.
+                  <span className="p-3">Quick Qr Pay!</span>
+                 <img className="qr" src="https://hporro.com/wp-content/uploads/2020/05/qrdemo.png"/>
                 </h1>
               </div>
             </div>
@@ -121,7 +112,8 @@ export const LandingPage = () => {
       </div>
       {/*como funciona segunda parte del landing page*/}
       <div className="contenedor2   text-white">
-        <h5 className="text-center my-4">Como funciona</h5>
+     
+        <h5 className="text-center my-4 titular">Como funciona</h5>
         <div className="d-flex flex-wrap justify-content-around">
           <div className="col-lg-6 my-4  ">
             <div className="card-body">
@@ -209,18 +201,16 @@ export const LandingPage = () => {
         </div>
       </div>
       {/*Ventajas tercera parte del landing page*/}
-      <div className="contenedor3 text-white w-100">
+      <div className="contenedor3 text-white w-100 " >
         <div>
-          <h5 className="text-center my-4">
+          <h5 className="text-center my-4 titular borderAnimado">
             Ventajas para usuarios y empresas.
           </h5>
         </div>
-        <div className="d-flex justify-content-around">
-          <FontAwesomeIcon className="mb-4" icon={faUser} size="2xl" />
-          <FontAwesomeIcon className="mb-4" icon={faCity} size="2xl" />
-        </div>
         <div className="row">
+     
           <div className="col-md-6 p-2">
+          <FontAwesomeIcon className="mb-4 ms-5 " icon={faCity} size="2xl" />
             <div className="p-5">
               <h6>Pago rapido y comodo desde el movil.</h6>
               <p>
@@ -243,7 +233,8 @@ export const LandingPage = () => {
               </p>
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6 ">
+          <FontAwesomeIcon className="mb-4 ms-5" icon={faUser} size="2xl" />
           <div className="p-5">
               <h6>Pago rapido y comodo desde el movil.</h6>
               <p>
@@ -268,6 +259,10 @@ export const LandingPage = () => {
           </div>
         </div>
       </div>
+
+      {/*ContactForm*/}
+
+      <ContactForm/>
     </div>
   );
 };
