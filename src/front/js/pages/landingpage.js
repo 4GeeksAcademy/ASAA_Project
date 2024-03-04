@@ -207,7 +207,7 @@ export const LandingPage = () => {
         <div className="row">
      
           <div className="col-md-6 p-2">
-          <FontAwesomeIcon className="mb-4 ms-5" icon={faCity} size="2xl" />
+          <FontAwesomeIcon className="mb-4 ms-5 " icon={faCity} size="2xl" />
             <div className="p-5">
               <h6>Pago rapido y comodo desde el movil.</h6>
               <p>
