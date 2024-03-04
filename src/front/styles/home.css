@@ -1,9 +1,48 @@
-/*
-    home.css: This website contains selectors only used in home.css
+/* background1: Establece un fondo gradiente */
+.background1 {
+    background: linear-gradient(to top right, #6A0DAD 40%, #000000 60%);
+    padding: 2rem; /* Agregué un poco de relleno para separar el contenido del borde */
+}
 
-    All pages share the styles on index.css but you should create 
-    one more css for each page that will contain the selected used 
-    on that page only (the ones not reused in other pages).
-*/
+/* contenedor12: Ajusté el tamaño y la alineación */
+.contenedor12 {
+    width: 50%; /* El contenedor ocupa el 50% del ancho del padre */
+    height: 400px;
+    display: flex; /* Para centrar el contenido horizontalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    margin: auto; /* Centra el contenedor en la página */
+}
 
+/* contenedor2: Añadí un gradiente de fondo */
+.contenedor2 {
+    width: 100%;
+    background: linear-gradient(to bottom right, #6A0DAD 40%, #000000 60%);
+    padding: 2rem; /* Agregué un poco de relleno para separar el contenido del borde */
+}
 
+/* contenedor3: Establece un fondo complejo con múltiples gradientes radiales y lineales */
+.contenedor3 {
+    width: 100%;
+    background: 
+        radial-gradient(circle at top left, #6A0DAD 5%, transparent 20%) top left,
+        radial-gradient(circle at bottom right, #6A0DAD 10%, transparent 40%) top right,
+        linear-gradient(to bottom right, #000000, #000000);
+    padding: 2rem; /* Agregué un poco de relleno para separar el contenido del borde */
+}
+
+/* qr: Ajusté el tamaño y la alineación */
+.qr {
+    width: 100%; /* Ajusté el ancho para que ocupe todo el ancho del contenedor */
+    max-width: 300px; /* Limité el ancho máximo para mantener la proporción */
+    margin: auto; /* Centra la imagen en el contenedor */
+    display: block; /* Para centrar la imagen horizontalmente */
+}
+
+/* sombreado: Ajusté el espaciado y la sombra */
+.sombreado {
+    display: inline-block;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 209, 195, 0.7); /* Añadí transparencia a la sombra */
+    padding: 15px;
+}
