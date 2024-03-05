@@ -50,7 +50,7 @@ export const Ventajas = () => {
                         </div>
                         <div className="d-flex flex-column">
                             <h3 className="mb-0">Sin Necesidad de Página Web Propia</h3>
-                            <p >
+                            <p>
                                 Redirige a una plataforma de orden y pago, eliminando la necesidad de una web propia. La gestión de pedidos y cobros se realiza de manera integral desde su interfaz.
                             </p>
                         </div>

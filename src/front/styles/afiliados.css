@@ -1,3 +1,10 @@
+body {
+    margin: 0;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+}
+
+
 .contenedor4 {
     margin: 0 auto; /* Centra el contenedor horizontalmente */
     background-color: black;
