@@ -1,0 +1,78 @@
+.contenedor4 {
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    background-color: black;
+    width: 100%;
+    background-color: black;
+    background: radial-gradient(at bottom left, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.981) 40%),
+                radial-gradient(at top right, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.999) 40%);
+    background-blend-mode: screen;
+    color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    min-height: 110vh;
+}
+
+.title {
+    text-align: center;
+    background: linear-gradient(45deg, rgba(255, 201, 253, 100%), rgba(37, 138, 192, 0.8));
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-top: 50px;
+    font-size: 35px;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: bold;
+    color: transparent;
+    letter-spacing: 3px;
+}
+
+.table-container {
+    width: 100%;
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+
+table {
+    width: 80%;
+    font-size: 14px;
+}
+
+table, th, td {
+    color: white;
+    border: 1px solid #1B255E; 
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 80px;
+}
+
+th {
+    text-align: center;
+}
+
+
+th:hover {
+    background-color: #1B255E; 
+    transition: background-color 0.1s ease; 
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 767px) {
+    .ventajas {
+        margin-top: 2%;
+        width: 100%; /* Ocupa el 100% del ancho disponible en dispositivos móviles */
+        padding: 3% 8%; /* Porcentaje en lugar de un valor fijo */
+    }
+
+    table {
+        width: 80%; /* Ocupa el 100% del ancho disponible en dispositivos móviles */
+        margin-top: 5%;
+    }
+
+    th, td {
+        padding: 5%; /* Porcentaje en lugar de un valor fijo */
+    }
+}
+

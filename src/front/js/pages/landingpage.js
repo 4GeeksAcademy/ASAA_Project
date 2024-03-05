@@ -8,6 +8,7 @@ import QRBackground from "../../img/qr_image.png";
 import QRScreen from "../../img/qr_image_recta_white.png";
 import { ComoFunciona } from "../component/ComoFunciona";
 import { Ventajas } from "../component/Ventajas";
+import { Afiliados } from "../component/Afiliados";
 
 
 export const LandingPage = () => {
@@ -99,6 +100,7 @@ export const LandingPage = () => {
 
             <ComoFunciona />
             <Ventajas />
+            <Afiliados />
         </div>
     );
 };
