@@ -12,6 +12,7 @@ import IconImage from "../../img/Icon.png"; // Importa la imagen
 import IconPlayDemo from "../../img/IconPlayDemo.png";
 import QRBackground from "../../img/qr_image.png";
 import QRScreen from "../../img/qr_image_recta_white.png";
+import { ComoFunciona } from "../component/ComoFunciona";
 
 
 export const LandingPage = () => {
@@ -67,9 +68,12 @@ export const LandingPage = () => {
               </div>
               <span className="demo-container">
                 <div className="icon-column">
-                  <img src={IconPlayDemo} alt="Icon" style={{ width: '100px' }} />
+                  <a href="#">
+                    <img src={IconPlayDemo} alt="Icon" style={{ width: '100px' }} />
+                  </a>
+
                 </div>
-                <div className="text-column" style={{letterSpacing: '3px' }}>
+                <div className="text-column hover-effect" style={{ letterSpacing: '3px' }}>
                   VER DEMO
                 </div>
               </span>
@@ -77,6 +81,7 @@ export const LandingPage = () => {
             </div>
           </div>
         </div>
+
 
 
 
@@ -97,7 +102,7 @@ export const LandingPage = () => {
                 <div className="px__body__right"></div>
               </div>
 
-            <div className="px__screen">
+              <div className="px__screen">
                 <div className="px__screen__">
                   <div className="center">
                     <div className="square"><img src={QRScreen} alt="Icon" />
@@ -105,195 +110,17 @@ export const LandingPage = () => {
                     </div>
                   </div>
                 </div>
-            </div>
+              </div>
 
             </div>
           </div>
         </div>
       </div>
 
+      <ComoFunciona />
 
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*como funciona segunda parte del landing page*/
-/* <div className="contenedor2   text-white">
- 
-   <h5 className="text-center my-4 titular">Como funciona</h5>
-   <div className="d-flex flex-wrap justify-content-around">
-     <div className="col-lg-6 my-4  ">
-       <div className="card-body">
-         <p className="card-text text-center my-4">
-           Escanea el QR de tu mesa.
-         </p>
-       </div>
-       <div className="d-flex justify-content-center">
-         <div className="text-center" style={{ width: "18rem" }}>
-           <div
-             className="d-flex justify-content-center align-items-center"
-             style={{ height: "18rem" }}
-           >
-             <img
-               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhSw2Vj5IzgUG02OTlOIsWmF8vNr9PB0fCABwTlkAAlIsYyzuJ"
-               className="card-img-top rounded-circle"
-               alt="Imagen redonda"
-             />
-           </div>
-         </div>
-       </div>
-     </div>
-
-     <div className="col-lg-6 my-4  ">
-       <div className="card-body">
-         <p className="card-text text-center my-4">Confirma tu pedido</p>
-       </div>
-       <div className="d-flex justify-content-center">
-         <div className="text-center" style={{ width: "18rem" }}>
-           <div
-             className="d-flex justify-content-center align-items-center"
-             style={{ height: "18rem" }}
-           >
-             <img
-               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhSw2Vj5IzgUG02OTlOIsWmF8vNr9PB0fCABwTlkAAlIsYyzuJ"
-               className="card-img-top rounded-circle"
-               alt="Imagen redonda"
-             />
-           </div>
-         </div>
-       </div>
-     </div>
-
-     <div className="col-lg-6 my-4  ">
-       <div className="card-body">
-         <p className="card-text text-center my-4">
-           Disfruta de tu pedido.
-         </p>
-       </div>
-       <div className="d-flex justify-content-center">
-         <div className="text-center" style={{ width: "18rem" }}>
-           <div
-             className="d-flex justify-content-center align-items-center"
-             style={{ height: "18rem" }}
-           >
-             <img
-               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhSw2Vj5IzgUG02OTlOIsWmF8vNr9PB0fCABwTlkAAlIsYyzuJ"
-               className="card-img-top rounded-circle"
-               alt="Imagen redonda"
-             />
-           </div>
-         </div>
-       </div>
-     </div>
-
-     <div className="col-lg-6 my-4  ">
-       <div className="card-body">
-         <p className="card-text text-center my-4">Paga tu cuenta.</p>
-       </div>
-       <div className="d-flex justify-content-center">
-         <div className="text-center" style={{ width: "18rem" }}>
-           <div
-             className="d-flex justify-content-center align-items-center"
-             style={{ height: "18rem" }}
-           >
-             <img
-               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhSw2Vj5IzgUG02OTlOIsWmF8vNr9PB0fCABwTlkAAlIsYyzuJ"
-               className="card-img-top rounded-circle"
-               alt="Imagen redonda"
-             />
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
- </div>*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*Ventajas tercera parte del landing page*/
-/* <div className="contenedor3 text-white w-100 " >
-   <div>
-     <h5 className="text-center my-4 titular borderAnimado">
-       Ventajas para usuarios y empresas.
-     </h5>
-   </div>
-   <div className="row">
- 
-     <div className="col-md-6 p-2">
-     <FontAwesomeIcon className="mb-4 ms-5 " icon={faCity} size="2xl" />
-       <div className="p-5">
-         <h6>Pago rapido y comodo desde el movil.</h6>
-         <p>
-           Pide y abona la transacion de manera veloz y conveniente a
-           traves de tu propio dispositivo.
-         </p>
-       </div>
-       <div className="p-5">
-         <h6>Pago rapido y comodo desde el movil.</h6>
-         <p>
-           Pide y abona la transacion de manera veloz y conveniente a
-           traves de tu propio dispositivo.
-         </p>
-       </div>
-       <div className="p-5">
-         <h6>Pago rapido y comodo desde el movil.</h6>
-         <p>
-           Pide y abona la transacion de manera veloz y conveniente a
-           traves de tu propio dispositivo.
-         </p>
-       </div>
-     </div>
-     <div className="col-md-6 ">
-     <FontAwesomeIcon className="mb-4 ms-5" icon={faUser} size="2xl" />
-     <div className="p-5">
-         <h6>Pago rapido y comodo desde el movil.</h6>
-         <p>
-           Pide y abona la transacion de manera veloz y conveniente a
-           traves de tu propio dispositivo.
-         </p>
-       </div>
-       <div className="p-5">
-         <h6>Pago rapido y comodo desde el movil.</h6>
-         <p>
-           Pide y abona la transacion de manera veloz y conveniente a
-           traves de tu propio dispositivo.
-         </p>
-       </div>
-       <div className="p-5">
-         <h6>Pago rapido y comodo desde el movil.</h6>
-         <p>
-           Pide y abona la transacion de manera veloz y conveniente a
-           traves de tu propio dispositivo.
-         </p>
-       </div>
-     </div>
-   </div>
- </div>
-</div>
-);
+  );
 };
+

@@ -113,7 +113,7 @@ h4 {
 .demo-container {
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 25px;
     margin-left: 100px;
 }
 
@@ -127,8 +127,13 @@ h4 {
     font-style: normal;
 }
 
-
-
+.hover-effect:hover img {
+    filter: invert(20%); 
+    transition: filter 0.3s;
+    cursor: pointer;
+  }
+  
+  
 /* fins aqui be */
 
 /* contenedor12: Ajusté el tamaño y la alineación */
@@ -379,12 +384,7 @@ h4 {
 
 
 
-
-
-
-
-
-
+/*CSS ComoFunciona*/
 
 /* contenedor2: Añadí un gradiente de fondo */
 .contenedor2 {
