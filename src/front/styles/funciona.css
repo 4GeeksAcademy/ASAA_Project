@@ -1,0 +1,58 @@
+
+.contenedor2 {
+    width: 100%;
+    background-color: black;
+    background: radial-gradient(at top right, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.981) 40%),
+                radial-gradient(at bottom left, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.999) 40%);
+    background-blend-mode: screen;
+    padding: 2rem; /* Agregué un poco de relleno para separar el contenido del borde */
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    text-align: left;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: bold;
+    letter-spacing: 3px;
+}
+
+.icon-text {
+  line-height: 40px; 
+  margin-right: 30px;
+}
+
+.icon-text img {
+  vertical-align: middle; 
+  width: 30px;
+  height: 30px;
+}
+
+
+.rounded-image-container {
+    width: 16rem;
+}
+
+.rounded-image-container img {
+  border-radius: 50px;
+  width: 100%;
+  height: auto;
+}
+
+.main-title-como-funciona {
+  background: linear-gradient(45deg, rgba(255, 201, 253, 100%), rgba(37, 138, 192, 0.8));
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin-top: 10px;
+  font-size: 35px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  color: transparent;
+  letter-spacing: 3px;
+}
+
+
+
+
+
+
+
