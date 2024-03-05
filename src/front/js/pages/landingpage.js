@@ -261,8 +261,9 @@ export const LandingPage = () => {
       </div>
 
       {/*ContactForm*/}
-
+      <div className="contenedor20">
       <ContactForm/>
+      </div>
     </div>
   );
 };

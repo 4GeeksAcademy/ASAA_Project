@@ -1,7 +1,7 @@
 import React from "react";
 
 const ContactForm = () => (
-  <div className="bg-primary h-screen d-flex align-items-center justify-content-center">
+  <div className=" h-screen d-flex align-items-center justify-content-center">
     <div className="container">
       <div className="row">
         <div className="col-lg-6 mb-4 mb-lg-0">

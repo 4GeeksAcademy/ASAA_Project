@@ -46,3 +46,10 @@
     box-shadow: 0 0 10px rgba(0, 209, 195, 0.7); /* Añadí transparencia a la sombra */
     padding: 15px;
 }
+
+.contenedor20 {
+    width: 100%;
+    background: linear-gradient(to bottom right, #6A0DAD 40%, #000000 60%);
+    padding: 2rem; /* Agregué un poco de relleno para separar el contenido del borde */
+
+}
