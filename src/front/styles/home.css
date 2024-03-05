@@ -45,7 +45,6 @@
 
 .text-span {
     color: rgb(255, 255, 255);
-    font-family: sans-serif;
     font-size: 12px;
     text-align: left;
     font-family: "Lato", sans-serif;
@@ -150,8 +149,8 @@ h4 {
 .container {
     width: 700px; 
     height: 500px;
-    margin: 40px auto; 
-    margin-right: 20px;
+    margin: 10px; 
+    margin-right: 10px;
     padding: 20px; 
     box-sizing: border-box; 
     float: right; 
@@ -159,7 +158,7 @@ h4 {
 }
 
 .container img {
-    width: 55%; 
+    width: 65%; 
     height: auto; 
     position: absolute; 
     top: 0px; 
@@ -386,12 +385,77 @@ h4 {
 
 /*CSS ComoFunciona*/
 
-/* contenedor2: Añadí un gradiente de fondo */
 .contenedor2 {
     width: 100%;
-    background: linear-gradient(to bottom right, #6A0DAD 40%, #000000 60%);
+    background-color: black;
+    background: radial-gradient(at bottom left, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.981) 40%),
+                radial-gradient(at top right, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.999) 40%);
+    background-blend-mode: screen;
     padding: 2rem; /* Agregué un poco de relleno para separar el contenido del borde */
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    text-align: left;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: bold;
+    letter-spacing: 3px;
 }
+
+.icon-text {
+  line-height: 40px; 
+  margin-right: 30px;
+}
+
+.icon-text img {
+  vertical-align: middle; 
+  width: 30px;
+  height: 30px;
+}
+
+
+.rounded-image-container {
+    width: 16rem;
+}
+
+.rounded-image-container img {
+  border-radius: 50px;
+  width: 100%;
+  height: auto;
+}
+
+.main-title-como-funciona {
+  background: linear-gradient(45deg, rgba(255, 201, 253, 100%), rgba(37, 138, 192, 0.8));
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin-top: 10px;
+  font-size: 35px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  color: transparent;
+  letter-spacing: 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* contenedor3: Establece un fondo complejo con múltiples gradientes radiales y lineales */
 .contenedor3 {
@@ -418,3 +482,4 @@ h4 {
     box-shadow: 0 0 10px rgba(0, 209, 195, 0.7); /* Añadí transparencia a la sombra */
     padding: 15px;
 }
+
