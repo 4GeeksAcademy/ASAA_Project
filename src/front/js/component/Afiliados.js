@@ -9,7 +9,7 @@ export const Afiliados = () => {
     return (
         <div className="contenedor4">
             <h1 className="title">Nuestros Afiliados</h1>
-            <div className="table-container">
+            <div className="table-container mb-5">
 
                 <table>
                     <tr>

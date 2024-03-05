@@ -2,23 +2,25 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/contact.css";
 
+
 export const ContactForm = () => {
     const { store, actions } = useContext(Context);
 
     return (
-        <div className="container-fluid contact-form-container">
-            <div className="row">
-                <div className="col-lg-6 mb-4 mb-lg-0">
-                    <h1 className="title">
-                        Let's Get in <strong>Touch!</strong>
-                    </h1>
-                    <p className="paragraph">
-                        Tienes alguna pregunta o necesitas ayuda? Contáctanos mediante el
-                        formulario de contacto. ¡Estamos deseando ayudarte!
-                    </p>
+        <div className="container-fluid background">
+            <div className="row justify-content-center">
+                <div className="col-10 col-md-6 col-lg-5 bg-lilac">
+                    <div className="content">
+                        <h1 className="title">
+                            Let's Get in <strong>Touch!</strong>
+                        </h1>
+                        <p className="paragraph">
+                            Tienes alguna pregunta o necesitas ayuda? Contáctanos mediante el
+                            formulario de contacto. ¡Estamos deseando ayudarte!
+                        </p>
+                    </div>
                 </div>
-
-                <div className="col-lg-6 mt-5 pl-0">
+                <div className="col-10 col-md-6 col-lg-5 bg-green">
                     <form className="custom-width">
                         <div className="mb-3 text-left">
                             <label
@@ -30,7 +32,7 @@ export const ContactForm = () => {
                             <input
                                 type="text"
                                 id="full-name"
-                                className="form-control rounded-pill mt-2"
+                                className="form-control rounded-pill mt-1"
                             />
                         </div>
                         <div className="mb-3 text-left">
@@ -43,7 +45,7 @@ export const ContactForm = () => {
                             <input
                                 type="email"
                                 id="email"
-                                className="form-control rounded-pill mt-2" 
+                                className="form-control rounded-pill mt-1" 
                             />
                         </div>
                         <div className="mb-3 text-left">
@@ -55,7 +57,7 @@ export const ContactForm = () => {
                             </label>
                             <textarea
                                 id="message"
-                                className="form-control mt-2" 
+                                className="form-control mt-1" 
                                 rows="5"
                             ></textarea>
                         </div>
@@ -73,5 +75,4 @@ export const ContactForm = () => {
         </div>
     );
 };
-
 

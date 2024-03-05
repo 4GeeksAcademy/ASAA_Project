@@ -22,7 +22,6 @@ body {
     
 }
 
-/* Otras reglas de estilo se mantienen igual */
 
 .main-title {
     background: linear-gradient(45deg, rgba(255, 201, 253, 100%), rgba(37, 138, 192, 0.8));
@@ -59,14 +58,14 @@ body {
     width: 40px;
     height: auto;
     margin-left: 120px;
-    margin-top: 10px; /* Ajusta según sea necesario para centrar verticalmente */
+    margin-top: 10px; 
 }
 
 .sub-icon2 {
     width: 40px;
     height: auto;
     margin-left: 80px;
-    margin-top: 10px; /* Ajusta según sea necesario para centrar verticalmente */
+    margin-top: 10px;
 }
 
 

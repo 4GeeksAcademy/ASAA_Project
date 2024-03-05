@@ -1,30 +1,27 @@
-container-fluid {
-    width: 100%;
-    background-color: rgb(226, 215, 215);
-    background: radial-gradient(at bottom right, rgba(0, 0, 0, 0.5) 10%, rgba(0, 0, 0, 0.981) 40%),
+.background {
+    background: 
                 radial-gradient(at top left, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.999) 40%);
     background-blend-mode: screen;
+    height: 100vh; 
 }
 
 .title {
-
     background: linear-gradient(45deg, rgba(255, 201, 253, 100%), rgba(37, 138, 192, 0.8));
     -webkit-background-clip: text;
     background-clip: text;
-    margin-top: 150px;
+    margin-top: 190px;
     font-size: 40px;
     font-family: "Lato", sans-serif;
-    font-weight: 400;
+    font-weight: 700;
     font-style: normal;
     color: transparent;
     letter-spacing: 3px;
     text-align: center;
-    
 }
 
 .paragraph {
     margin-top: 10px;
-    margin-left: 140px;
+    margin-left: 80px;
     font-size: 12px;
     font-family: "Lato", sans-serif;
     font-weight: 400;
@@ -34,24 +31,25 @@ container-fluid {
 }
 
 .contact-form-container {
-    margin-top: 5rem; /* Puedes ajustar este valor según tus necesidades */
+    margin-top: 5rem; 
 }
-
 
 .custom-width {
 width: 60%;
+margin-left: 50px;
 font-family: "Lato", sans-serif;
 font-weight: 400;
 font-style: normal;
 letter-spacing: 3px;
 font-size: 12px;
+margin-top: 100px;
 }
 
 .form-control{
 border: 2px solid #656ED3;
 background-color: #1B255E;
+color: white;
 }
-
 
 .custom-btn {
 background-color: #1B255E; 

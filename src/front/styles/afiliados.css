@@ -4,9 +4,8 @@ body {
     background-color: rgb(0, 0, 0);
 }
 
-
 .contenedor4 {
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    margin: 0 auto; 
     background-color: black;
     width: 100%;
     background-color: black;
@@ -14,8 +13,7 @@ body {
                 radial-gradient(at top right, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.999) 40%);
     background-blend-mode: screen;
     color: rgb(255, 255, 255);
-    box-sizing: border-box;
-    min-height: 110vh;
+    box-sizing: border-box; 
 }
 
 .title {
@@ -59,7 +57,6 @@ th {
     text-align: center;
 }
 
-
 th:hover {
     background-color: #1B255E; 
     transition: background-color 0.1s ease; 
@@ -69,17 +66,17 @@ th:hover {
 @media only screen and (max-width: 767px) {
     .ventajas {
         margin-top: 2%;
-        width: 100%; /* Ocupa el 100% del ancho disponible en dispositivos móviles */
-        padding: 3% 8%; /* Porcentaje en lugar de un valor fijo */
+        width: 100%; 
+        padding: 3% 8%; 
     }
 
     table {
-        width: 80%; /* Ocupa el 100% del ancho disponible en dispositivos móviles */
+        width: 80%; 
         margin-top: 5%;
     }
 
     th, td {
-        padding: 5%; /* Porcentaje en lugar de un valor fijo */
+        padding: 5%; 
     }
 }
 
