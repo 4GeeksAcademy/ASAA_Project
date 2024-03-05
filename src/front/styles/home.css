@@ -389,7 +389,7 @@ h4 {
     width: 100%;
     background-color: black;
     background: radial-gradient(at bottom left, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.981) 40%),
-                radial-gradient(at top right, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.999) 40%);
+                radial-gradient(at top right, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.5) 40%);
     background-blend-mode: screen;
     padding: 2rem; /* Agregué un poco de relleno para separar el contenido del borde */
     color: rgb(255, 255, 255);

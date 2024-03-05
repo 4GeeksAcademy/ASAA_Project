@@ -1,0 +1,86 @@
+
+.contenedor3 {
+    min-height: 190vh;
+    background-color: black;
+    background: radial-gradient(at bottom right, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.981) 40%),
+                radial-gradient(at top left, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.999) 40%);
+    background-blend-mode: screen;
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    text-align: left;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: bold;
+    letter-spacing: 3px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    margin-bottom: 200px;
+}
+
+/* Otras reglas de estilo se mantienen igual */
+
+.main-title {
+    background: linear-gradient(45deg, rgba(255, 201, 253, 100%), rgba(37, 138, 192, 0.8));
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-top: 40px;
+    font-size: 35px;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: bold;
+    color: transparent;
+    letter-spacing: 3px;
+  }
+
+.icon {
+    
+    width: 80px; 
+    height: auto;
+    margin-left: 100px;
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+
+.icon2 {
+    
+    width: 80px; 
+    height: auto;
+    margin-left: 60px;
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+
+.sub-icon {
+    width: 40px;
+    height: auto;
+    margin-left: 120px;
+    margin-top: 10px; /* Ajusta según sea necesario para centrar verticalmente */
+}
+
+.sub-icon2 {
+    width: 40px;
+    height: auto;
+    margin-left: 80px;
+    margin-top: 10px; /* Ajusta según sea necesario para centrar verticalmente */
+}
+
+
+
+h3 {
+    font-size: 22px;
+    margin-top: 18px;
+    margin-left: 50px;
+    max-width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+p {
+    font-size: 13px;
+    margin-left: 50px;
+    margin-top: 20px; 
+    max-width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
