@@ -74,10 +74,10 @@ export const LandingPage = () => {
                 </div>
               </span>
 
-
             </div>
           </div>
         </div>
+
 
 
         <div className="contenedor12 col-lg-6 p-2 mb-5 ">

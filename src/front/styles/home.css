@@ -39,8 +39,9 @@
     }
   }
 
-
-
+  .contenedor11{
+    margin-top: 40px;
+  }
 
 .text-span {
     color: rgb(255, 255, 255);
@@ -66,12 +67,10 @@
     background-clip: text;
     color: transparent;
     margin-left: 100px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
+    letter-spacing: 3px;
     
 }
-
-
-
 
 .icon {
     display: inline-block;
@@ -114,7 +113,7 @@ h4 {
 .demo-container {
     display: flex;
     align-items: center;
-    margin-top: 70px;
+    margin-top: 20px;
     margin-left: 100px;
 }
 
