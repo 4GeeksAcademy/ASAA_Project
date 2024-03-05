@@ -10,7 +10,7 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import { LandingPage } from "./pages/LandingPage";
+import { LandingPage } from "./pages/landingpage";
 import { Welcome } from "./pages/welcome";
 import Register from "./pages/registrarse";
 import Login from "./pages/login";

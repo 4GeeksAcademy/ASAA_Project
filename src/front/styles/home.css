@@ -1,18 +1,391 @@
-/* background1: Establece un fondo gradiente */
-.background1 {
-    background: linear-gradient(to top right, #6A0DAD 40%, #000000 60%);
-    padding: 2rem; /* Agregué un poco de relleno para separar el contenido del borde */
+ 
+  .background1 { 
+    background: linear-gradient(233deg, #1B255E, #000000,  #000000);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-blend-mode: hard-light;
+    -webkit-animation: hue-rotate 3s linear infinite;
+            animation: hue-rotate 3s linear infinite;
+  }
+  
+  @-webkit-keyframes hue-rotate {
+    from {
+      -webkit-filter: hue-rotate(0);
+      -moz-filter: hue-rotate(0);
+      -ms-filter: hue-rotate(0);
+      filter: hue-rotate(0);
+    }
+    to {
+      -webkit-filter: hue-rotate(360deg);
+      -moz-filter: hue-rotate(360deg);
+      -ms-filter: hue-rotate(360deg);
+      filter: hue-rotate(360deg);
+    }
+  }
+  
+  @keyframes hue-rotate {
+    from {
+      -webkit-filter: hue-rotate(0);
+      -moz-filter: hue-rotate(0);
+      -ms-filter: hue-rotate(0);
+      filter: hue-rotate(0);
+    }
+    to {
+      -webkit-filter: hue-rotate(360deg);
+      -moz-filter: hue-rotate(360deg);
+      -ms-filter: hue-rotate(360deg);
+      filter: hue-rotate(360deg);
+    }
+  }
+
+
+
+
+.text-span {
+    color: rgb(255, 255, 255);
+    font-family: sans-serif;
+    font-size: 12px;
+    text-align: left;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 0px;
+    margin-left: 100px;
+    letter-spacing: 3px;
 }
 
-/* contenedor12: Ajusté el tamaño y la alineación */
-.contenedor12 {
-    width: 50%; /* El contenedor ocupa el 50% del ancho del padre */
-    height: 400px;
-    display: flex; /* Para centrar el contenido horizontalmente */
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
-    margin: auto; /* Centra el contenedor en la página */
+.main-title { 
+    margin-top: 10px;
+    font-size: 50px;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: bold;
+    background: linear-gradient(45deg, rgba(255, 201, 253, 1), rgba(255, 201, 253, 0));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-left: 100px;
+    margin-bottom: 60px;
+    
 }
+
+
+
+
+.icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: contain; 
+    background-position: center;
+    margin-right: 25px;
+    margin-left: 100px;
+}
+
+
+ul {
+    margin: 0;
+    padding: 0; 
+}
+
+li {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 20px; 
+}
+
+
+
+.text-column {
+    flex: 1; 
+}
+
+h4 {
+    margin: 0; 
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 18px;   
+}
+
+
+.demo-container {
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+    margin-left: 100px;
+}
+
+.icon-column {
+    margin-right: 10px; 
+}
+
+.text-column {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+/* fins aqui be */
+
+/* contenedor12: Ajusté el tamaño y la alineación */
+/*.contenedor12 {
+    width: 50%; 
+    height: 400px;
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start; 
+    margin: auto;
+    background-color: blue;
+}*/
+
+.container {
+    width: 700px; 
+    height: 500px;
+    margin: 40px auto; 
+    margin-right: 20px;
+    padding: 20px; 
+    box-sizing: border-box; 
+    float: right; 
+    position: relative; 
+}
+
+.container img {
+    width: 55%; 
+    height: auto; 
+    position: absolute; 
+    top: 0px; 
+    right: 50px; 
+}
+
+/* LAYOUT */
+
+.temp-wrapper {
+  margin: 20px;
+  transform: rotate(16deg);
+}
+
+@media all and (min-width: 180px) {
+  .temp-wrapper {
+    width: 50%;
+    margin: 20px auto;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .temp-wrapper {
+    width: 33.33337%;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .temp-wrapper {
+    width: 25%;
+  }
+}
+
+
+/* IPHONE */
+
+.px {
+  position: relative;
+  padding: 6% 7%;
+  width: 125%;
+}
+
+.px__body {
+  position: absolute;
+  top: 0;
+  right: 1%;
+  bottom: 0;
+  left: 1%;
+  background: linear-gradient(to top, #e5e5e5 0%, #f7f7f9 10%, #eeeef0 90%);
+  border-radius: 14%/7%;
+  box-shadow: inset 0 0 3px 1px #000;
+}
+
+.px__body:before {
+  content: "";
+  position: absolute;
+  top: 0.7%;
+  right: 1.4%;
+  bottom: 0.7%;
+  left: 1.4%;
+  background-color: #000;
+  border-radius: 13%/7%;
+  box-shadow: 0 0 3px #000;
+}
+
+.px__body:after {
+  content: "";
+  position: absolute;
+  top: 1%;
+  right: 2.3%;
+  bottom: 1%;
+  left: 2.3%;
+  background-color: #000;
+  box-shadow: inset 0 0 10px 2px #fff;
+  border-radius: 13%/6.5%;
+}
+
+.px__body__cut {
+  position: absolute;
+  z-index: 2;
+  top: 3%;
+  left: 50%;
+  width: 50%;
+  height: 3.5%;
+  background-color: #000;
+  border-radius: 0 0 10% 10%/80%;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.px__body__speaker,
+.px__body__camera,
+.px__body__sensor {
+  position: absolute;
+  z-index: 2;
+  background-color: #222;
+  transform: translate(-50%, -50%);
+}
+
+.px__body__speaker {
+  top: 4%;
+  left: 50%;
+  width: 12%;
+  height: 0.8%;
+  border-radius: 5px;
+}
+
+.px__body__camera {
+  top: 4%;
+  left: 36%;
+  width: 3.5%;
+  height: 1.7%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 2px 1px #000;
+}
+
+.px__body__sensor {
+  top: 4%;
+  left: 61%;
+  width: 2.2%;
+  height: 1.1%;
+  border-radius: 50%;
+  background-color: #2a4a73;
+  box-shadow: inset 0 0 2px 1px #000;
+}
+
+.px__body__mute,
+.px__body__up,
+.px__body__down,
+.px__body__right {
+  position: absolute;
+  background-color: #b5b8ba;
+  box-shadow: inset 0 5px 5px -3px rgba(0, 0, 0, 0.5),
+    inset 0 -5px 5px -3px rgba(0, 0, 0, 0.5);
+  transform: translate(0, -50%);
+}
+
+.px__body__mute {
+  top: 14.7%;
+  left: -0.7%;
+  width: 0.7%;
+  height: 4%;
+  border-radius: 1px 0 0 1px;
+}
+
+.px__body__up,
+.px__body__down {
+  left: -1%;
+  width: 1%;
+  height: 7.5%;
+  border-radius: 2px 0 0 2px;
+}
+
+.px__body__up {
+  top: 25%;
+}
+
+.px__body__down {
+  top: 34%;
+}
+
+.px__body__right {
+  top: 25%;
+  right: -1%;
+  width: 1%;
+  height: 7.5%;
+  border-radius: 0 2px 2px 0;
+}
+
+.px__screen__ {
+  position: relative;
+  padding-bottom: 218%;
+  background-color: #020202;
+  border-radius: 10%/5%;
+  box-shadow: 0 0 10px #000;
+  overflow: hidden;
+}
+
+.px__screen__::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), transparent 50%, rgba(56, 55, 55, 0.2));
+  border-radius: 10%/5%;
+  
+}
+
+/*Phone Screen scan*/
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .square {
+    width: 150px;
+    height: 150px;
+    background: transparent;
+   
+    border: 5px double white;
+    overflow: hidden;
+    position: relative; 
+  }
+  
+  
+  .scan {
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(cyan, transparent);
+    animation: scanning 3s linear alternate infinite;
+  }
+  
+  @keyframes scanning {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(270px); }
+  }
+  
+  
+
+
+
+
+
+
+
+
+
 
 /* contenedor2: Añadí un gradiente de fondo */
 .contenedor2 {
