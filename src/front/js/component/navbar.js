@@ -36,29 +36,29 @@ export const Navbar = () => {
         <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
           <ul className="navbar-nav">
             <li className="nav-item" style={{ margin: "0 10px" }}>
-              <Link to="/landingpage" className="nav-link custom-hover" style={{ color: "white", fontFamily: "Lato, sans-serif", fontWeight: 400, textDecoration: "none", transition: "color 0.3s" }}>
+              <a href="#landingpage" className="nav-link custom-hover" style={{ color: "white", fontFamily: "Lato, sans-serif", fontWeight: 400, textDecoration: "none", transition: "color 0.3s" }}>
                 Home
-              </Link>
+              </a>
             </li>
             <li className="nav-item" style={{ margin: "0 10px" }}>
-              <Link to="/ventajas"  className="nav-link custom-hover" style={{ color: "white", fontFamily: "Lato, sans-serif", fontWeight: 400, textDecoration: "none", transition: "color 0.3s" }}>
+              <a href="#ventajas"  className="nav-link custom-hover" style={{ color: "white", fontFamily: "Lato, sans-serif", fontWeight: 400, textDecoration: "none", transition: "color 0.3s" }}>
                 Ventajas
-              </Link>
+              </a>
             </li>
             <li className="nav-item" style={{ margin: "0 10px" }}>
-              <Link to="/ComoFunciona" className="nav-link custom-hover" style={{ color: "white", fontFamily: "Lato, sans-serif", fontWeight: 400, textDecoration: "none", transition: "color 0.3s" }}>
+              <a href="#ComoFunciona" className="nav-link custom-hover" style={{ color: "white", fontFamily: "Lato, sans-serif", fontWeight: 400, textDecoration: "none", transition: "color 0.3s" }}>
                 Funcionamiento
-              </Link>
+              </a>
             </li>
             <li className="nav-item" style={{ margin: "0 10px" }}>
-              <Link to="/Afiliados" className="nav-link custom-hover" style={{ color: "white", fontFamily: "Lato, sans-serif", fontWeight: 400, textDecoration: "none", transition: "color 0.3s" }}>
+              <a href="#Afiliados" className="nav-link custom-hover" style={{ color: "white", fontFamily: "Lato, sans-serif", fontWeight: 400, textDecoration: "none", transition: "color 0.3s" }}>
                 Afiliados
-              </Link>
+              </a>
             </li> 
             <li className="nav-item" style={{ margin: "0 10px", marginRight: "100px" }}>
-              <Link to="/contactForm" className="nav-link custom-hover" style={{ color: "white", fontFamily: "Lato, sans-serif", fontWeight: 400, textDecoration: "none", transition: "color 0.3s" }}>
+              <a href="#contactForm" className="nav-link custom-hover" style={{ color: "white", fontFamily: "Lato, sans-serif", fontWeight: 400, textDecoration: "none", transition: "color 0.3s" }}>
                 Contact Us
-              </Link>
+              </a>
             </li>
           </ul>
         </div>

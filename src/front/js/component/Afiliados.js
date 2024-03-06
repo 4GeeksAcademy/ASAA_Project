@@ -7,7 +7,7 @@ export const Afiliados = () => {
 
 
     return (
-        <div className="contenedor4">
+        <div id="Afiliados" className="contenedor4">
             <h1 className="title">Nuestros Afiliados</h1>
             <div className="table-container mb-5">
 

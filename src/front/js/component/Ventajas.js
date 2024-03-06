@@ -10,7 +10,7 @@ export const Ventajas = () => {
     const { store, actions } = useContext(Context);
 
     return (
-        <div className="d-flex flex-wrap justify-content-center align-items-center text-white contenedor">
+        <div id="ventajas" className="d-flex flex-wrap justify-content-center align-items-center text-white contenedor">
 
             <div className="contenedor3 text-white w-100">
 

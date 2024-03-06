@@ -12,7 +12,7 @@ export const ComoFunciona = () => {
 
     return (
         <>
-            <div className="white-line"></div>
+            <div id="ComoFunciona" className="white-line"></div>
             <div className="gradient w-100">
                 <div className="container-fluid mt-5">
                     {/* Primera Fila */}

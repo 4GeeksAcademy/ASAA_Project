@@ -7,7 +7,7 @@ export const ContactForm = () => {
     const { store, actions } = useContext(Context);
 
     return (
-        <div className="container-fluid background">
+        <div id="contactForm" className="container-fluid background">
             <div className="row justify-content-center">
                 <div className="col-10 col-md-6 col-lg-5 bg-lilac">
                     <div className="content">
