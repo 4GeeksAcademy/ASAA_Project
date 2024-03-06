@@ -1,0 +1,97 @@
+
+
+.title {
+    font-size: 50px;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: bold;
+    background: linear-gradient(45deg, rgba(255, 201, 253, 1), rgba(255, 201, 253, 0));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 3px;
+    margin-left: 10px !important;
+}
+
+
+/* footer-styles.css */
+
+.footer-column1 {
+    padding: 0;
+  }
+  
+  .footer-column1 h2 {
+    text-align: right;
+    margin-bottom: 10px;
+    margin-right: 45px;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: bold;
+    letter-spacing: 3px;
+  }
+  
+  .footer-column1 p {
+    margin-bottom: 5px; 
+    text-align: left;
+    margin-left: 320px;
+    font-size: 12px;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 3px;
+  }
+  
+  .footer-column2 {
+    padding: 0;
+  }
+  
+  .footer-column2 h2 {
+    text-align: left;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: bold;
+    letter-spacing: 3px;
+  }
+  
+  .footer-column2 p {
+    margin-bottom: 5px; 
+    text-align: left;
+    font-size: 12px;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 3px;
+    margin-left: 30px;
+  }
+
+  #Suscribirse::placeholder {
+    color: #ccc; 
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 3px;
+    font-size: 12px;
+  }
+
+
+.custom-border-top {
+    position: relative;
+  }
+  
+  .custom-border-top::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1250px;
+    height: 1px;
+    background-image: linear-gradient(45deg, rgba(255, 201, 253, 100%), rgba(37, 138, 192, 0.8));
+    transform: translateX(-50%);
+  }
+  
+  
+  
