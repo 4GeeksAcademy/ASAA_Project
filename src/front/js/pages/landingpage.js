@@ -103,6 +103,7 @@ export const LandingPage = () => {
             <Ventajas />
             <Afiliados />
             <ContactForm />
+            
         </div>
     );
 };

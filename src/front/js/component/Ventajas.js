@@ -108,7 +108,6 @@ export const Ventajas = () => {
 
                     {/* Columna Derecha */}
 
-
                     <div className="col-md-6 p-2 d-flex align-items-start">
                         <div className="pl-3">
                             <img src={IconImage} alt="Icon" className="sub-icon" />

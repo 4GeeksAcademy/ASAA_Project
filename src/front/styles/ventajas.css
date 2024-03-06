@@ -5,7 +5,7 @@ body {
 }
 
 .contenedor3 {
-    min-height: 190vh;
+   
     background-color: black;
     background: radial-gradient(at bottom right, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.981) 40%),
                 radial-gradient(at top left, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.999) 40%);
@@ -27,7 +27,7 @@ body {
     background: linear-gradient(45deg, rgba(255, 201, 253, 100%), rgba(37, 138, 192, 0.8));
     -webkit-background-clip: text;
     background-clip: text;
-    margin-top: 40px;
+    margin-top: 60px;
     font-size: 35px;
     font-family: "Lato", sans-serif;
     font-weight: 700;
