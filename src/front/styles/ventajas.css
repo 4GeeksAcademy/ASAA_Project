@@ -22,12 +22,12 @@ body {
 }
 
 
-.main-title {
+.main-title22 {
     background: linear-gradient(45deg, rgba(255, 201, 253, 100%), rgba(37, 138, 192, 0.8));
     -webkit-background-clip: text;
     background-clip: text;
-    margin-top: 150px;
-    margin-bottom: 100px;
+   margin-top: 100px;
+   margin-bottom: 50px;
     font-size: 35px;
     font-family: "Lato", sans-serif;
     font-weight: 700;

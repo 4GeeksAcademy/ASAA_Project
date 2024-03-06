@@ -15,7 +15,7 @@ export const Ventajas = () => {
             <div className="contenedor3 text-white w-100">
 
                 <div>
-                    <h5 className="text-center titular main-title">
+                    <h5 className="text-center titular main-title22">
                         Ventajas para usuarios y empresas
                     </h5>
                 </div>
