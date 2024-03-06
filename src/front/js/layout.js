@@ -11,6 +11,7 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { LandingPage } from "./pages/landingpage";
+import { ComoFunciona } from "./component/ComoFunciona";
 import { Welcome } from "./pages/welcome";
 import Register from "./pages/registrarse";
 import Login from "./pages/login";
@@ -33,6 +34,7 @@ const Layout = () => {
                     
                     <Routes>
                         <Route element={<LandingPage />} path="/" />
+                       
                         <Route element={<Welcome />} path="/welcome" />
                         <Route element={<Login />} path="/login" />
                         <Route element={<Register />} path="/register" />
