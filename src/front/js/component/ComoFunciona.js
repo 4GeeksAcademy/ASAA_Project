@@ -8,6 +8,8 @@ export const ComoFunciona = () => {
     const { store, actions } = useContext(Context);
 
     return (
+        <>
+        <div className="white-line"></div>
         <div className="contenedor2 text-white">
             <h5 className="text-center my-4 titular main-title-como-funciona">Como funciona</h5>
             <div className="row">
@@ -112,6 +114,7 @@ export const ComoFunciona = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 
