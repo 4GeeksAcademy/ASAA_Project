@@ -366,20 +366,26 @@ h4 {
     position: relative; 
   }
   
-  
+  /*
   .scan {
     width: 100%;
     height: 80px;
     background: linear-gradient(cyan, transparent);
     animation: scanning 3s linear alternate infinite;
-  }
-  
+  }*/
+  /*
   @keyframes scanning {
     0% { transform: translateY(0px); }
     100% { transform: translateY(270px); }
-  }
+  }*/
   
   
+
+
+
+
+
+
 
 
 
