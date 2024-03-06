@@ -1,120 +1,94 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/funciona.css";
-
 import IconImage from "../../img/Icon.png";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export const ComoFunciona = () => {
     const { store, actions } = useContext(Context);
 
     return (
         <>
-        <div className="white-line"></div>
-        <div className="contenedor2 text-white">
-            <h5 className="text-center my-4 titular main-title-como-funciona">Como funciona</h5>
-            <div className="row">
-                <div className="col-lg-6 col-md-12 my-2">
-                    <div className="card-body">
-                        <p className="card-text text-center my-2">
-                            <span className="icon-text">
-                                <img src={IconImage} alt="Icon" />
-                            </span>
-                            Escanea el QR de tu mesa
-                        </p>
-                    </div>
-                    <div className="d-flex justify-content-center">
-                        <div className="text-center rounded-image-container">
-                            <div
-                                className="d-flex justify-content-center align-items-center"
-                                style={{ height: "18rem" }}
-                            >
-                                <img
-                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhSw2Vj5IzgUG02OTlOIsWmF8vNr9PB0fCABwTlkAAlIsYyzuJ"
-                                    className="card-img-top"
-                                    alt="Imagen redonda"
-                                />
-                            </div>
+            <div className="white-line"></div>
+            <div className="gradient w-100">
+                <div className="container-fluid mt-5">
+                    {/* Primera Fila */}
+                    <div className="row">
+                        <div className="col-12 bg-info text-center main-title-funciona">
+                            Como Funciona
                         </div>
                     </div>
-                </div>
 
-                <div className="col-lg-6 col-md-12 my-2">
-                    <div className="card-body">
-                        <p className="card-text text-center my-2">
-                            <span className="icon-text">
-                                <img src={IconImage} alt="Icon" />
-                            </span>
-                            Confirma tu pedido
-                        </p>
-                    </div>
-                    <div className="d-flex justify-content-center">
-                        <div className="text-center rounded-image-container">
-                            <div
-                                className="d-flex justify-content-center align-items-center"
-                                style={{ height: "18rem" }}
-                            >
-                                <img
-                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhSw2Vj5IzgUG02OTlOIsWmF8vNr9PB0fCABwTlkAAlIsYyzuJ"
-                                    className="card-img-top"
-                                    alt="Imagen redonda"
-                                />
+                    <div className="row mt-5 align-items-center justify-content-center w-75 mx-auto">
+                        <div className="col-6">
+                            {/* Columna 1 con dos subcolumnas */}
+                            <div className="row align-items-end">
+                                <div className="col-3">
+                                    {/* Contenido de la subcolumna 1 */}
+                                    <h1 className="number mb-0">1.</h1>
+                                </div>
+                                <div className="col-9">
+                                    {/* Contenido de la subcolumna 2 */}
+                                    <img src="https://www.wikihow.com/images_en/thumb/8/82/Scan-a-QR-Code-Step-2-Version-3.jpg/v4-460px-Scan-a-QR-Code-Step-2-Version-3.jpg.webp" alt="Imagen" className="img-fluid img-funciona" />
+                                    <h1 className="text mb-3" >Escanea el QR de tu mesa</h1>
+                                </div>
                             </div>
+                            {/* Fin de la columna 1 */}
+                        </div>
+
+                        <div className="col-6 ">
+                            {/* Columna 2 con dos subcolumnas */}
+                            <div className="row align-items-end">
+                                <div className="col-3 ">
+                                    {/* Contenido de la subcolumna 1 */}
+                                    <h1 className="number mb-0">2.</h1>
+                                </div>
+                                <div className="col-9">
+                                    {/* Contenido de la subcolumna 2 */}
+                                    <img src="https://www.wikihow.com/images_en/thumb/8/82/Scan-a-QR-Code-Step-2-Version-3.jpg/v4-460px-Scan-a-QR-Code-Step-2-Version-3.jpg.webp" alt="Imagen" className="img-fluid img-funciona" />
+                                    <h1 className="text mb-3">Conforma tu pedido</h1>
+                                </div>
+                            </div>
+                            {/* Fin de la columna 2 */}
                         </div>
                     </div>
-                </div>
 
-                <div className="col-lg-6 col-md-12 my-2">
-                    <div className="card-body">
-                        <p className="card-text text-center my-2">
-                            <span className="icon-text">
-                                <img src={IconImage} alt="Icon" />
-                            </span>
-                            Disfruta de tu pedido
-                        </p>
-                    </div>
-                    <div className="d-flex justify-content-center">
-                        <div className="text-center rounded-image-container">
-                            <div
-                                className="d-flex justify-content-center align-items-center"
-                                style={{ height: "18rem" }}
-                            >
-                                <img
-                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhSw2Vj5IzgUG02OTlOIsWmF8vNr9PB0fCABwTlkAAlIsYyzuJ"
-                                    className="card-img-top"
-                                    alt="Imagen redonda"
-                                />
+                    {/* Tercera Fila */}
+                    <div className="row mt-5 mb-5 align-items-center justify-content-center w-75 mx-auto">
+                        <div className="col-6 ">
+                            {/* Columna 1 con dos subcolumnas */}
+                            <div className="row align-items-end">
+                                <div className="col-3 ">
+                                    {/* Contenido de la subcolumna 1 */}
+                                    <h1 className="number mb-0">3.</h1>
+                                </div>
+                                <div className="col-9">
+                                    {/* Contenido de la subcolumna 2 */}
+                                    <img src="https://www.wikihow.com/images_en/thumb/8/82/Scan-a-QR-Code-Step-2-Version-3.jpg/v4-460px-Scan-a-QR-Code-Step-2-Version-3.jpg.webp" alt="Imagen" className="img-fluid img-funciona" />
+                                    <h1 className="text mb-3">Disfruta de tu pedido</h1>
+                                </div>
                             </div>
+                            {/* Fin de la columna 1 */}
                         </div>
-                    </div>
-                </div>
 
-                <div className="col-lg-6 col-md-12 my-2">
-                    <div className="card-body">
-                        <p className="card-text text-center my-2">
-                            <span className="icon-text">
-                                <img src={IconImage} alt="Icon" />
-                            </span>
-                            Paga tu cuenta
-                        </p>
-                    </div>
-                    <div className="d-flex justify-content-center">
-                        <div className="text-center rounded-image-container">
-                            <div
-                                className="d-flex justify-content-center align-items-center"
-                                style={{ height: "18rem" }}
-                            >
-                                <img
-                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhSw2Vj5IzgUG02OTlOIsWmF8vNr9PB0fCABwTlkAAlIsYyzuJ"
-                                    className="card-img-top"
-                                    alt="Imagen redonda"
-                                />
+                        <div className="col-6 ">
+                            {/* Columna 2 con dos subcolumnas */}
+                            <div className="row align-items-end">
+                                <div className="col-3 ">
+                                    {/* Contenido de la subcolumna 1 */}
+                                    <h1 className="number mb-0">4.</h1>
+                                </div>
+                                <div className="col-9">
+                                    {/* Contenido de la subcolumna 2 */}
+                                    <img src="https://www.wikihow.com/images_en/thumb/8/82/Scan-a-QR-Code-Step-2-Version-3.jpg/v4-460px-Scan-a-QR-Code-Step-2-Version-3.jpg.webp" alt="Imagen" className="img-fluid img-funciona" />
+                                    <h1 className="text mb-3">Paga tu ticket</h1>
+                                </div>
                             </div>
+                            {/* Fin de la columna 2 */}
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         </>
     );
 };
-

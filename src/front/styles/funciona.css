@@ -1,65 +1,72 @@
-
-
-.contenedor2 {
-    width: 100%;
-    background-color: black;
+.gradient {
+    
     background: radial-gradient(at top right, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.981) 40%),
                 radial-gradient(at bottom left, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.999) 40%);
     background-blend-mode: screen;
-    padding: 2rem; /* Agregué un poco de relleno para separar el contenido del borde */
-    color: rgb(255, 255, 255);
-    font-size: 22px;
-    text-align: left;
+}
+
+
+
+
+
+
+.main-title-funciona {
+    background: linear-gradient(45deg, rgba(255, 201, 253, 100%), rgba(37, 138, 192, 0.8));
+    -webkit-background-clip: text;
+    color: transparent;
+    background-clip: text;
+    margin-top: 10px;
+    font-size: 35px;
     font-family: "Lato", sans-serif;
-    font-weight: 400;
+    font-weight: 700;
     font-style: bold;
     letter-spacing: 3px;
 }
 
-.icon-text {
-  line-height: 40px; 
-  margin-right: 30px;
+.number {
+    font-size: 80px;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: bold;
+    letter-spacing: 3px;
+    text-align: right;
+    background: linear-gradient(45deg, rgba(255, 201, 253, 100%), rgba(37, 138, 192, 0.8));
+    -webkit-background-clip: text;
+    color: transparent;
+    background-clip: text;
+    
 }
 
-.icon-text img {
-  vertical-align: middle; 
-  width: 30px;
-  height: 30px;
+.text {
+    font-size: 20px;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: bold;
+    letter-spacing: 3px;
+    text-align: left;
+    background: linear-gradient(45deg, rgba(255, 201, 253, 100%), rgba(37, 138, 192, 0.8));
+    -webkit-background-clip: text;
+    color: transparent;
+    background-clip: text;
+    
 }
 
-
-.rounded-image-container {
-    width: 14rem;
+.img-funciona {
+    border: 5px solid #1B255E;
+    border-radius: 5%;
+    width:300px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    box-shadow: 10px 5px 20px rgba(41, 38, 62, 0.5); 
 }
 
-.rounded-image-container img {
-  border-radius: 50px;
-  width: 100%;
-  height: auto;
-}
-
-.main-title-como-funciona {
-  background: linear-gradient(45deg, rgba(255, 201, 253, 100%), rgba(37, 138, 192, 0.8));
-  -webkit-background-clip: text;
-  background-clip: text;
-  margin-top: 10px;
-  font-size: 35px;
-  font-family: "Lato", sans-serif;
-  font-weight: 700;
-  font-style: bold;
-  color: transparent;
-  letter-spacing: 3px;
+.container-content {
+    width:85%;
 }
 
 
 .white-line {
-  width: 100%;
-  height: 1px; 
-  background-image: linear-gradient(45deg, rgba(255, 201, 253, 100%), rgba(37, 138, 192, 0.8));
-}
-
-
-
-
-
-
+    width: 100%;
+    height: 1px; 
+    background-image: linear-gradient(45deg, rgba(255, 201, 253, 100%), rgba(37, 138, 192, 0.8));
+  }
