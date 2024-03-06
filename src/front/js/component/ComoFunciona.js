@@ -1,7 +1,10 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/funciona.css";
-import IconImage from "../../img/Icon.png";
+import ImageScan from "../../img/scan.png";
+import ImagePidiendo from "../../img/pidiendo.png";
+import ImageSirviendo from "../../img/sirviendo.png";
+import ImagePagando from "../../img/pagando.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export const ComoFunciona = () => {
@@ -29,7 +32,7 @@ export const ComoFunciona = () => {
                                 </div>
                                 <div className="col-9">
                                     {/* Contenido de la subcolumna 2 */}
-                                    <img src="https://www.wikihow.com/images_en/thumb/8/82/Scan-a-QR-Code-Step-2-Version-3.jpg/v4-460px-Scan-a-QR-Code-Step-2-Version-3.jpg.webp" alt="Imagen" className="img-fluid img-funciona" />
+                                    <img src={ImageScan} alt="Imagen" className="img-fluid img-funciona" />
                                     <h1 className="text mb-3" >Escanea el QR de tu mesa</h1>
                                 </div>
                             </div>
@@ -45,7 +48,7 @@ export const ComoFunciona = () => {
                                 </div>
                                 <div className="col-9">
                                     {/* Contenido de la subcolumna 2 */}
-                                    <img src="https://www.wikihow.com/images_en/thumb/8/82/Scan-a-QR-Code-Step-2-Version-3.jpg/v4-460px-Scan-a-QR-Code-Step-2-Version-3.jpg.webp" alt="Imagen" className="img-fluid img-funciona" />
+                                    <img src={ImagePidiendo} className="img-fluid img-funciona" />
                                     <h1 className="text mb-3">Conforma tu pedido</h1>
                                 </div>
                             </div>
@@ -64,7 +67,7 @@ export const ComoFunciona = () => {
                                 </div>
                                 <div className="col-9">
                                     {/* Contenido de la subcolumna 2 */}
-                                    <img src="https://www.wikihow.com/images_en/thumb/8/82/Scan-a-QR-Code-Step-2-Version-3.jpg/v4-460px-Scan-a-QR-Code-Step-2-Version-3.jpg.webp" alt="Imagen" className="img-fluid img-funciona" />
+                                    <img src={ImageSirviendo} alt="Imagen" className="img-fluid img-funciona" />
                                     <h1 className="text mb-3">Disfruta de tu pedido</h1>
                                 </div>
                             </div>
@@ -80,7 +83,7 @@ export const ComoFunciona = () => {
                                 </div>
                                 <div className="col-9">
                                     {/* Contenido de la subcolumna 2 */}
-                                    <img src="https://www.wikihow.com/images_en/thumb/8/82/Scan-a-QR-Code-Step-2-Version-3.jpg/v4-460px-Scan-a-QR-Code-Step-2-Version-3.jpg.webp" alt="Imagen" className="img-fluid img-funciona" />
+                                    <img src={ImagePagando} alt="Imagen" className="img-fluid img-funciona" />
                                     <h1 className="text mb-3">Paga tu ticket</h1>
                                 </div>
                             </div>
