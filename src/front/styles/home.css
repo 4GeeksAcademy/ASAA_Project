@@ -1,6 +1,6 @@
 
 .background-landingpage {
-  background: linear-gradient(233deg, #1B255E, #000000,  #000000);
+  background: linear-gradient(233deg, #252e61, #000000,  #000000);
   background-size: cover;
   background-blend-mode: hard-light;
   -webkit-animation: hue-rotate 3s linear infinite;
@@ -103,5 +103,267 @@ ul {
 li {
   display: flex;
   margin-bottom: 20px; 
+}
+
+.columna2 {
+  position: relative;
+}
+
+.qr-background {
+  position: absolute;
+  top: 0;
+  right: 20px; /* Ajusta según sea necesario para mover a la derecha */
+  width: 500px; /* Ajusta según sea necesario para cambiar el tamaño */
+  z-index: 1; /* Ajusta según sea necesario para que esté detrás de .scene */
+  /*filter: brightness(0) invert(1);  Aplica el filtro blanco */
+  
+ 
+}
+
+:root {
+  /* Phone */
+  --phoneWidth: 3em;
+  --perspectiveValue: 15em; /* Ajusta el valor de la perspectiva según sea necesario */
+}
+
+.scene {
+  height: 100%;
+  overflow: hidden;
+  font-size: 100px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  perspective: var(--perspectiveValue);
+  perspective-origin: 50% 30%;
+}
+
+.scene {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2; /* Ajusta según sea necesario para que esté encima de QRBackground */
+  width: 100%; /* Ajuste aquí para ocupar el 100% del ancho de la columna */
+}
+
+.phone__wrapper {
+  height: calc(var(--phoneWidth) * 1.77);
+  width: var(--phoneWidth);
+  border-radius: 35px;
+  background: transparent; /* Cambiado de 'tr' */
+  padding: 5px;
+  position: absolute;
+  top: 0px; /* Ajuste aquí para colocar en la parte superior de la columna */
+  left: 100px; /* Ajuste aquí para colocar en la parte izquierda de la columna */
+  animation: startPhoneAnimation 2s forwards ease-out, sceneMoving 4s 1 linear; /* Cambio de infinite a 1 */
+}
+
+
+@keyframes startPhoneAnimation {
+  from {
+    transform: rotateY(80deg) rotateX(40deg) scale(2) translateX(-3em);
+  }
+
+  to {
+    transform: rotateY(-20deg) rotateX(40deg) rotateZ(10deg) scale(1); /* Ajuste de rotateY para girar a la izquierda */
+  }
+}
+
+.phone__frame {
+  height: calc(100% - 20px);
+  width: calc(100% - 20px);
+  border-radius: 30px;
+  background-color: #000;
+  padding: 10px;
+  position: relative;
+}
+
+.screen {
+  height: calc(100% - 20px);
+  width: calc(100% - 20px);
+  border-radius: 20px;
+  padding: 10px;
+  position: relative;
+  animation: startPhoneScreen 3s linear forwards;
+  animation-delay: 2s;
+}
+
+.screen__active {
+  opacity: 0;
+  animation: startPhoneApplications 3s linear forwards;
+  animation-delay: 3.5s;
+  z-index: 3;
+  position: absolute;
+  height: calc(100% - 30px);
+  width: 100%;
+  margin-top: 20px;
+}
+
+.screen__time {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(var(--phoneWidth) / 3);
+  animation: startPhoneScreenTime 3s linear forwards;
+  animation-delay: 2s;
+}
+
+.screen__time span {
+  text-shadow: 0 0 calc(var(--phoneWidth) / 10) #fff8;
+  color: #fff;
+}
+
+@keyframes startPhoneScreen {
+  from {
+      background: #000;
+  }
+
+  to {
+      background-image: linear-gradient(148deg, rgba(15, 15, 15,0.04) 0%, rgba(15, 15, 15,0.04) 35%,rgba(113, 113, 113,0.04) 35%, rgba(113, 113, 113,0.04) 42%,rgba(210, 210, 210,0.04) 42%, rgba(210, 210, 210,0.04) 100%),linear-gradient(70deg, rgba(15, 15, 15,0.04) 0%, rgba(15, 15, 15,0.04) 25%,rgba(113, 113, 113,0.04) 25%, rgba(113, 113, 113,0.04) 30%,rgba(210, 210, 210,0.04) 30%, rgba(210, 210, 210,0.04) 100%),linear-gradient(65deg, rgba(15, 15, 15,0.04) 0%, rgba(15, 15, 15,0.04) 13%,rgba(113, 113, 113,0.04) 13%, rgba(113, 113, 113,0.04) 27%,rgba(210, 210, 210,0.04) 27%, rgba(210, 210, 210,0.04) 100%),linear-gradient(90deg, rgb(0,0,0),rgb(0,0,0));
+  }
+}
+
+@keyframes startPhoneApplications {
+  to {
+      opacity: 1;
+      z-index: 3;
+  }
+}
+
+@keyframes startPhoneScreenTime {
+  0% {
+      z-index: 10;
+  }
+
+  50%, 100% {
+      opacity: 0;
+      z-index: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+.battery {
+  height: calc(var(--phoneWidth) / 20 - 10px);
+  width: calc(var(--phoneWidth) / 10 - 10px);
+  border: 1px solid #fff;
+  position: absolute;
+  right: 10px;
+  border-radius: 10px;
+  padding: 2px;
+  cursor: pointer;
+  transition: .5s transform ease-in;
+  opacity: 0;
+  animation: startPhoneApplications 3s linear forwards;
+  animation-delay: 1.5s;
+  z-index: 4;
+}
+
+.battery__life {
+  height: 100%;
+  width: 25%;
+  background-color: rgba(31, 228, 64, 0.87);
+  border-radius: 15px;
+}
+
+
+
+.camera {
+  background-color: #000;
+  height: 5%;
+  width: 40%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 0 0 17px 17px;
+  z-index: 2;
+  box-shadow: 0 -.02em .01em #5552 inset;
+}
+
+.camera__lens {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 7%;
+  margin: auto;
+  background: radial-gradient(circle at center, #000, #fff3 20%, #000 30%);
+  height: calc(var(--phoneWidth) / 20);
+  width: calc(var(--phoneWidth) / 20);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: .1s box-shadow linear;
+}
+
+.camera__lens:active {
+  box-shadow: -.1em -.1em 2em 1em #fff;
+}
+
+.time span {
+  color: #fff;
+  font-size: calc(var(--phoneWidth) / 20);
+  font-family: sans-serif;
+  position: absolute;
+  cursor: pointer;
+  transition: .5s transform ease-out;
+  text-shadow: -.1em -.1em .2em #fff5;
+  opacity: 0;
+  animation: startPhoneApplications 3s linear forwards;
+  animation-delay: 1.5s;
+  z-index: 4;
+}
+
+
+
+
+
+@media (max-width: 767px) {
+  .columna2 {
+    display: none;
+  }
+
+    .columna1 {
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+  
+    .fila1 {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .main-title-landingpage {
+      font-size: 36px;
+      margin-top: 10px;
+    }
+  
+    .text-span {
+      margin-left: 0;
+      text-align: center;
+    }
+  
+    .demo-container {
+      margin-left: 0;
+    }
+  
+    .demo-icon {
+      width: 80px;
+    }
+  
+    h4 {
+      font-size: 16px;
+      margin-top: 12px;
+    }
+     
 }
 
