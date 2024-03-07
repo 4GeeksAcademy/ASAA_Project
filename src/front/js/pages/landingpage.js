@@ -1,36 +1,41 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
-
 import IconImage from "../../img/Icon.png";
 import IconPlayDemo from "../../img/IconPlayDemo.png";
 import QRBackground from "../../img/qr_image.png";
-import QRScreen from "../../img/qr_image_recta_white.png";
 import { ComoFunciona } from "../component/ComoFunciona";
 import { Ventajas } from "../component/Ventajas";
 import { Afiliados } from "../component/Afiliados";
 import { ContactForm } from "../component/contactForm";
 import { Navbar } from "../component/navbar";
 
-
 export const LandingPage = () => {
     const { store, actions } = useContext(Context);
 
     return (
-    <>
-        <Navbar />
-        <div className="d-flex flex-wrap justify-content-center align-items-center text-white contenedor">
+        <>
+            <Navbar />
+            <div className="d-flex flex-wrap col-12 p-0 m-0 text-white  background-landingpage">
 
-            <div className="background1 w-100 d-flex flex-lg-row flex-column">
-                <div className="contenedor1 col-lg-6">
-                    <div className="p-2">
-                        <div className="contenedor11">
+                <div className="columna1 col-6 p-3 ">
+                    <div className="fila1  mb-3 d-flex align-items-center">
+                        <img
+                            src="https://play-lh.googleusercontent.com/NciBqxLXBwgKfKDiVCJ9y_FrbEXVtHuIJyLaTNGiIw88S-MJ_iS1442Epi5gD_ghpDg=w240-h480-rw"
+                            alt="logo"
+                            className="logo-img" 
+                            width={"150px"}
+                        />
+                        <div className="ml-3">
                             <span className="text-span">SCAN-ORDER-ENJOY-PAY</span>
-                            <div className="main-title">
+                            <div className="main-title-landingpage">
                                 <h1>Quick Pay QR</h1>
                             </div>
-                            <div>
-                                <ul className="my-3">
+                        </div>
+                    </div>
+
+                    <div className="fila2">
+                    <ul className="my-3">
                                     <li>
                                         <div className="icon">
                                             <img src={IconImage} alt="Icon" />
@@ -59,47 +64,26 @@ export const LandingPage = () => {
                                         </div>
                                     </li>
                                 </ul>
+                    </div>
+
+                    <div className="fila3">
+                        <span className="demo-container">
+                            <div className="icon-demo-column">
+                                <a href="#">
+                                    <img src={IconPlayDemo} alt="Icon" className="demo-icon" />
+                                </a>
                             </div>
-                            <span className="demo-container">
-                                <div className="icon-column">
-                                    <a href="#">
-                                        <img src={IconPlayDemo} alt="Icon" style={{ width: '100px' }} />
-                                    </a>
-                                </div>
-                                <div className="text-column hover-effect" style={{ letterSpacing: '3px' }}>
-                                    VER DEMO
-                                </div>
-                            </span>
-                        </div>
+                            <div className="text-column hover-effect" style={{ letterSpacing: '3px' }}>
+                                VER DEMO
+                            </div>
+                        </span>
                     </div>
                 </div>
 
-                <div className="contenedor12 col-lg-6 p-2 mb-5">
+                <div className="columna2 col-6 p-3 ">
                     <div className="container">
-                        <img src={QRBackground} alt="Icon" />
+                        <img src={QRBackground} alt="Icon" className="qr-img" />
                     </div>
-                    {/*<div className="temp-wrapper">
-                        <div className="px">
-                            <div className="px__body">
-                                <div className="px__body__cut"></div>
-                                <div className="px__body__speaker"></div>
-                                <div className="px__body__sensor"></div>
-                                <div className="px__body__mute"></div>
-                                <div className="px__body__up"></div>
-                                <div className="px__body__down"></div>
-                                <div className="px__body__right"></div>
-                            </div>
-                            <div className="px__screen">
-                                <div className="px__screen__">
-                                    <div className="center">
-                                        <div className="square"><img src={QRScreen} alt="Icon" />
-                                            <div className="scan"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>*/}
                 </div>
             </div>
 
@@ -107,10 +91,9 @@ export const LandingPage = () => {
             <Ventajas />
             <Afiliados />
             <ContactForm />
-
-        </div>
-    </>
+        </>
     );
 };
+
 
 

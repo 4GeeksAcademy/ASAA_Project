@@ -1,20 +1,18 @@
 
-
-.title {
-    font-size: 50px;
-    font-family: "Lato", sans-serif;
-    font-weight: 900;
-    font-style: bold;
-    background: linear-gradient(45deg, rgba(255, 201, 253, 1), rgba(255, 201, 253, 0));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    letter-spacing: 3px;
-    margin-left: 10px !important;
+.title-footer {
+  font-size: 30px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  background: linear-gradient(45deg, rgba(255, 201, 253, 1), rgba(230, 60, 8, 0));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 3px;
+  margin-left: 10px;
+  
 }
 
-
-/* footer-styles.css */
 
 .footer-column1 {
     padding: 0;
@@ -93,5 +91,92 @@
     transform: translateX(-50%);
   }
   
+
+  @media (max-width: 768px) {
+    
+    body {
+      overflow-x: hidden;
+    }
+  
+    .container-fluid,
+    .row {
+      padding: 0;
+      margin: 0 auto;
+    }
+  
+    .col-12 {
+      text-align: center;
+    }
+  
+    .title-footer {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+  
+    .col-12 img {
+      max-width: 100%; /* Adjusted to ensure the image doesn't exceed the container width */
+      height: auto; /* Maintain aspect ratio */
+      margin-top: 10px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .footer-column1,
+    .footer-column2,
+    .col-12 {
+      margin: 10px auto;
+      text-align: center;
+    }
+  
+    .footer-column1 h2,
+    .footer-column2 h2 {
+      margin-bottom: 10px;
+      font-size: 16px;
+      text-align: center;
+    }
+  
+    .footer-column1 p,
+    .footer-column2 p {
+      margin-bottom: 10px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    #Suscribirse {
+      width: 70%; /* Adjust the width as needed */
+    }
+  
+    .form-label {
+      font-size: 14px; /* Adjust the font size as needed */
+    }
+  
+    .btn {
+      width: 70%;
+      margin-top: 10px;
+    }
+  
+    #Suscribirse::placeholder {
+      font-size: 10px;
+    }
+  
+    .custom-border-top::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100%;
+      height: 1px;
+      background-image: linear-gradient(45deg, rgba(255, 201, 253, 100%), rgba(37, 138, 192, 0.8));
+      transform: translateX(-50%);
+    }
+  
+    .d-flex {
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
   
   

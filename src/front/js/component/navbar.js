@@ -13,15 +13,7 @@ export const Navbar = () => {
         `}
       </style>  
       <div className="container-fluid">
-        <a className="navbar-brand">
-          <img
-            src="https://play-lh.googleusercontent.com/NciBqxLXBwgKfKDiVCJ9y_FrbEXVtHuIJyLaTNGiIw88S-MJ_iS1442Epi5gD_ghpDg=w240-h480-rw"
-            alt="logo"
-            width="40"
-            height="40"
-            className="d-inline-block align-text-top me-2"
-          />
-        </a>
+        
         <button
           className="navbar-toggler"
           type="button"
@@ -47,7 +39,7 @@ export const Navbar = () => {
             </li>
             <li className="nav-item" style={{ margin: "0 10px" }}>
               <a href="#ComoFunciona" className="nav-link custom-hover" style={{ color: "white", fontFamily: "Lato, sans-serif", fontWeight: 400, textDecoration: "none", transition: "color 0.3s" }}>
-                Funcionamiento
+                Como Funciona
               </a>
             </li>
             <li className="nav-item" style={{ margin: "0 10px" }}>
@@ -57,7 +49,7 @@ export const Navbar = () => {
             </li> 
             <li className="nav-item" style={{ margin: "0 10px", marginRight: "100px" }}>
               <a href="#contactForm" className="nav-link custom-hover" style={{ color: "white", fontFamily: "Lato, sans-serif", fontWeight: 400, textDecoration: "none", transition: "color 0.3s" }}>
-                Contact Us
+                Contáctanos
               </a>
             </li>
           </ul>

@@ -1,8 +1,3 @@
-body {
-    margin: 0;
-    width: 100%;
-    background-color: rgb(0, 0, 0);
-}
 
 .contenedor3 {
    
@@ -88,3 +83,62 @@ p {
     text-overflow: ellipsis;
 }
 
+
+@media (max-width: 767px) {
+    .contenedor3 {
+        font-size: 16px;
+        overflow-x: hidden; /* Oculta la barra de desplazamiento horizontal en dispositivos móviles */
+    }
+
+    .main-title22 {
+        font-size: 24px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .icon {
+        width: 40px; /* Ajusta el ancho según sea necesario */
+        display: inline-block; /* Muestra los íconos en línea (uno al lado del otro) */
+        margin: 0 10px 10px 0; /* Añade márgenes entre los íconos */
+    }
+
+    .icon2 {
+        width: 40px; /* Ajusta el ancho según sea necesario */
+        display: block; /* Muestra el icono2 en un nuevo bloque debajo de los otros */
+        margin: 0 auto 10px; /* Añade márgenes para centrarlo debajo de los otros íconos */
+    }
+
+    .sub-icon,
+    .sub-icon2 {
+        width: 30px; /* Ajusta el ancho según sea necesario */
+        height: auto;
+        margin: 5px auto; /* Centra los íconos horizontalmente con algún margen superior e inferior */
+        display: block;
+    }
+
+    h3 {
+        font-size: 16px;
+        margin-left: 10px;
+        max-width: none; 
+        
+    }
+
+    p {
+        font-size: 12px;
+        margin-left: 10px;
+        max-width: none; /* Elimina la restricción de ancho máximo */
+    }
+
+    .col-md-6 {
+        flex-basis: 100%;
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 20px; /* Añade espacio entre las filas */
+    }
+
+    .col-md-6 img {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+}
