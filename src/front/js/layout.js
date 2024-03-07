@@ -13,6 +13,10 @@ import { Footer } from "./component/footer";
 import { LandingPage } from "./pages/landingpage";
 import { ComoFunciona } from "./component/ComoFunciona";
 import { Welcome } from "./pages/welcome";
+import { Bienvenido } from "./pages/bienvenido";
+import { Mesa } from "./pages/mesa";
+import { Pedidos } from "./pages/pedidos";
+import { ResumenPedido } from "./pages/resumenPedido";
 import Register from "./pages/registrarse";
 import Login from "./pages/login";
 
@@ -36,6 +40,10 @@ const Layout = () => {
                         <Route element={<LandingPage />} path="/" />
                        
                         <Route element={<Welcome />} path="/welcome" />
+                        <Route element={<Bienvenido />} path="/bienvenido" />
+                        <Route element={<Mesa />} path="/mesa" />
+                        <Route element={<Pedidos />} path="/pedidos" />
+                        <Route element={<ResumenPedido />} path="/resumenPedido" />
                         <Route element={<Login />} path="/login" />
                         <Route element={<Register />} path="/register" />
                         <Route element={<EditPerfil />} path="/EditPerfil" />

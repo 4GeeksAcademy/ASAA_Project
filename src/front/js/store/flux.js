@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			Mesas: [],
 			message: null,
 			demo: [
 				{
@@ -46,7 +47,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
-			}
+			},
+
+			
 		}
 	};
 };
