@@ -17,7 +17,7 @@ import { Bienvenido } from "./pages/bienvenido";
 import { Mesa } from "./pages/mesa";
 import { Pedidos } from "./pages/pedidos";
 import { ResumenPedido } from "./pages/resumenPedido";
-import Register from "./pages/registrarse";
+import Register from "./pages/register";
 import Login from "./pages/login";
 
 import EditPerfil from "./pages/editPerfil";
