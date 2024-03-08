@@ -33,6 +33,7 @@ const Layout = () => {
                 <ScrollToTop>
                     
                     <Routes>
+                    
                         <Route element={<LandingPage />} path="/" />
                        
                         <Route element={<Welcome />} path="/welcome" />

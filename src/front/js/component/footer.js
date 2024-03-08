@@ -10,7 +10,7 @@ export const Footer = () => (
         <img
           src={IconLogo}
           alt="logo"
-          className="img-fluid d-inline-block align-text-top me-2 footer-image-class logo-img"
+          className="img-fluid d-inline-block align-text-top me-2 footer-image-class logo-img-2"
 		  width="100" 
 		  height="100" 
 		  style={{marginLeft:"100px"}}
