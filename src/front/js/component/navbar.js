@@ -6,7 +6,8 @@ export const Navbar = () => {
 
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundColor: "black", fontFamily: "Lato, sans-serif" }}>
+
+    <nav className="navbar navbar-expand-lg navbar-dark sticky-top" style={{ backgroundColor: "black", fontFamily: "Lato, sans-serif" }}>
       <style>
         {`
           .custom-hover:hover {
@@ -32,7 +33,7 @@ export const Navbar = () => {
         <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
           <ul className="navbar-nav">
             <li className="nav-item" style={{ margin: "0 10px" }}>
-              <a href="#landingpage" className="nav-link custom-hover" style={{ color: "white", fontFamily: "Lato, sans-serif", fontWeight: 400, textDecoration: "none", transition: "color 0.3s" }}>
+              <a href="#home" className="nav-link custom-hover" style={{ color: "white", fontFamily: "Lato, sans-serif", fontWeight: 400, textDecoration: "none", transition: "color 0.3s" }}>
                 Home
               </a>
             </li>

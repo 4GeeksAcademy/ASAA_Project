@@ -20,7 +20,7 @@ export const LandingPage = () => {
     return (
         <>
             <Navbar />
-            <div className="d-flex flex-wrap col-12 p-0 m-0 text-white  background-landingpage">
+            <div id="home" className="d-flex flex-wrap col-12 p-0 m-0 text-white  background-landingpage">
 
                 <div className="columna1 col-6 p-3 ">
                     <div className="fila1  mb-3 d-flex align-items-center" >

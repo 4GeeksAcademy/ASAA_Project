@@ -77,6 +77,8 @@ p {
 }
 
 
+
+
 @media (max-width: 767px) {
     .contenedor3 {
         font-size: 16px;
@@ -134,7 +136,6 @@ p {
         display: block;
     }
 }
-
 
 
 @media (max-width: 767px) {
