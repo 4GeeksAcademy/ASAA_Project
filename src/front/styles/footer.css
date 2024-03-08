@@ -4,13 +4,12 @@
   font-family: "Lato", sans-serif;
   font-weight: 700;
   font-style: bold;
-  background: linear-gradient(45deg, rgba(255, 201, 253, 1), rgba(230, 60, 8, 0));
+  color: transparent;
+  background: linear-gradient(5deg, rgba(230, 60, 8, 0), rgba(255, 201, 253, 1), rgba(230, 60, 8, 0));
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
   letter-spacing: 3px;
-  margin-left: 10px;
-  
+  margin-left: 20px;
 }
 
 
@@ -92,6 +91,7 @@
   }
   
 
+
   @media (max-width: 768px) {
     
     body {
@@ -114,12 +114,13 @@
     }
   
     .col-12 img {
-      max-width: 100%; /* Adjusted to ensure the image doesn't exceed the container width */
-      height: auto; /* Maintain aspect ratio */
+      max-width: 100%; 
+      height: auto; 
       margin-top: 10px;
       display: block;
       margin-left: auto;
       margin-right: auto;
+      display: none !important;
     }
   
     .footer-column1,
@@ -134,22 +135,23 @@
       margin-bottom: 10px;
       font-size: 16px;
       text-align: center;
+      display: none !important;
     }
   
     .footer-column1 p,
     .footer-column2 p {
-      margin-bottom: 10px;
+      
       text-align: center;
       margin-left: auto;
       margin-right: auto;
     }
   
     #Suscribirse {
-      width: 70%; /* Adjust the width as needed */
+      width: 70%; 
     }
   
     .form-label {
-      font-size: 14px; /* Adjust the font size as needed */
+      font-size: 14px; 
     }
   
     .btn {

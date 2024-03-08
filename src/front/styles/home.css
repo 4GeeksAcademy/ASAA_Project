@@ -66,9 +66,17 @@
   font-style: bold;
   letter-spacing: 3px; 
   color: transparent;
-  background: linear-gradient(45deg, rgba(33, 4, 88, 1), rgba(255, 201, 253, 1), rgba(33, 4, 88, 1));
+  background: linear-gradient(5deg, rgba(33, 4, 88, 1), rgba(255, 201, 253, 1), rgba(33, 4, 88, 1));
   -webkit-background-clip: text;
   background-clip: text;
+}
+
+.icon {
+  width: 80px;
+  height: auto;
+  margin-left: 100px;
+  margin-bottom: 0;
+  margin-top: 15px;
 }
 
 .demo-container {

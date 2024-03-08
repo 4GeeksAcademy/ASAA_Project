@@ -22,10 +22,10 @@ export const Ventajas = () => {
 
                 <div className="row">
                     <div className="col-md-6 p-2 d-flex align-items-center">
-                        <img src={IconClient} alt="Icon" className="icon" />
+                        <img src={IconClient} alt="Icon" className="icon-c" />
                     </div>
                     <div className="col-md-6 p-2 d-flex align-items-center">
-                        <img src={IconCorporate} alt="Icon" className="icon2" />
+                        <img src={IconCorporate} alt="Icon" className="icon-cp" />
                     </div>
                 </div>
 
