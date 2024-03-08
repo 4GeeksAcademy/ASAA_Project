@@ -22,7 +22,7 @@ export const LandingPage = () => {
     useEffect(() => {
         const intervalId = setInterval(() => {
             setCurrentTime(getCurrentTime());
-        }, 1000); // Actualiza cada segundo
+        }, 1000); 
 
         // Limpia el intervalo cuando el componente se desmonta
         return () => clearInterval(intervalId);
@@ -121,8 +121,7 @@ export const LandingPage = () => {
                                         <div class="qr-scanner">
                                             <div class="box">
                                             <img src={ImageScan} alt="Imagen en pantalla" className="image-scan" />
-                                                <div class="line"></div>
-                                                
+                                                <div class="line"></div> 
                                                 <div class="angle"></div>
                                             </div>
                                         </div>
