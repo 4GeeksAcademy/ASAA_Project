@@ -179,4 +179,9 @@
     }
   }
   
-  
+  .logo-img {
+    width: 70px;
+    margin-left: 75px;
+    filter: invert(10%) sepia(10%) hue-rotate(180deg) saturate(200%) brightness(150%) contrast(150%);
+    opacity: 0.7; 
+  }

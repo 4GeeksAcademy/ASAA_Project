@@ -1,5 +1,6 @@
 import React from "react";
 import "../../styles/footer.css";
+import IconLogo from "../../img/logo_quickpayqr_white.png";
 
 export const Footer = () => (
   <footer className="container-fluid" style={{backgroundColor: "black"}}>
@@ -7,11 +8,11 @@ export const Footer = () => (
     <div className="row">
       <div className="col-12 col-md-2 d-flex align-items-center">
         <img
-          src="https://play-lh.googleusercontent.com/NciBqxLXBwgKfKDiVCJ9y_FrbEXVtHuIJyLaTNGiIw88S-MJ_iS1442Epi5gD_ghpDg=w240-h480-rw"
+          src={IconLogo}
           alt="logo"
-          className="img-fluid d-inline-block align-text-top me-2 footer-image-class"
-		  width="100" // Adjust the width as needed
-		  height="100" // Adjust the height as needed
+          className="img-fluid d-inline-block align-text-top me-2 footer-image-class logo-img"
+		  width="100" 
+		  height="100" 
 		  style={{marginLeft:"100px"}}
         />
         <h1 className="title-footer" style={{ whiteSpace: 'nowrap' }}>Quick Pay QR</h1>

@@ -2,8 +2,12 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import IconImage from "../../img/Icon.png";
+import IconLogo from "../../img/logo_quickpayqr_white.png";
 import IconPlayDemo from "../../img/IconPlayDemo.png";
 import QRBackground from "../../img/qr_image.png";
+import ImageScan from "../../img/qr_image_recta.png";
+
+
 import { ComoFunciona } from "../component/ComoFunciona";
 import { Ventajas } from "../component/Ventajas";
 import { Afiliados } from "../component/Afiliados";
@@ -21,10 +25,10 @@ export const LandingPage = () => {
                 <div className="columna1 col-6 p-3 ">
                     <div className="fila1  mb-3 d-flex align-items-center" >
                         <img
-                            src="https://play-lh.googleusercontent.com/NciBqxLXBwgKfKDiVCJ9y_FrbEXVtHuIJyLaTNGiIw88S-MJ_iS1442Epi5gD_ghpDg=w240-h480-rw"
+                            src={IconLogo}
                             alt="logo"
                             className="logo-img"
-                            style={{ width: "150px" }}
+
                         />
                         <div className="ml-3">
                             <span className="text-span">SCAN-ORDER-ENJOY-PAY</span>
@@ -81,7 +85,7 @@ export const LandingPage = () => {
                 </div>
 
                 <div className="columna2 col-6 p-3  ">
-                    <img src={QRBackground} alt="Icon" className="qr-background"  />
+                    <img src={QRBackground} alt="Icon" className="qr-background" />
                     <div className="scene">
                         <div className="phone__wrapper">
                             <div className="phone__frame">
@@ -95,16 +99,28 @@ export const LandingPage = () => {
                                     <div className="battery">
                                         <div className="battery__life"></div>
                                     </div>
-                                    <div className="screen__active"></div>
+                                    <div className="screen__active">
+                                        <div className="qr-scanner">
+                                            <div className="image-scan-container">
+                                                <img src={ImageScan} alt="Imagen en pantalla" className="image-scan" />
+                                            </div>
+                                            <div className="line"></div>
+                                            <div className="angle"></div>
+                                        </div>
+                                    </div>
+
+
+
                                     <div className="screen__time">
                                         <span>¡Hola!</span>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
-                
-                
+
+
 
 
                 </div>
