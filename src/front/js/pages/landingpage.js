@@ -1,12 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
+
 import "../../styles/home.css";
+
 import IconImage from "../../img/Icon.png";
 import IconLogo from "../../img/logo_quickpayqr_white.png";
 import IconPlayDemo from "../../img/IconPlayDemo.png";
 import QRBackground from "../../img/qr_image.png";
 import ImageScan from "../../img/qr_image_recta.png";
-
 
 import { ComoFunciona } from "../component/ComoFunciona";
 import { Ventajas } from "../component/Ventajas";
@@ -16,6 +17,23 @@ import { Navbar } from "../component/navbar";
 
 export const LandingPage = () => {
     
+    const [currentTime, setCurrentTime] = useState(getCurrentTime());
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCurrentTime(getCurrentTime());
+        }, 1000); // Actualiza cada segundo
+
+        // Limpia el intervalo cuando el componente se desmonta
+        return () => clearInterval(intervalId);
+    }, []);
+
+    function getCurrentTime() {
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, "0");
+        const minutes = now.getMinutes().toString().padStart(2, "0");
+        return `${hours}:${minutes}`;
+    }
 
     return (
         <>
@@ -93,7 +111,7 @@ export const LandingPage = () => {
                                 </div>
                                 <div className="screen">
                                     <div className="time">
-                                        <span>18:30</span>
+                                    <span>{currentTime}</span>
                                     </div>
                                     <div className="battery">
                                         <div className="battery__life"></div>
