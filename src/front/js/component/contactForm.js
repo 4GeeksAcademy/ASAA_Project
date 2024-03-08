@@ -4,7 +4,6 @@ import "../../styles/contact.css";
 
 
 export const ContactForm = () => {
-    const { store, actions } = useContext(Context);
 
     return (
         <div id="contactForm" className="container-fluid background">

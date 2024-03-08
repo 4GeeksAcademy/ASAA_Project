@@ -4,7 +4,6 @@
         radial-gradient(at bottom left, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.999) 40%);
     background-blend-mode: screen;
     padding-top: 20px; 
-
 }
 
 .mytitle-afiliados {
@@ -27,13 +26,10 @@
     justify-content: center;
 }
 
-
 table {
     width: 80%;
     font-size: 14px;
-    margin-bottom: 100px;
-    
-    
+    margin-bottom: 100px;    
 }
 
 table,
@@ -61,9 +57,10 @@ th:hover {
 
 
 /* Media query para tamaños de pantalla más pequeños */
+
 @media screen and (max-width: 768px) {
     .mytitle-afiliados {
-        font-size: 28px; /* Ajusta el tamaño de la fuente para pantallas más pequeñas */
+        font-size: 28px; 
     }
 
     table {
@@ -73,30 +70,31 @@ th:hover {
 
     th,
     td {
-        padding: 20px; /* Ajusta el espaciado de las celdas para pantallas más pequeñas */
+        padding: 20px; 
     }
     td {
-        display: block; /* Cambia las celdas a un formato de bloque para apilarlas en dispositivos móviles */
-        width: 100%; /* Ocupa el ancho completo del contenedor */
-        box-sizing: border-box; /* Incluye el relleno y el borde en el ancho total */
+        display: block; 
+        width: 100%; 
+        box-sizing: border-box; 
     }
 }
 
 
 /* Media query para tabletas en orientación horizontal (landscape) y vertical (portrait) */
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .mytitle-afiliados {
-        font-size: 32px; /* Ajusta el tamaño de la fuente para tabletas */
+        font-size: 32px; 
     }
 
     table {
         width: 80%;
-        font-size: 14px; /* Puedes ajustar según sea necesario */
+        font-size: 14px; 
     }
 
     th,
     td {
-        padding: 40px; /* Ajusta el espaciado de las celdas para tabletas */
+        padding: 40px; 
     }
 }
 

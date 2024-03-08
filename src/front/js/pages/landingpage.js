@@ -15,7 +15,7 @@ import { ContactForm } from "../component/contactForm";
 import { Navbar } from "../component/navbar";
 
 export const LandingPage = () => {
-    const { store, actions } = useContext(Context);
+    
 
     return (
         <>
@@ -28,7 +28,6 @@ export const LandingPage = () => {
                             src={IconLogo}
                             alt="logo"
                             className="logo-img"
-
                         />
                         <div className="ml-3">
                             <span className="text-span">SCAN-ORDER-ENJOY-PAY</span>
@@ -94,22 +93,23 @@ export const LandingPage = () => {
                                 </div>
                                 <div className="screen">
                                     <div className="time">
-                                        <span>15:11</span>
+                                        <span>18:30</span>
                                     </div>
                                     <div className="battery">
                                         <div className="battery__life"></div>
                                     </div>
                                     <div className="screen__active">
-                                        <div className="qr-scanner">
-                                            <div className="image-scan-container">
-                                                <img src={ImageScan} alt="Imagen en pantalla" className="image-scan" />
+                                        
+                                        <div class="qr-scanner">
+                                            <div class="box">
+                                            <img src={ImageScan} alt="Imagen en pantalla" className="image-scan" />
+                                                <div class="line"></div>
+                                                
+                                                <div class="angle"></div>
                                             </div>
-                                            <div className="line"></div>
-                                            <div className="angle"></div>
                                         </div>
+
                                     </div>
-
-
 
                                     <div className="screen__time">
                                         <span>¡Hola!</span>
@@ -119,12 +119,9 @@ export const LandingPage = () => {
                             </div>
                         </div>
                     </div>
-
-
-
-
                 </div>
             </div>
+
             <ComoFunciona />
             <Ventajas />
             <Afiliados />

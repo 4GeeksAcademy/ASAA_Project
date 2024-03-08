@@ -7,7 +7,6 @@
           animation: hue-rotate 3s linear infinite;
 }
 
-
 @-webkit-keyframes hue-rotate {
   from {
     -webkit-filter: hue-rotate(0);
@@ -70,7 +69,6 @@
   background: linear-gradient(45deg, rgba(33, 4, 88, 1), rgba(255, 201, 253, 1), rgba(33, 4, 88, 1));
   -webkit-background-clip: text;
   background-clip: text;
- 
 }
 
 .demo-container {
@@ -122,8 +120,10 @@ li {
   z-index: 1;  
 }
 
+
+ /* Phone */
+
 :root {
-  /* Phone */
   --phoneWidth: 3em;
   --perspectiveValue: 15em; 
 }
@@ -201,44 +201,7 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
-
-.image-scan-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.image-scan {
-  width: 150%; /* Ajusta según sea necesario */
-  height: auto;
-  max-width: none; /* Remover la restricción del máximo ancho */
-  display: block;
-  margin: 0 auto; /* Centra la imagen horizontalmente */
-  margin-left: -25%; /* Ajusta este valor para compensar el aumento de tamaño */
-  margin-top: -40px;
-}
-
-
-
-
-.qr-scanner {
-  background-image:
-    linear-gradient(0deg,
-      transparent 24%, rgba(32, 255, 77, 0.1) 25%, rgba(32, 255, 77, 0.1) 26%, transparent 27%, transparent 74%, rgba(32, 255, 77, 0.1) 75%, rgba(32, 255, 77, 0.1) 76%, transparent 77%, transparent),
-    linear-gradient(90deg,
-      transparent 24%, rgba(32, 255, 77, 0.1) 25%, rgba(32, 255, 77, 0.1) 26%, transparent 27%, transparent 74%, rgba(32, 255, 77, 0.1) 75%, rgba(32, 255, 77, 0.1) 76%, transparent 77%, transparent);
-  background-size: 3rem 3rem;
-  background-position: -1rem -1rem;
-  width: 100%;
-  height: 100%;
-  position: absolute; /* Cambiado a absolute para superponerse correctamente a la imagen */
-  background-color: #111;
-}
-
 
 .screen__time {
   position: absolute;
@@ -355,22 +318,13 @@ li {
 }
 
 
-
-
-
-
-
-
-
-/* Para que sobresalga al hacer la animación */
+/* Para que sobresalga al hacer la animación del Phone */
 
 .scene {
-  
   overflow: visible; 
 }
 
 .phone__wrapper {
- 
   position: absolute;
   top: -20px;
   left: 80px;
@@ -386,6 +340,123 @@ li {
 }
 
 
+/* Scanner */
+
+.qr-scanner {
+  background-image:
+      linear-gradient(0deg,
+      transparent 24%,
+      rgba(32, 255, 77, 0.1) 25%,
+      rgba(32, 255, 77, 0.1) 26%,
+      transparent 27%,
+      transparent 74%,
+      rgba(32, 255, 77, 0.1) 75%,
+      rgba(32, 255, 77, 0.1) 76%,
+      transparent 77%,
+      transparent),
+      linear-gradient(90deg,
+      transparent 24%,
+      rgba(32, 255, 77, 0.1) 25%,
+      rgba(32, 255, 77, 0.1) 26%,
+      transparent 27%,
+      transparent 74%,
+      rgba(32, 255, 77, 0.1) 75%,
+      rgba(32, 255, 77, 0.1) 76%,
+      transparent 77%,
+      transparent);
+  background-size: 3rem 3rem;
+  background-position: -1rem -1rem;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: #111;
+}
+
+.qr-scanner .box {
+  width: 200px;
+  height: 200px;
+  max-height: 200px;
+  max-width: 200px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  border: 0.1rem solid rgba(0, 255, 51, 0.2);
+  z-index: 2;
+}
+
+.qr-scanner .line {
+  height: calc(100% - 2px);
+  width: 100%;
+  background: linear-gradient(180deg, rgba(0, 255, 51, 0) 43%, #00ff33 211%);
+  border-bottom: 3px solid #00ff33;
+  transform: translateY(-100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  animation: radar-beam 5s infinite;
+  animation-timing-function: cubic-bezier(0.53, 0, 0.43, 0.99);
+  animation-delay: 1.4s;
+}
+
+.image-scan {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  background-color: transparent;
+  position: relative; 
+  z-index: 1; 
+}
+
+
+.qr-scanner .box:after,
+.qr-scanner .box:before,
+.qr-scanner .angle:after,
+.qr-scanner .angle:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 3vw;
+  height: 3vw;
+  border: 0.2rem solid transparent;
+}
+
+.qr-scanner .box:after,
+.qr-scanner .box:before {
+  top: 0;
+  border-top-color: #00ff33;
+}
+
+.qr-scanner .angle:after,
+.qr-scanner .angle:before {
+  bottom: 0;
+  border-bottom-color: #00ff33;
+}
+
+.qr-scanner .box:before,
+.qr-scanner .angle:before {
+  left: 0;
+  border-left-color: #00ff33;
+}
+
+.qr-scanner .box:after,
+.qr-scanner .angle:after {
+  right: 0;
+  border-right-color: #00ff33;
+}
+
+@keyframes radar-beam {
+  0% {
+      transform: translateY(-100%);
+  }
+
+  100% {
+      transform: translateY(0);
+  }
+}
 
 
 

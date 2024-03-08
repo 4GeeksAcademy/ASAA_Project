@@ -8,13 +8,13 @@ import ImagePagando from "../../img/pagando.png";
 
 
 export const ComoFunciona = () => {
-    const { store, actions } = useContext(Context);
-
+  
     return (
         <>
             <div id="ComoFunciona" className="white-line"></div>
             <div className="gradient w-100" >
                 <div className="container-fluid">
+                    
                     {/* Primera Fila */}
                     <div className="row">
                         <div className="col-12  text-center main-title-funciona">

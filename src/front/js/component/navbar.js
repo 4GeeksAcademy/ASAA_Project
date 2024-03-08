@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 
 export const Navbar = () => {
+
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundColor: "black", fontFamily: "Lato, sans-serif" }}>
       <style>
@@ -11,9 +13,10 @@ export const Navbar = () => {
             color: #337ab7  !important;
           }
         `}
-      </style>  
+      </style>
+
       <div className="container-fluid">
-        
+
         <button
           className="navbar-toggler"
           type="button"
@@ -25,6 +28,7 @@ export const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+        
         <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
           <ul className="navbar-nav">
             <li className="nav-item" style={{ margin: "0 10px" }}>
@@ -33,7 +37,7 @@ export const Navbar = () => {
               </a>
             </li>
             <li className="nav-item" style={{ margin: "0 10px" }}>
-              <a href="#ventajas"  className="nav-link custom-hover" style={{ color: "white", fontFamily: "Lato, sans-serif", fontWeight: 400, textDecoration: "none", transition: "color 0.3s" }}>
+              <a href="#ventajas" className="nav-link custom-hover" style={{ color: "white", fontFamily: "Lato, sans-serif", fontWeight: 400, textDecoration: "none", transition: "color 0.3s" }}>
                 Ventajas
               </a>
             </li>
@@ -46,7 +50,7 @@ export const Navbar = () => {
               <a href="#Afiliados" className="nav-link custom-hover" style={{ color: "white", fontFamily: "Lato, sans-serif", fontWeight: 400, textDecoration: "none", transition: "color 0.3s" }}>
                 Afiliados
               </a>
-            </li> 
+            </li>
             <li className="nav-item" style={{ margin: "0 10px", marginRight: "100px" }}>
               <a href="#contactForm" className="nav-link custom-hover" style={{ color: "white", fontFamily: "Lato, sans-serif", fontWeight: 400, textDecoration: "none", transition: "color 0.3s" }}>
                 Contáctanos

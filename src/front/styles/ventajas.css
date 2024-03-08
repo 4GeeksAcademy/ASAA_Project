@@ -1,9 +1,7 @@
-
 .contenedor3 {
-   
     background-color: black;
     background: radial-gradient(at bottom right, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.981) 40%),
-                radial-gradient(at top left, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.999) 40%);
+        radial-gradient(at top left, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.999) 40%);
     background-blend-mode: screen;
     color: rgb(255, 255, 255);
     font-size: 22px;
@@ -16,24 +14,22 @@
     overflow-x: hidden;
 }
 
-
 .main-title22 {
     background: linear-gradient(45deg, rgba(255, 201, 253, 100%), rgba(37, 138, 192, 0.8));
     -webkit-background-clip: text;
     background-clip: text;
-   margin-top: 100px;
-   margin-bottom: 50px;
+    margin-top: 100px;
+    margin-bottom: 50px;
     font-size: 35px;
     font-family: "Lato", sans-serif;
     font-weight: 700;
     font-style: bold;
     color: transparent;
     letter-spacing: 3px;
-  }
+}
 
 .icon {
-    
-    width: 80px; 
+    width: 80px;
     height: auto;
     margin-left: 100px;
     margin-bottom: 0;
@@ -41,8 +37,7 @@
 }
 
 .icon2 {
-    
-    width: 80px; 
+    width: 80px;
     height: auto;
     margin-left: 60px;
     margin-bottom: 0;
@@ -53,7 +48,7 @@
     width: 40px;
     height: auto;
     margin-left: 120px;
-    margin-top: 10px; 
+    margin-top: 10px;
 }
 
 .sub-icon2 {
@@ -62,8 +57,6 @@
     margin-left: 80px;
     margin-top: 10px;
 }
-
-
 
 h3 {
     font-size: 22px;
@@ -77,7 +70,7 @@ h3 {
 p {
     font-size: 13px;
     margin-left: 50px;
-    margin-top: 20px; 
+    margin-top: 20px;
     max-width: 400px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -87,7 +80,7 @@ p {
 @media (max-width: 767px) {
     .contenedor3 {
         font-size: 16px;
-        overflow-x: hidden; /* Oculta la barra de desplazamiento horizontal en dispositivos móviles */
+        overflow-x: hidden;
     }
 
     .main-title22 {
@@ -97,43 +90,42 @@ p {
     }
 
     .icon {
-        width: 40px; /* Ajusta el ancho según sea necesario */
-        display: inline-block; /* Muestra los íconos en línea (uno al lado del otro) */
-        margin: 0 10px 10px 0; /* Añade márgenes entre los íconos */
+        width: 40px;
+        display: inline-block;
+        margin: 0 10px 10px 0;
     }
 
     .icon2 {
-        width: 40px; /* Ajusta el ancho según sea necesario */
-        display: block; /* Muestra el icono2 en un nuevo bloque debajo de los otros */
-        margin: 0 auto 10px; /* Añade márgenes para centrarlo debajo de los otros íconos */
+        width: 40px;
+        display: block;
+        margin: 0 auto 10px;
     }
 
     .sub-icon,
     .sub-icon2 {
-        width: 30px; /* Ajusta el ancho según sea necesario */
+        width: 30px;
         height: auto;
-        margin: 5px auto; /* Centra los íconos horizontalmente con algún margen superior e inferior */
+        margin: 5px auto;
         display: block;
     }
 
     h3 {
         font-size: 16px;
         margin-left: 10px;
-        max-width: none; 
-        
+        max-width: none;
     }
 
     p {
         font-size: 12px;
         margin-left: 10px;
-        max-width: none; /* Elimina la restricción de ancho máximo */
+        max-width: none;
     }
 
     .col-md-6 {
         flex-basis: 100%;
         max-width: 100%;
         text-align: center;
-        margin-bottom: 20px; /* Añade espacio entre las filas */
+        margin-bottom: 20px;
     }
 
     .col-md-6 img {

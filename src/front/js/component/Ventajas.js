@@ -7,7 +7,7 @@ import IconCorporate from "../../img/icono_empresa.png";
 import IconImage from "../../img/Icon.png";
 
 export const Ventajas = () => {
-    const { store, actions } = useContext(Context);
+   
 
     return (
         <div id="ventajas" className="d-flex flex-wrap justify-content-center align-items-center text-white contenedor">
@@ -28,7 +28,6 @@ export const Ventajas = () => {
                         <img src={IconCorporate} alt="Icon" className="icon2" />
                     </div>
                 </div>
-
 
                 <div className="row">
                     {/* Columna Izquierda */}
@@ -80,8 +79,6 @@ export const Ventajas = () => {
                         </div>
                     </div>
 
-
-
                     <div className="col-md-6 p-2 d-flex align-items-start">
                         <div className="pr-3">
                             <img src={IconImage} alt="Icon" className="sub-icon" />
@@ -107,7 +104,6 @@ export const Ventajas = () => {
                     </div>
 
                     {/* Columna Derecha */}
-
                     <div className="col-md-6 p-2 d-flex align-items-start">
                         <div className="pl-3">
                             <img src={IconImage} alt="Icon" className="sub-icon" />
@@ -131,7 +127,6 @@ export const Ventajas = () => {
                             </p>
                         </div>
                     </div>
-
                 
                 </div>
             </div>

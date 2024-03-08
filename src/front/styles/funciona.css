@@ -1,8 +1,7 @@
-
 .gradient {
     background-color: transparent;
     background: radial-gradient(at top right, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.981) 40%),
-                radial-gradient(at bottom left, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.999) 40%);
+        radial-gradient(at bottom left, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.999) 40%);
     background-blend-mode: screen;
     margin-top: 0;
 }
@@ -31,7 +30,6 @@
     -webkit-background-clip: text;
     color: transparent;
     background-clip: text;
-    
 }
 
 .text {
@@ -44,88 +42,82 @@
     background: linear-gradient(45deg, rgba(255, 201, 253, 100%), rgba(37, 138, 192, 0.8));
     -webkit-background-clip: text;
     color: transparent;
-    background-clip: text;   
+    background-clip: text;
 }
 
 .img-funciona {
     border: 2px solid #1B255E;
     border-radius: 5%;
-    width:300px;
+    width: 300px;
     height: 250px;
     margin-bottom: 10px;
     overflow: hidden;
-    box-shadow: 10px 5px 20px rgba(34, 31, 54, 0.5); 
+    box-shadow: 10px 5px 20px rgba(34, 31, 54, 0.5);
     object-fit: fill;
 }
 
 .container-content {
-    width:85%;
+    width: 85%;
 }
-
 
 .white-line {
     width: 100%;
-    height: 1px; 
+    height: 1px;
     background-image: linear-gradient(45deg, rgba(255, 201, 253, 100%), rgba(37, 138, 192, 0.8));
-  }
+}
 
-  .custom-col {
+.custom-col {
     margin-left: -50px;
     padding-left: -50px;
 }
 
 
+/* Media query para dispositivos móviles */
 
-
-  /* Media query para dispositivos móviles */
-
-/* Para dispositivos pequeños como teléfonos */
 @media (max-width: 767px) {
     .row {
-        flex-direction: column; /* De filas a columnas */
+        flex-direction: column;
     }
 
     .col-6 {
-        width: 100%; /* Ancho deseado para dispositivos móviles */
+        width: 100%;
     }
 
     .img-funciona {
-        width: 100%; /* Las imágenes ocupan el ancho completo del contenedor */
-        height: auto; /* Para mantener la proporción de aspecto */
+        width: 100%;
+        height: auto;
     }
 }
 
 
 /* Para tabletas en orientación horizontal (landscape) y vertical (portrait) */
+
 @media (min-width: 768px) and (max-width: 1024px) {
-    /* Ajustes de estilo para tabletas aquí */
+
     .col-6 {
-        width: 100%; /* Ancho completo para adaptarse al tamaño de pantalla */
+        width: 100%;
     }
 
     .img-funciona {
-        width: 100%; /* Haz que las imágenes ocupen el ancho completo del contenedor */
-        height: auto; /* Para mantener la proporción de aspecto */
+        width: 100%;
+        height: auto;
     }
 }
 
 
 /* Para dispositivos más grandes como monitores de escritorio */
+
 @media (min-width: 1025px) {
     .row {
-        /*  Cambia la dirección de las filas a columnas */
         flex-direction: row;
     }
 
     .col-6 {
-        /* Ajustes específicos para las columnas en escritorio, si es necesario */
-        width: 50%; /* Puedes cambiar el ancho según tu diseño */
+        width: 50%;
     }
 
     .img-funciona {
-        
-        width: 100%; /* Puedes ajustar según tu diseño */
-        height: auto; /* Para mantener la proporción de aspecto */
+        width: 100%;
+        height: auto;
     }
 }
-

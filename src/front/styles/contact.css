@@ -1,5 +1,4 @@
 .background {
-    
     background-color: black;
     background: 
                 radial-gradient(at top left, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.999) 40%),
@@ -70,6 +69,7 @@ font-size: 12px;
 }
 
 /* Media query para pequeño tamaño */
+
 @media (max-width: 768px) {
     .custom-width {
         width: 80%;
@@ -95,26 +95,27 @@ font-size: 12px;
 }
 
 /* Media query para tabletas en orientación horizontal (landscape) y vertical (portrait) */
+
 @media (min-width: 769px) and (max-width: 1024px) {
     .custom-width {
         width: 80%;
         margin-left: auto;
-        margin-right: auto; /* Center the form on tablet screens */
+        margin-right: auto;
     }
 
     .title {
         font-size: 30px;
         margin-top: 30px;
-        text-align: center; /* Center the title text */
+        text-align: center; 
     }
 
     .paragraph {
         margin-left: 0;
-        text-align: center; /* Center the paragraph text */
+        text-align: center; 
     }
 
     #contactForm .row {
-        flex-direction: column; /* Stack columns on tablets */
-        align-items: center; /* Center the columns */
+        flex-direction: column;
+        align-items: center; 
     }
 }
