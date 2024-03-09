@@ -26,6 +26,10 @@ h5 {
     flex-direction: column;
 }
 
+.dropdown-item {
+    font-size: 15px;
+}
+
 .container-pedidos .quantity button {
       background-color: orange;
       width: 25px;
@@ -43,7 +47,6 @@ h5 {
     align-items: center;
     width: 100px;
     height: 80px;
-    margin-left:;
     margin-right: 3%;
     font-size: 20px;
     font-weight: bold; 
@@ -92,6 +95,15 @@ h5 {
     top: 4px;
     box-shadow: #c0392b 0px 3px 2px, #000 0px 3px 5px;
 }
+
+/*FOTOs*/
+
+.producto-imagen {
+    width: 50px; /* ajusta el ancho según tus necesidades */
+    height: auto; /* ajusta la altura automáticamente para mantener la proporción */
+    cursor: pointer; /* opcional: agrega un cursor al pasar el ratón para indicar interactividad */
+}
+
 
 /*MOVIL*/
 @media only screen and (max-width: 767px) {

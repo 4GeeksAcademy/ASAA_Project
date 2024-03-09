@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			Mesa: [],
 			message: null,
 			demo: [
 				{
@@ -48,7 +49,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ demo: demo });
 			},
 
-			
+			Mesas: (mesaId, Name) => {
+                fetch(process.env.BACKEND_URL +'/api/mesa', 
+                {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ mesaId, Name }),
+                })
+                  .then(response => response.json())
+                  .then(data => {
+                    console.log('Respuesta del servidor:', data);
+                    
+                  })
+                  .catch(error => {
+                    console.error('Error al enviar la mesa seleccionada:', error);
+                  });
+              }  
+
 		}
 	};
 };

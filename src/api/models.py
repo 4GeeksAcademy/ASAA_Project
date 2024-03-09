@@ -2,7 +2,7 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, Integer, ForeignKey
 from sqlalchemy.orm import relationship
 
-db = SQLAlchemy()
+db = SQLAlchemy() 
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -15,7 +15,7 @@ class User(db.Model):
  
     def serialize(self):
         return {
-            "id": self.id,
+            "id": self.id, 
             "email": self.email,
             # do not serialize the password, its a security breach
         }
@@ -30,8 +30,9 @@ class Cliente(db.Model):
 
     def serialize(self):
         return {
-            "id": self.id,
-        }
+            "id": self.id,  
+        }   
+        
 
 class Camarero(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -124,7 +125,7 @@ class Pago(db.Model):
     
 
 class Mesa(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     id_admin = db.Column(Integer, ForeignKey('admin.id'))
     id_camarero = db.Column(Integer, ForeignKey('camarero.id'))
     name = db.Column(db.String(80), unique=False, nullable=False)
@@ -161,8 +162,8 @@ class ProductoPedido(db.Model):
 
 class Pedido(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    id_cliente = db.Column(Integer, ForeignKey('producto.id'))
-    id_mesa = db.Column(Integer, ForeignKey('pedido.id'))
+    id_cliente = db.Column(Integer, ForeignKey('cliente.id'))
+    id_mesa = db.Column(Integer, ForeignKey('mesa.id'))
     date = db.Column(db.String(80), unique=False, nullable=False)
     total_amount = db.Column(db.String(80), unique=False, nullable=False)
     status = db.Column(db.String(80), unique=False, nullable=False)

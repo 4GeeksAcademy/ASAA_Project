@@ -7,7 +7,6 @@ export const Mesa = () => {
 
     const [mesaSeleccionada, setMesaSeleccionada] = useState(null);
 
-    // Definir un array de mesas con su información
     const mesas = [
         { id: 1, name: 'Mesa París' },
         { id: 2, name: 'Mesa Lyon' },
@@ -15,12 +14,9 @@ export const Mesa = () => {
         { id: 4, name: 'Mesa Bordeaux' },
     ];
 
-    // Función para manejar la selección de una mesa
     const handleSeleccionMesa = (mesaId, Name) => {
         // Encontrar la mesa correspondiente en el array
         const mesaSeleccionada = mesas.find(mesa => mesa.id === mesaId);
-
-        // Actualizar el estado con la mesa seleccionada
         setMesaSeleccionada(mesaSeleccionada);
 
         console.log('Mesa seleccionada:', mesaSeleccionada);
@@ -51,7 +47,7 @@ export const Mesa = () => {
                                 onClick={() => handleSeleccionMesa(mesa.id, mesa.name)}
                             >
                                 <i className={`fa-solid fa-${mesa.id}`} style={{ color: '#ff8040' }}></i> {mesa.name}
-                            </a>
+                            </a> 
                         ))}
                     </div>
                 </div>
