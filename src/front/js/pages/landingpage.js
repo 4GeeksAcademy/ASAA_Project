@@ -14,6 +14,7 @@ import { Ventajas } from "../component/Ventajas";
 import { Afiliados } from "../component/Afiliados";
 import { ContactForm } from "../component/contactForm";
 import { Navbar } from "../component/navbar";
+import { Footer } from "../component/footer";
 
 export const LandingPage = () => {
     
@@ -90,7 +91,7 @@ export const LandingPage = () => {
                     <div className="fila3">
                         <span className="demo-container">
                             <div className="icon-demo-column">
-                                <a href="#">
+                                <a href="/welcome">
                                     <img src={IconPlayDemo} alt="Icon" className="demo-icon" />
                                 </a>
                             </div>
@@ -143,6 +144,7 @@ export const LandingPage = () => {
             <Ventajas />
             <Afiliados />
             <ContactForm />
+            <Footer />
 
         </>
     );

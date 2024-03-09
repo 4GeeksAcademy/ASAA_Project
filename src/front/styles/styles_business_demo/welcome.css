@@ -1,0 +1,126 @@
+.container {
+    max-width: 100%;
+}
+
+.title-business,
+.sub-title-business {
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.title-business {
+  font-size: 30px;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: bold;
+  letter-spacing: 3px;
+  margin-top: 0px;
+}
+
+.sub-title-business {
+  font-size: 18px;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 3px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+
+
+
+.title-welcome,
+.sub-title-welcome {
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.title-welcome {
+    font-size: 30px;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: bold;
+    letter-spacing: 3px;
+    margin-top: 10px;
+}
+
+.sub-title-welcome {
+    font-size: 18px;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 3px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.custom-button-guest {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: #d9534f;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 3px;
+}
+
+.custom-button-guest:hover {
+    background-color: #383635;
+    color: #FF7058;
+}
+
+.custom-button-register,
+.custom-button-login {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 3px;
+    border-radius: 10px;
+}
+
+.custom-button-register {
+    background-color: #d9534f;
+    max-width: 270px;
+    justify-content: start;
+
+}
+
+.custom-button-login {
+    background-color: #d9534f;
+    max-width: 270px;
+    justify-content: end;
+}
+
+.custom-button-register:hover,
+.custom-button-login:hover {
+    background-color: #383635;
+    color: #FF7058;
+}
+
+
+
+

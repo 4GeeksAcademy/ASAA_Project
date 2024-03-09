@@ -11,8 +11,10 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { LandingPage } from "./pages/landingpage";
-import { ComoFunciona } from "./component/ComoFunciona";
-import { Welcome } from "./pages/welcome";
+
+
+import { Welcome } from "./pages/pages_business_demo/welcome";
+
 import Register from "./pages/registrarse";
 import Login from "./pages/login";
 
@@ -25,18 +27,23 @@ const Layout = () => {
     // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
     const basename = process.env.BASENAME || "";
 
-    if(!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL/ >;
+    if (!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL />;
 
     return (
         <div>
             <BrowserRouter basename={basename}>
                 <ScrollToTop>
-                    
+
                     <Routes>
-                    
+
                         <Route element={<LandingPage />} path="/" />
-                       
+
+
+
                         <Route element={<Welcome />} path="/welcome" />
+                    
+
+
                         <Route element={<Login />} path="/login" />
                         <Route element={<Register />} path="/register" />
                         <Route element={<EditPerfil />} path="/EditPerfil" />
@@ -45,7 +52,7 @@ const Layout = () => {
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
-                    <Footer />
+                    {/*<Footer />*/}
                 </ScrollToTop>
             </BrowserRouter>
         </div>
