@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../styles/seleccionarMesa.css";
 
 
@@ -31,7 +31,7 @@ export const SeleccionarMesa = () => {
             // Puedes poner aquí la lógica para continuar
             console.log("Continuar...");
             // Redirigir a la siguiente página
-            history("/welcome");
+            history("/Menu");
         } else {
             alert("Por favor, seleccione una mesa y responda si es mayor de 18 años.");
         }
@@ -44,7 +44,7 @@ export const SeleccionarMesa = () => {
 
                 <div className="row mb-3">
                     <div className="col d-flex align-items-center justify-content-center">
-                        <Link to="/welcome" style={{ marginRight: "auto", color:"black" }}>
+                        <Link to="/welcome" style={{ marginRight: "auto", color: "black" }}>
                             <i className="fa-solid fa-chevron-left"></i>
                         </Link>
                         <span className="text-center">
@@ -100,7 +100,7 @@ export const SeleccionarMesa = () => {
                             <label className="form-check-label" htmlFor="inlineCheckbox1">SI</label>
                         </div>
                         <div className="form-check form-check-inline custom-large-radio">
-                            <input className="form-check-input" type="radio" id="inlineCheckbox2" name="radioGroup"  value="NO"
+                            <input className="form-check-input" type="radio" id="inlineCheckbox2" name="radioGroup" value="NO"
                                 onChange={handleSeleccionRespuesta} />
                             <label className="form-check-label" htmlFor="inlineCheckbox2">NO</label>
                         </div>
@@ -111,9 +111,9 @@ export const SeleccionarMesa = () => {
                 <div className="row mb-3">
 
                     <div className="col-12 p-0">
-                    <button className="custom-button-continue" onClick={handleContinuar}>
-                    CONTINUAR
-                </button>
+                        <button className="custom-button-continue" onClick={handleContinuar}>
+                            CONTINUAR
+                        </button>
                     </div>
                 </div>
 
@@ -123,7 +123,7 @@ export const SeleccionarMesa = () => {
                 </div>
             </div>
         </>
-          
+
 
     )
 };

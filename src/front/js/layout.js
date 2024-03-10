@@ -23,7 +23,7 @@ import Login from "./pages/login";
 import EditPerfil from "./pages/editPerfil";
 import Interfaz from "./pages/interfaz";
 import { SeleccionarMesa } from "./pages/SeleccionarMesa";
-
+import {Menu} from "./pages/Menu";
 
 
 
@@ -49,7 +49,7 @@ const Layout = () => {
                         <Route element={<Welcome />} path="/welcome" />
                        
                         <Route element={<SeleccionarMesa />} path="/SeleccionarMesa" />
-
+                        <Route element={<Menu />} path="/Menu" />
 
                         <Route element={<Login />} path="/login" />
                         <Route element={<Register />} path="/register" />

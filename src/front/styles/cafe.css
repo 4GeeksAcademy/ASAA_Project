@@ -1,0 +1,33 @@
+
+h4 {
+    font-size: 24px; /* Tamaño de fuente más grande */
+    color:black;
+    font-family: "Lato", sans-serif;
+    font-weight: 700; 
+    font-style: bold; 
+    letter-spacing: 3px;
+  }
+  
+  /* Estilo para los radio buttons y texto */
+  label {
+    display: block;
+    margin-bottom: 8px; /* Separación entre radio button y texto */
+    color: black; /* Color de texto negro */
+  }
+  
+  /* Estilo para los precios con color rojo */
+  label input[type="radio"]:checked + span {
+    color: rgb(177, 72, 72);
+  }
+  
+  /* Estilo para los botones +/- y el total de precio */
+  button {
+    margin: 8px 4px; /* Añade margen a los botones para mayor separación */
+  }
+  
+  /* Estilo para el texto "Your order" y "Total Price" */
+  p {
+    color: black; /* Color de texto negro */
+    margin: 10px 0; /* Añade margen para mejor presentación */
+  }
+  

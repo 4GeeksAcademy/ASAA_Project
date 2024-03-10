@@ -1,0 +1,169 @@
+.container {
+    max-width: 100%;
+}
+
+.ti-choose-products {
+    text-align: left;
+    font-family: "Lato", sans-serif;
+    font-weight: 700; /* or font-weight: 700; */
+    font-style: bold; /* if you want italic */
+    letter-spacing: 3px;
+    color: black;
+    font-size: 24px;
+}
+
+.custom-button-add {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: #d9534f;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 3px;
+  }
+  
+  .custom-button-add:hover {
+    background-color: #383635;
+    color: #FF7058;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+.pagina-pedido {
+    margin-top: 5%;
+    margin-bottom: 22%;
+    font-family: sans-serif;
+}
+
+h5 {
+    font-size: 25px;
+    font-weight: bold; 
+    font-style: italic;
+    text-align: center;
+}
+
+
+.container-pedidos {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-item {
+    font-size: 15px;
+}
+
+.container-pedidos .quantity button {
+      background-color: orange;
+      width: 25px;
+}
+
+.quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.precio-pedido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 80px;
+    margin-right: 3%;
+    font-size: 20px;
+    font-weight: bold; 
+}
+
+
+
+
+.contador {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 10px;
+    color: orange;
+}
+*/
+
+/*BOTON*/
+/*
+.button {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.button button {
+    --text-color: #fff;
+    color: var(--text-color);
+    position: relative;
+    width: 250px;
+    border: none;
+    background-color: #c0392b;
+    padding: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.2s;
+    border-radius: 5px;
+    opacity: 0.8;
+    letter-spacing: 1px;
+    box-shadow: #c0392b 0px 7px 2px, #000 0px 1px 1px;
+}
+
+.button:hover {
+    opacity: 1;
+}
+
+.button:active {
+    top: 4px;
+    box-shadow: #c0392b 0px 3px 2px, #000 0px 3px 5px;
+}
+*/
+/*FOTOs*/
+/*
+.producto-imagen {
+    width: 50px; 
+    height: auto; 
+    cursor: pointer; 
+}
+*/
+
+/*MOVIL*//*
+@media only screen and (max-width: 767px) {
+    .pagina-pedido {
+        width: 100%; 
+        padding: 0 5%; 
+    }
+
+    .dropdown-item {
+        width: 100%; 
+        margin-top: 5%;
+    }
+
+}*/
