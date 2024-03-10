@@ -13,13 +13,19 @@ import { Footer } from "./component/footer";
 import { LandingPage } from "./pages/landingpage";
 
 
-import { Welcome } from "./pages/pages_business_demo/welcome";
+import { Welcome } from "./pages/welcome";
+
+
 
 import Register from "./pages/registrarse";
 import Login from "./pages/login";
 
 import EditPerfil from "./pages/editPerfil";
 import Interfaz from "./pages/interfaz";
+import { SeleccionarMesa } from "./pages/SeleccionarMesa";
+
+
+
 
 //create your first component
 const Layout = () => {
@@ -41,7 +47,8 @@ const Layout = () => {
 
 
                         <Route element={<Welcome />} path="/welcome" />
-                    
+                       
+                        <Route element={<SeleccionarMesa />} path="/SeleccionarMesa" />
 
 
                         <Route element={<Login />} path="/login" />

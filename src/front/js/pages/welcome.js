@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../../styles/styles_business_demo/welcome.css";
-import ShopPhoto from "../../../img/img-business-demo/coffeeshop.jpg";
+import "../../styles/welcome.css";
+import ShopPhoto from "../../img/img-business-demo/coffeeshop.jpg";
 
 export const Welcome = () => {
   return (
