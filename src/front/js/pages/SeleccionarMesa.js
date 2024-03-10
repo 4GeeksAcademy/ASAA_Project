@@ -1,12 +1,13 @@
-import React, { Component, useState } from "react";
-import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate} from "react-router-dom";
 import "../../styles/seleccionarMesa.css";
 
 
-export const SeleccionarMesa = () => {
 
+export const SeleccionarMesa = () => {
     const [mesaSeleccionada, setMesaSeleccionada] = useState('');
+    const [respuestaSeleccionada, setRespuestaSeleccionada] = useState('');
+    const history = useNavigate();
 
     const mesas = [
         { id: 1, name: 'Mesa PARIS' },
@@ -21,9 +22,22 @@ export const SeleccionarMesa = () => {
         setMesaSeleccionada(mesaSeleccionada ? mesaSeleccionada.name : '');
     };
 
+    const handleSeleccionRespuesta = (e) => {
+        setRespuestaSeleccionada(e.target.value);
+    };
+
+    const handleContinuar = () => {
+        if (mesaSeleccionada && respuestaSeleccionada) {
+            // Puedes poner aquí la lógica para continuar
+            console.log("Continuar...");
+            // Redirigir a la siguiente página
+            history("/welcome");
+        } else {
+            alert("Por favor, seleccione una mesa y responda si es mayor de 18 años.");
+        }
+    };
+
     return (
-
-
         <>
 
             <div className="container border mt-2 p-4 " style={{ maxWidth: "600px" }}>
@@ -40,7 +54,6 @@ export const SeleccionarMesa = () => {
                     </div>
                 </div>
 
-
                 {/* Row 2 */}
                 <div className="row mb-3">
                     <div className="col text-center title-business2">
@@ -48,7 +61,6 @@ export const SeleccionarMesa = () => {
                         <h2 >Invitado</h2>
                     </div>
                 </div>
-
 
                 {/* Row 3 */}
                 <div className="row mb-3">
@@ -70,7 +82,6 @@ export const SeleccionarMesa = () => {
                     </div>
                 </div>
 
-
                 {/* Row 4 */}
                 <div className="row mb-3">
 
@@ -80,33 +91,31 @@ export const SeleccionarMesa = () => {
 
                 </div>
 
-
-
                 {/* Row 5 */}
                 <div className="row mb-3">
                     <div className="col d-flex justify-content-center gap-5">
                         <div className="form-check form-check-inline custom-large-radio">
-                            <input className="form-check-input" type="radio" id="inlineCheckbox1" name="radioGroup" value="option1" />
+                            <input className="form-check-input" type="radio" id="inlineCheckbox1" name="radioGroup" value="SI"
+                                onChange={handleSeleccionRespuesta} />
                             <label className="form-check-label" htmlFor="inlineCheckbox1">SI</label>
                         </div>
                         <div className="form-check form-check-inline custom-large-radio">
-                            <input className="form-check-input" type="radio" id="inlineCheckbox2" name="radioGroup" value="option2" />
+                            <input className="form-check-input" type="radio" id="inlineCheckbox2" name="radioGroup"  value="NO"
+                                onChange={handleSeleccionRespuesta} />
                             <label className="form-check-label" htmlFor="inlineCheckbox2">NO</label>
                         </div>
                     </div>
                 </div>
 
-
                 {/* Row 6 */}
                 <div className="row mb-3">
 
                     <div className="col-12 p-0">
-                        <Link to="/welcome" className="custom-button-continue">
-                            CONTINUAR
-                        </Link>
+                    <button className="custom-button-continue" onClick={handleContinuar}>
+                    CONTINUAR
+                </button>
                     </div>
                 </div>
-
 
                 {/* Row 7 */}
                 <div className="row  mb-3">
@@ -114,74 +123,7 @@ export const SeleccionarMesa = () => {
                 </div>
             </div>
         </>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /*
-            <div className="pagina-mesa">
-                <div className="container-mesa">
-                    <h1>Bienvenido a La Petit Café</h1>
-                    <h2>Invitado</h2>
-                    <div className="dropdown">
-                        <button
-                            className="btn btn-warning dropdown-toggle"
-                            type="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                            style={{ color: '#ffffff' }}
-                        >
-                            {mesaSeleccionada ? mesaSeleccionada.name : 'Seleccione Mesa'}
-                        </button>
-
-                        <div className="dropdown-menu">
-                            {mesas.map(mesa => (
-                                <a
-                                    key={mesa.id}
-                                    className="dropdown-item"
-                                    href="#"
-                                    onClick={() => handleSeleccionMesa(mesa.id, mesa.name)}
-                                >
-                                    <i className={`fa-solid fa-${mesa.id}`} style={{ color: '#ff8040' }}></i> {mesa.name}
-                                </a>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div className="dropdown2">
-                        <h3 className="h3-mesa">Antes de empezar, queremos saber si eres <span>mayor de 18 años.</span></h3>
-                        <div className="radio-button">
-                            <input type="radio" name="example-radio" value="option1" />
-                            <span className="radio"></span>
-                            Si
-                        </div>
-
-                        <div className="radio-button">
-                            <input type="radio" name="example-radio" value="option2" />
-                            <span className="radio"></span>
-                            No
-                        </div>
-                    </div>
-                    <div className="button">
-                        <Link to="/pedidos">
-                            <button>Continuar</button>
-                        </Link>
-                        <p>* Responsabilidad: si eres menor de 18 años, verás el menú adaptado a tu edad</p>
-                    </div>
-                </div>
-            </div>
-
-            */
+          
 
     )
 };
