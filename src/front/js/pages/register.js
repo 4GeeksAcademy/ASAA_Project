@@ -1,35 +1,32 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link, useNavigate } from "react-router-dom";
 import "../../styles/form.css";
 
-export const Login = () => {
-  const { store, actions } = useContext(Context);
-  const [credentials, setCredentials] = useState({
+export const SignUp = () => {
+  const { actions } = useContext(Context);
+  const [user, setUser] = useState({
     email: "",
     password: "",
   });
   const [pwShown, setPwShown] = useState(false);
+
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (store.token) navigate("/private");
-  }, [store.token]);
-
-  const handleLogin = async () => {
+  const handleSignup = async () => {
     try {
-      let success = await actions.login(credentials);
+      const success = await actions.newUser(user);
       if (success) {
-        navigate("/private");
+        navigate("/login"); // Redirecciona a la página de inicio de sesión si el registro tiene éxito
       } else {
-        alert("Wrong password or username.");
-        setCredentials({
-          ...credentials,
-          password: "",
+        alert("Sign up failed. Please try again."); // Si falla el registro, mostrar mensaje de error
+        setUser({
+          ...user,
+          password: "", // Limpiar el campo del password
         });
       }
     } catch (error) {
-      alert("Error during login:", error);
+      alert("Error during Sign Up:", error);
     }
   };
 
@@ -49,15 +46,16 @@ export const Login = () => {
       }}
     >
       <div className="animated-container">
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
+        <div className="wave"></div>
+        <div className="wave"></div>
+        <div className="wave"></div>
 
         <form>
           <div className="container">
-            <header className="head-form mt-5 text-white ">
-              <h2>Date de alta</h2>
+            <header className="head-form mt-5 text-white">
+              <h2>Inicia sesion</h2>
             </header>
+
             <div className="field-set mt-5">
               <div className="input-group mb-3">
                 <span
@@ -66,19 +64,20 @@ export const Login = () => {
                 >
                   <i className="fa fa-user-circle"></i>
                 </span>
+
                 <input
                   style={{
                     background: "white",
                     borderLeft: "none",
                     borderRight: "none",
                   }}
-                  type="text"
+                  type="email"
                   className="form-control mx-auto"
+                  value={user.email}
                   placeholder="@ Email"
-                  value={credentials.email}
                   onChange={(event) => {
-                    setCredentials({
-                      ...credentials,
+                    setUser({
+                      ...user,
                       email: event.target.value,
                     });
                   }}
@@ -94,22 +93,21 @@ export const Login = () => {
                   <i className="fa fa-key"></i>
                 </span>
                 <input
+                  type={pwShown ? "text" : "password"}
                   style={{
                     background: "white",
                     borderLeft: "none",
                     borderRight: "none",
                   }}
-                  type={pwShown ? "text" : "password"}
                   className="form-control mx-auto"
                   placeholder="Password"
-                  value={credentials.password}
+                  value={user.password}
                   onChange={(event) => {
-                    setCredentials({
-                      ...credentials,
+                    setUser({
+                      ...user,
                       password: event.target.value,
                     });
                   }}
-                  required
                 />
                 <span
                   className="input-group-text eye-icon"
@@ -130,22 +128,23 @@ export const Login = () => {
                 <button
                   className="btn mb-1 btn-primary"
                   type="button"
-                  onClick={handleLogin}
+                  onClick={handleSignup}
                 >
-                  Date de alta
+                  Inicia sesion
                 </button>
               </div>
+
               <span className="text-white">
-                Not a member?{" "}
+                Already have an account?{" "}
                 <Link
-                  to="/signup"
+                  to="/login"
                   style={{
                     textDecoration: "none",
                     fontWeight: "bold",
                     color: "blue",
                   }}
                 >
-                  Inicia sesion
+                  Date de alta
                 </Link>
               </span>
             </div>
@@ -156,4 +155,4 @@ export const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
