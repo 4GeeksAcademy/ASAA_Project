@@ -21,12 +21,9 @@ const injectContext = PassedComponent => {
         getActions: () => state.actions,
         setStore: updatedStore =>
           setState({
+            ...state,
             store: Object.assign(state.store, updatedStore),
-            actions: { ...state.actions }
           }),
-        userSelections: [],
-        setUserSelections: selections =>
-          setState({ ...state, userSelections: selections })
       })
     );
 
@@ -37,7 +34,7 @@ const injectContext = PassedComponent => {
     const contextValue = {
       ...state,
       setUserSelections: selections =>
-        setState({ ...state, userSelections: selections })
+        setState({ ...state, userSelections: selections }),
     };
 
     return (
@@ -48,6 +45,7 @@ const injectContext = PassedComponent => {
   };
 
   return StoreWrapper;
+
 };
 
 export default injectContext;
