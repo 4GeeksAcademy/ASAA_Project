@@ -186,7 +186,7 @@ class Pedido(db.Model):
     def serialize(self):
         return {
             "id": self.id,
-            "id_cliente": self.id_cliente,
+            "id_cliente": self.id_cliente,  
             "id_mesa": self.id_mesa,
             "date" : self.date,
             "total_amount" : self.total_amount,

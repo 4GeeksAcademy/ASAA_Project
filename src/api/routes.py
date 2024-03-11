@@ -78,7 +78,7 @@ def obtener_producto(producto_id):
     if producto:
         return jsonify(producto.serialize())
     else:
-        return jsonify({"mensaje": "Producto no encontrado"}), 404
+        return jsonify({"mensaje": "Producto no encontrado"}), 404    
     
 
 
@@ -130,9 +130,9 @@ def crear_pedido():
     nuevo_pedido = Pedido( 
         id_cliente=data.get('clienteId'),
         id_mesa=data.get('mesaId'),
-        date=data.get('fecha'), 
-        total_amount=data.get('precioTotal'),
-        status=data.get('estado'),    
+        date=data.get('date'), 
+        total_amount=data.get('total_amount'),
+        status=data.get('status'),    
     )
 
     db.session.add(nuevo_pedido)
