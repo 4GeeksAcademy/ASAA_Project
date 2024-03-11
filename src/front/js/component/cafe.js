@@ -7,23 +7,25 @@ export const Cafe = () => {
 
     const [contador, setContador] = useState([]);
     const [imagenSeleccionada, setImagenSeleccionada] = useState(null);
+    const { store, actions } = useContext(Context);
 
 
     const incrementar = (productoId, precio) => {
-        setContador((prevContadores) => {
+        console.log('hola')
+        actions.IncrementarContadorPedido()
+        setContador ((prevContadores) => {
             const nuevoContador = (prevContadores[productoId] || 0) + 1;
             return { ...prevContadores, [productoId]: nuevoContador };
         });
     };
-
+  
     const decrementar = (productoId, precio) => {
-        if (contador[productoId] && contador[productoId] > 0) {
+      actions.DecrementarContadorPedido()
             setContador((prevContadores) => {
                 const nuevoContador = prevContadores[productoId] - 1;
                 return { ...prevContadores, [productoId]: nuevoContador };
             });
-        }
-    };
+        };
 
     const [cafes, setCafes] = useState([
         { id: 1, nombre: 'Cappuccino', precio: 3.50, imagen: 'https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipe%20Ramp%20Up%2F2022-07-Cappuccino%2FCappuccino'},

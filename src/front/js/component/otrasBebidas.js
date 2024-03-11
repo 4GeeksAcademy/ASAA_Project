@@ -8,6 +8,7 @@ export const Otras = () => {
 
     const [contador, setContador] = useState([]);
     const [imagenSeleccionada, setImagenSeleccionada] = useState(null);
+    const { store, actions } = useContext(Context);
 
     const [otras, setOtras] = useState([
         { id: 1, nombre: 'Agua', precio: 1.00, imagen: 'https://elhorno.com/media/catalog/product/cache/728587fcd73f36684dd4a1c3c4b36cfb/m/o/mondariz.jpg' },
@@ -18,20 +19,21 @@ export const Otras = () => {
 
 
     const incrementar = (productoId, precio) => {
-        setContador((prevContadores) => {
+        console.log('hola')
+        actions.IncrementarContadorPedido()
+        setContador ((prevContadores) => {
             const nuevoContador = (prevContadores[productoId] || 0) + 1;
             return { ...prevContadores, [productoId]: nuevoContador };
         });
     };
-
+  
     const decrementar = (productoId, precio) => {
-        if (contador[productoId] && contador[productoId] > 0) {
+      actions.DecrementarContadorPedido()
             setContador((prevContadores) => {
                 const nuevoContador = prevContadores[productoId] - 1;
                 return { ...prevContadores, [productoId]: nuevoContador };
             });
-        }
-    };
+        };
 
     const mostrarImagen = (imagen) => {
         setImagenSeleccionada(imagen);

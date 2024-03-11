@@ -7,6 +7,7 @@ export const Te = () => {
 
     const [contador, setContador] = useState([]);
     const [imagenSeleccionada, setImagenSeleccionada] = useState(null);
+    const { store, actions } = useContext(Context);
 
     const [tes, setTes] = useState([
         { id: 1, nombre: 'Té Negro', precio: 2.50, imagen: 'https://www.gastrolabweb.com/u/fotografias/m/2021/3/15/f850x638-10066_87555_5050.jpg' },
@@ -17,20 +18,21 @@ export const Te = () => {
 
 
     const incrementar = (productoId, precio) => {
-        setContador((prevContadores) => {
+        console.log('hola')
+        actions.IncrementarContadorPedido()
+        setContador ((prevContadores) => {
             const nuevoContador = (prevContadores[productoId] || 0) + 1;
             return { ...prevContadores, [productoId]: nuevoContador };
         });
     };
-
+  
     const decrementar = (productoId, precio) => {
-        if (contador[productoId] && contador[productoId] > 0) {
+      actions.DecrementarContadorPedido()
             setContador((prevContadores) => {
                 const nuevoContador = prevContadores[productoId] - 1;
                 return { ...prevContadores, [productoId]: nuevoContador };
             });
-        }
-    };
+        };
 
     const mostrarImagen = (imagen) => {
         setImagenSeleccionada(imagen);

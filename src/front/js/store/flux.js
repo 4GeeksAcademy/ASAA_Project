@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			contadorPedido: 0,
 			Mesa: [],
 			dulces: [],
 			cafes: [],
@@ -69,7 +70,17 @@ const getState = ({ getStore, getActions, setStore }) => {
                   .catch(error => {
                     console.error('Error al enviar la mesa seleccionada:', error);
                   });
-              }  
+              } ,
+
+			  IncrementarContadorPedido: () => {
+                let contador = getStore().contadorPedido
+				setStore({contadorPedido: contador += 1})
+              } ,
+
+			  DecrementarContadorPedido: () => {
+				let contador = getStore().contadorPedido
+				setStore({contadorPedido: contador -= 1})
+              } ,
 
 		}
 	};
