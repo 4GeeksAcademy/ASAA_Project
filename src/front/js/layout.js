@@ -25,7 +25,7 @@ import EditPerfil from "./pages/editPerfil";
 import Interfaz from "./pages/interfaz";
 import { SeleccionarMesa } from "./pages/SeleccionarMesa";
 import {Menu} from "./pages/Menu";
-import { ResumenPedido } from "./pages/resumenPedido";
+
 
 
 //create your first component

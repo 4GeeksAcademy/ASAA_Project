@@ -119,11 +119,11 @@ export const LandingPage = () => {
                                     </div>
                                     <div className="screen__active">
                                         
-                                        <div class="qr-scanner">
-                                            <div class="box">
+                                        <div className="qr-scanner">
+                                            <div className="box">
                                             <img src={ImageScan} alt="Imagen en pantalla" className="image-scan" />
-                                                <div class="line"></div> 
-                                                <div class="angle"></div>
+                                                <div className="line"></div> 
+                                                <div className="angle"></div>
                                             </div>
                                         </div>
 
