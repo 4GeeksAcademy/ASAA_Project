@@ -12,22 +12,21 @@ export const Cafe = () => {
     const [quantity, setQuantity] = useState(1);
 
     const cafes = [
-        { name: "Capuccino", price: 3.5 },
-        { name: "Espresso", price: 2.5 },
-        { name: "Latte", price: 4.0 },
-        { name: "Americano", price: 3.0 },
+        { name: "Capuccino", price: 3.50 },
+        { name: "Espresso", price: 2.50 },
+        { name: "Latte", price: 4.00 },
+        { name: "Americano", price: 3.00 },
     ];
 
     const sweeteners = ["Sin Endulzantes", "Azúcar", "Azúcar Moreno", "Sacarina"];
     const milks = [
 
         { name: "Sin Leche", priceIncrement: 0 },
-        { name: "Leche Desnatada", priceIncrement: 0 },
-        { name: "Leche Entera", priceIncrement: 0 },
-        { name: "Leche Semi-Desnatada", priceIncrement: 0 },
-        { name: "Leche de Soja", priceIncrement: 0.4 },
-        { name: "Leche de Almendras", priceIncrement: 0.4 },
-        { name: "Leche de Avena", priceIncrement: 0.4 },
+        { name: "Desnatada", priceIncrement: 0 },
+        { name: "Entera", priceIncrement: 0 },
+        { name: "Semi-Desnatada", priceIncrement: 0 },
+        { name: "De Soja", priceIncrement: 0.40 },
+        { name: "De Almendras", priceIncrement: 0.40 },
     ];
 
     const handleCafeSelection = () => {
@@ -84,183 +83,168 @@ export const Cafe = () => {
     };
 
     return (
+
         <div>
             <h4 onClick={handleCafeSelection} style={{ cursor: "pointer", display: "flex", alignItems: "center", margin: 0, padding: 0 }}>
-                <img src={ImageCoffee} alt="Café Icon" style={{ marginRight: "18px", width: "40px", height: "40px", verticalAlign: "top" }} />
-                <span style={{  margin: 0, padding: 0 }}>CAFÉS</span>
+                <img src={ImageCoffee} alt="Café Icon" style={{ marginRight: "18px", width: "40px", height: "40px" }} />
+                <span className="cafe-title" style={{ margin: 0, padding: 0, verticalAlign: "bottom" }}>CAFÉS</span>
             </h4>
 
             {showCoffeeOptions && (
-  <>
-    {cafes.map((cafe) => (
-      <div key={cafe.name} style={{ marginLeft: "12px", marginBottom: "10px", marginTop: "10px"}}>
-        <label style={{ display: "flex", alignItems: "center", fontSize: "16px" }}>
-          <input
-            type="radio"
-            value={cafe.name}
-            checked={selectedCafe === cafe.name}
-            onChange={() => handleCoffeeOptionSelection(cafe.name)}
-          />
-          <span style={{ marginLeft: "10px" }}>{cafe.name} - {cafe.price} €</span>
-        </label>
-      </div>
-    ))}
-  </>
-)}
+                <>
+                    <div style={{ marginLeft: "12px", marginBottom: "10px", marginTop: "10px" }}>
+                        <label className="cafe-select">Selecciona tu Café:</label>
+                    </div>
+                    {cafes.map((cafe) => (
+                        <div key={cafe.name} style={{ marginLeft: "12px", marginBottom: "10px", marginTop: "10px" }}>
+                            <label className="cafe-label" style={{ display: "flex", alignItems: "center", fontSize: "16px" }}>
+                                <input
+                                    type="radio"
+                                    value={cafe.name}
+                                    checked={selectedCafe === cafe.name}
+                                    onChange={() => handleCoffeeOptionSelection(cafe.name)}
+                                />
+                                <span style={{ marginLeft: "10px" }}>{cafe.name}</span>
+                                <span style={{ marginLeft: "auto" }}>
+                                    Desde <strong>{Number.isInteger(cafe.price) ? cafe.price : cafe.price.toFixed(2)} €</strong>
+                                </span>
 
+                            </label>
+                        </div>
+                    ))}
+
+                </>
+            )}
 
             {selectedCafe && selectedCafe !== "Cafe" && (
                 <div style={{ overflowY: "auto", maxHeight: "150px" }}>
-                    <label>Select sweetener:</label>
-                    <div>
-                        {sweeteners.map((sweetener) => (
-                            <label key={sweetener}>
+                    <label className="cafe-select" style={{ marginLeft: "12px", marginTop: "5px" }}>Selecciona Edulcorante:</label>
+                    <div style={{ display: "flex", flexDirection: "column", marginLeft: "12px" }}>
+                        <div style={{ display: "flex", flexDirection: "row", marginTop: "5px" }}>
+                            <label className="cafe-label" style={{ fontSize: "16px", marginRight: "50px" }}>
                                 <input
                                     type="radio"
-                                    value={sweetener}
-                                    checked={selectedSweetener === sweetener}
-                                    onChange={() => handleSweetenerSelection(sweetener)}
+                                    value="Azúcar"
+                                    checked={selectedSweetener === "Azúcar"}
+                                    onChange={() => handleSweetenerSelection("Azúcar")}
+                                    style={{ marginRight: "10px" }}
                                 />
-                                {sweetener}
+                                Azúcar
                             </label>
-                        ))}
+                            <label className="cafe-label" style={{ fontSize: "16px" }}>
+                                <input
+                                    type="radio"
+                                    value="Azúcar Moreno"
+                                    checked={selectedSweetener === "Azúcar Moreno"}
+                                    onChange={() => handleSweetenerSelection("Azúcar Moreno")}
+                                    style={{ marginRight: "10px" }}
+                                />
+                                Azúcar Moreno
+                            </label>
+                        </div>
+                        <div style={{ display: "flex", flexDirection: "row" }}>
+                            <label className="cafe-label" style={{ fontSize: "16px", marginRight: "32px" }}>
+                                <input
+                                    type="radio"
+                                    value="Sacarina"
+                                    checked={selectedSweetener === "Sacarina"}
+                                    onChange={() => handleSweetenerSelection("Sacarina")}
+                                    style={{ marginRight: "10px" }}
+                                />
+                                Sacarina
+                            </label>
+                            <label className="cafe-label" style={{ fontSize: "16px" }}>
+                                <input
+                                    type="radio"
+                                    value="Sin Endulzante"
+                                    checked={selectedSweetener === "Sin Endulzante"}
+                                    onChange={() => handleSweetenerSelection("Sin Endulzante")}
+                                    style={{ marginRight: "10px" }}
+                                />
+                                Sin Edulcorante
+                            </label>
+                        </div>
                     </div>
                 </div>
             )}
 
             {selectedCafe && selectedCafe !== "Cafe" && selectedSweetener && (
-                <div style={{ overflowY: "auto", maxHeight: "150px" }}>
-                    <label>Select milk:</label>
-                    <div>
-                        {milks.map((milk) => (
-                            <label key={milk.name}>
-                                <input
-                                    type="radio"
-                                    value={milk.name}
-                                    checked={selectedMilk === milk}
-                                    onChange={() => handleMilkSelection(milk)}
-                                />
-                                {milk.name} {milk.priceIncrement !== 0 && `(+${milk.priceIncrement} €)`}
-                            </label>
-                        ))}
+                <div style={{ overflowY: "auto", maxHeight: "150px", display: "flex", flexDirection: "column", marginLeft: "12px" }}>
+                    <label className="cafe-select">Selecciona Tipo de Leche:</label>
+                    <div style={{ display: "flex", justifyContent: "space-between", marginTop: "5px" }}>
+
+                        {/* Milk Left*/}
+                        <div style={{ display: "flex", flexDirection: "column" }}>
+                            {milks.slice(0, 2).map((milk) => (
+                                <label key={milk.name} className="cafe-label" style={{ fontSize: "14px" }}>
+                                    <input
+                                        type="radio"
+                                        value={milk.name}
+                                        checked={selectedMilk === milk}
+                                        onChange={() => handleMilkSelection(milk)}
+                                        style={{ marginRight: "10px" }}
+                                    />
+                                    {milk.name} {milk.priceIncrement !== 0 && `(+${milk.priceIncrement} €)`}
+                                </label>
+                            ))}
+                        </div>
+
+                        {/* Milk Center */}
+                        <div style={{ display: "flex", flexDirection: "column" }}>
+                            {milks.slice(2, 4).map((milk) => (
+                                <label key={milk.name} className="cafe-label" style={{ fontSize: "14px" }}>
+                                    <input
+                                        type="radio"
+                                        value={milk.name}
+                                        checked={selectedMilk === milk}
+                                        onChange={() => handleMilkSelection(milk)}
+                                        style={{ marginRight: "10px" }}
+                                    />
+                                    {milk.name} {milk.priceIncrement !== 0 && `(+${milk.priceIncrement} €)`}
+                                </label>
+                            ))}
+                        </div>
+
+                        {/* Milk Right */}
+                        <div style={{ display: "flex", flexDirection: "column" }}>
+                            {milks.slice(4).map((milk) => (
+                                <label key={milk.name} className="cafe-label" style={{ fontSize: "14px" }}>
+                                    <input
+                                        type="radio"
+                                        value={milk.name}
+                                        checked={selectedMilk === milk}
+                                        onChange={() => handleMilkSelection(milk)}
+                                        style={{ marginRight: "10px" }}
+                                    />
+                                    {milk.name} {milk.priceIncrement !== 0 && `(+${milk.priceIncrement.toFixed(2)}€)`}
+                                </label>
+                            ))}
+                        </div>
                     </div>
                 </div>
             )}
 
             {selectedCafe && selectedCafe !== "Cafe" && selectedSweetener && selectedMilk && (
-                <div>
-                    <p>Tu Selección: {quantity} {selectedCafe} con {selectedMilk.name} y {selectedSweetener}</p>
-                    <div>
-                        <button onClick={handleDecrement}>-</button>
-                        <span>{quantity}</span>
-                        <button onClick={handleIncrement}>+</button>
+                <div style={{ textAlign: "left", width: "100%" }}>
+                    <p className="text-tuseleccion"><strong>Tu Selección: </strong>{quantity} {selectedCafe} con Leche {selectedMilk.name} y {selectedSweetener}.</p>
+
+                    <div style={{ textAlign: "center", fontSize: "24px", margin: "10px 0", fontFamily: "Lato, sans-serif" }}>
+                        <button onClick={handleDecrement} style={{ marginRight: "10px", background: "none", border: "none" }}>-</button>
+                        <span style={{ color: "black", fontWeight: "bold" }}>{quantity}</span>
+                        <button onClick={handleIncrement} style={{ marginLeft: "10px", background: "none", border: "none" }}>+</button>
                     </div>
-                    <p>Total Price: {calculateTotalPrice()} €</p>
-                    <button onClick={handleAddToOrder}>Add to Order</button>
-                    <button onClick={handleDiscard}>Descartar</button>
+
+                    <p className="totalprice-menu">Total Price: {calculateTotalPrice().toFixed(2)} €</p>
+
+                    <div style={{ textAlign: "center" }}>
+                        <button className="button-add-comand" onClick={handleAddToOrder} style={{ marginRight: "20px" }}>Añadir a tu Pedido</button>
+                        <button className="button-add-comand" onClick={handleDiscard}>Descartar</button>
+                    </div>
                 </div>
             )}
+
         </div>
     );
 };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-import React, { useContext, useState } from "react";
-import { Context } from "../store/appContext";
-
-import "../../styles/pedidos.css";
-
-export const Cafe = () => {
-
-    const [contador, setContador] = useState([]);
-    const [imagenSeleccionada, setImagenSeleccionada] = useState(null);
-
-
-    const incrementar = (productoId, precio) => {
-        setContador((prevContadores) => {
-            const nuevoContador = (prevContadores[productoId] || 0) + 1;
-            return { ...prevContadores, [productoId]: nuevoContador };
-        });
-    };
-
-    const decrementar = (productoId, precio) => {
-        if (contador[productoId] && contador[productoId] > 0) {
-            setContador((prevContadores) => {
-                const nuevoContador = prevContadores[productoId] - 1;
-                return { ...prevContadores, [productoId]: nuevoContador };
-            });
-        }
-    };
-
-    const [cafes, setCafes] = useState([
-        { id: 1, nombre: 'Cappuccino', precio: 3.50, imagen: 'https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipe%20Ramp%20Up%2F2022-07-Cappuccino%2FCappuccino'},
-        { id: 2, nombre: 'Americano', precio: 2.50, imagen: 'https://static.wixstatic.com/media/e9453e_95e93ca3c71d496d92bbfdcf2e38a047.jpg/v1/fill/w_480,h_384,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/e9453e_95e93ca3c71d496d92bbfdcf2e38a047.jpg'},
-        { id: 3, nombre: 'Café Latte', precio: 4.00, imagen: 'https://www.allrecipes.com/thmb/Wh0Qnynwdxok4oN0NZ1Lz-wl0A8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/9428203-9d140a4ed1424824a7ddd358e6161473.jpg' },
-        { id: 4, nombre: 'Espresso', precio: 2.00 , imagen: 'https://www.thespruceeats.com/thmb/HJrjMfXdLGHbgMhnM0fMkDx9XPQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/what-is-espresso-765702-hero-03_cropped-ffbc0c7cf45a46ff846843040c8f370c.jpg'},
-    ]);
-
-    const mostrarImagen = (imagen) => {
-        setImagenSeleccionada(imagen);
-    };
-
-    return (
-        <div className="cafes">
-            <button
-                className="btn-warning"
-                type="button"
-                data-bs-toggle="dropdown">
-                CAFÉ <i className="fa-solid fa-arrow-down-long" />
-            </button>
-            <ul className="dropdown-menu dropdown-menu-lg-end">
-                <li className="m-2 text-secondary">Café</li>
-                {cafes.map((producto) => (
-                    <li key={producto.id} className="d-flex p-1">
-                          <img
-                                    src={producto.imagen}
-                                    alt={`Imagen de ${producto.nombre}`}
-                                    className="producto-imagen"
-                                    onClick={() => mostrarImagen(producto.imagen)}
-                                />
-                        <span className="dropdown-item">
-                            {producto.nombre} - {producto.precio.toFixed(2)}€
-                        </span>
-                        <div className="quantity">
-                            <button onClick={() => incrementar(producto.id, producto.precio)}>+</button>
-                            <span className="contador">{contador[producto.id] || 0}</span>
-                            <button onClick={() => decrementar(producto.id, producto.precio)}>-</button>
-                        </div>
-                        <div className="precio-pedido">
-                            <p>{(contador[producto.id] || 0) * producto.precio.toFixed(2)}€</p>
-                        </div>
-                    </li>
-                ))}
-            </ul>
-        </div>
-
-
-    )
-
-}
-*/
