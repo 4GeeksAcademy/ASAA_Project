@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Mesa, Pedido
+from api.models import db, User, Cliente, Mesa, Producto, Pedido
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
 
@@ -21,6 +21,22 @@ def handle_hello():
 
     return jsonify(response_body), 200
 
+
+# CLIENTE
+
+@api.route('/cliente', methods=['POST'])
+def agregar_cliente():
+    data = request.get_json()
+    nuevo_cliente = Cliente(
+        id=data['id'],
+    )
+    db.session.add(nuevo_cliente)
+    db.session.commit()
+    return jsonify({"mensaje": "Cliente creado exitosamente"})
+ 
+
+
+# MESA
 
 @api.route("/mesa", methods=["GET"])
 def get_users():
@@ -47,24 +63,52 @@ def crear_mesa():
 
 
 
+# PRODUCTOS
+
+@api.route('/productos', methods=['GET'])
+def obtener_productos():
+    productos = Producto.query.all()
+    return jsonify([producto.serialize() for producto in productos])
 
 
-@api.route('/pedidos', methods=['POST'])
-def crear_pedido():
+
+@api.route('/productos/<int:producto_id>', methods=['GET'])
+def obtener_producto(producto_id):
+    producto = Producto.query.get(producto_id)
+    if producto:
+        return jsonify(producto.serialize())
+    else:
+        return jsonify({"mensaje": "Producto no encontrado"}), 404
+    
+
+
+@api.route('/productos', methods=['POST'])
+def crear_producto():
     data = request.get_json()
-
-    nuevo_pedido = Pedido(
-        id_cliente=data.get('clienteId'),
-        id_mesa=data.get('mesaId'),
-        date=data.get('fecha'), 
-        total_amount=data.get('precioTotal'),
-        status=data.get('estado'),    
+    nuevo_producto = Producto(
+        id=data['id'],
+        name=data['name'],
+        description=data['description'],
+        price=data['price']
     )
-
-    db.session.add(nuevo_pedido)
+    db.session.add(nuevo_producto)
     db.session.commit()
+    return jsonify({"mensaje": "Producto creado exitosamente"})
 
-    return jsonify({'mensaje': 'Pedido creado correctamente'}), 201
+
+@api.route('/productos/<int:producto_id>', methods=['DELETE'])
+def eliminar_producto(producto_id):
+    producto = Producto.query.get(producto_id)
+    if not producto:
+        return jsonify({"mensaje": "Producto no encontrado"}), 404
+
+    db.session.delete(producto)
+    db.session.commit()
+    return jsonify({"mensaje": "Producto eliminado exitosamente"})
+
+
+
+# PEDIDOS
 
 @api.route('/pedidos', methods=['GET'])
 def obtener_pedidos():
@@ -77,5 +121,59 @@ def obtener_pedidos():
     pedidos = list(map(lambda pedido: pedido.serialize(), pedidos))
 
     return jsonify(pedidos), 200
+
+
+@api.route('/pedidos', methods=['POST'])
+def crear_pedido():
+    data = request.get_json()
+
+    nuevo_pedido = Pedido( 
+        id_cliente=data.get('clienteId'),
+        id_mesa=data.get('mesaId'),
+        date=data.get('fecha'), 
+        total_amount=data.get('precioTotal'),
+        status=data.get('estado'),    
+    )
+
+    db.session.add(nuevo_pedido)
+    db.session.commit()
+
+    return jsonify({'mensaje': 'Pedido creado correctamente'}), 201
+
+
+@api.route('/pedido/<int:pedido_id>', methods=['PUT'])
+def actualizar_pedido(pedido_id):
+    data = request.json
+    pedido = Pedido.query.get(pedido_id)
+
+    if not pedido:
+        return jsonify({'message': 'Pedido no encontrado'}), 404
+
+    pedido.id_cliente = data['id_cliente']
+    pedido.id_mesa = data['id_mesa']
+    pedido.date = data['date']
+    pedido.total_amount = data['total_amount']
+    pedido.status = data['status']
+
+    try:
+        db.session.commit()
+        return jsonify({'message': 'Pedido actualizado exitosamente'})
+    except IntegrityError:
+        db.session.rollback()
+        return jsonify({'message': 'Error al actualizar el pedido'}), 500
+
+
+@api.route('/pedido/<int:pedido_id>', methods=['DELETE'])
+def eliminar_pedido(pedido_id):
+    pedido = Pedido.query.get(pedido_id)
+    if not pedido:
+        return jsonify({'message': 'Pedido no encontrado'}), 404
+
+    db.session.delete(pedido)
+    db.session.commit()
+    return jsonify({'message': 'Pedido eliminado exitosamente'})
+
+
+
 
 

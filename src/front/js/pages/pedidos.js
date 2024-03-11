@@ -10,45 +10,29 @@ import { Otras } from "../component/otrasBebidas";
 
 
 export const Pedidos = () => {
-    const [contador, setContador] = useState([]);
-    const [imagenSeleccionada, setImagenSeleccionada] = useState(null);
-
-
-    const incrementar = (productoId, precio) => {
-        setContador((prevContadores) => {
-            const nuevoContador = (prevContadores[productoId] || 0) + 1;
-            return { ...prevContadores, [productoId]: nuevoContador };
-        });
+    const [productosSeleccionados, setProductosSeleccionados] = useState([]);
+  
+    const handleAgregarAlPedido = () => {
+      // Aquí puedes acceder a la lista de productosSeleccionados
+      console.log('Productos seleccionados:', productosSeleccionados);
+      // Realiza las acciones necesarias para añadir los productos al pedido
     };
-
-    const decrementar = (productoId, precio) => {
-        if (contador[productoId] && contador[productoId] > 0) {
-            setContador((prevContadores) => {
-                const nuevoContador = prevContadores[productoId] - 1;
-                return { ...prevContadores, [productoId]: nuevoContador };
-            });
-        }
-    };
-
-    const mostrarImagen = (imagen) => {
-        setImagenSeleccionada(imagen);
-    };
-
+  
     return (
-        <div className="pagina-pedido">
-            <div className="container-pedidos">
-                <h5>Elige tus productos:</h5>
-                <Dulces />,
-                <Cafe />,
-                <Te />,
-                <Otras />
-
-                <div className="button">
-                    <Link to="/resumenPedido">
-                        <button>Añadir al Pedido</button>
-                    </Link>
-                </div>
-            </div>
+      <div className="pagina-pedido">
+        <div className="container-pedidos">
+          <h5>Elige tus productos:</h5>
+          <Dulces  />
+          <Cafe />
+          <Te />
+          <Otras />
+  
+          <div className="button">
+            <Link to="/resumenPedido">
+              <button>Añadir al Pedido</button>
+            </Link>
+          </div>
         </div>
+      </div>
     );
-}    
+  };

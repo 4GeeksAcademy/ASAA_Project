@@ -2,6 +2,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			Mesa: [],
+			dulces: [],
+			cafes: [],
+			tes: [],
+			otras: [],
+			pedidos: [], 
 			message: null,
 			demo: [
 				{

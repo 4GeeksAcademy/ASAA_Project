@@ -37,7 +37,7 @@ export const Te = () => {
     };
 
     return (
-        <div className="cafes">
+        <div className="tes">
             <button
                 className="btn-warning"
                 type="button"
@@ -61,7 +61,7 @@ export const Te = () => {
                             <button onClick={() => incrementar(producto.id, producto.precio)}>+</button>
                             <span className="contador">{contador[producto.id] || 0}</span>
                             <button onClick={() => decrementar(producto.id, producto.precio)}>-</button>
-                        </div>
+                        </div>  
                         <div className="precio-pedido">
                             <p>{(contador[producto.id] || 0) * producto.precio.toFixed(2)}€</p>
                         </div>

@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 import "../../styles/pedidos.css";
 
@@ -13,7 +14,7 @@ export const Otras = () => {
         { id: 2, nombre: 'Coca Cola', precio: 1.50, imagen: 'https://www.encopadebalon.com/3507-large_default/coca-cola-pack-24-botellas-20cl.jpg' },
         { id: 3, nombre: 'Batido', precio: 2.00, imagen: 'https://okdiario.com/img/recetas/2017/06/16/smoothie-de-fresa.jpg' },
         { id: 4, nombre: 'Nestea', precio: 1.20, imagen: 'https://pollossanjuan.es/wp-content/uploads/2018/04/Nestealata.jpg' },
-    ]);
+    ]); 
 
 
     const incrementar = (productoId, precio) => {
@@ -35,6 +36,12 @@ export const Otras = () => {
     const mostrarImagen = (imagen) => {
         setImagenSeleccionada(imagen);
     };
+
+
+    const totalPedido = otras.reduce((total, producto) => {
+        return total + (contador[producto.id] || 0) * producto.precio;
+    }, 0);
+
 
     return (
         <div className="otras">
@@ -65,10 +72,11 @@ export const Otras = () => {
                         <div className="precio-pedido">
                             <p>{(contador[producto.id] || 0) * producto.precio.toFixed(2)}€</p>
                         </div>
-                    </li>
+                    </li>  
                 ))}
             </ul>
         </div>
+        
 
     )
 

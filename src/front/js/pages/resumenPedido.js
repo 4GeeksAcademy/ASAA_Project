@@ -36,9 +36,9 @@ export const ResumenPedido = () => {
                             <p>Croissant</p>
                         </div>
                         <div className="quantity">
-                            <button onClick={incrementar}>+</button>
+
                             <span className="contador">{contador}</span>
-                            <button onClick={decrementar}>-</button>
+
                         </div>
                         <label className="price small">23.99</label>
                     </div>
