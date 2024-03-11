@@ -1,0 +1,29 @@
+.custom-button-confirm {
+display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: #d9534f;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 3px;
+}
+  
+  .custom-button-confirm:hover {
+    background-color: #383635;
+    color: #FF7058;
+  }
+
+  .tu-pedido {
+    font-size: 18px;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 3px;
+  }

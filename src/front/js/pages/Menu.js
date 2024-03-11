@@ -9,8 +9,8 @@ import { Cafe } from "../component/cafe";
 import ImageMenu from "../../img/img-business-demo/image_menu.png";
 
 export const Menu = () => {
-   
-      
+
+
 
 
     return (
@@ -48,9 +48,9 @@ export const Menu = () => {
 
                 {/* Third Row */}
                 <div className="row bg-info text-light p-2 mb-2">
-                    
+
                     <Cafe />
-                    
+
 
                 </div>
 
@@ -59,13 +59,13 @@ export const Menu = () => {
 
 
                     <div className="col-12 p-0">
-                        <button className="custom-button-add" /*onClick={#}*/>
-                            AÑADIR AL PEDIDO
-                        </button>
+                        <Link to="/resumenPedido" className="custom-button-add">
+                           FINALIZAR Y VER TU PEDIDO
+                        </Link>
                     </div>
 
-                </div>
 
+                </div>
 
 
             </div>
@@ -82,7 +82,7 @@ export const Menu = () => {
 
 
 
-</>
+        </>
 
 
     );

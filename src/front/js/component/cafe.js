@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "../../styles/cafe.css";
 
+import { useAppContext } from '../store/appContext';
+
+
 import ImageCoffee from "../../img/img-business-demo/coffee.png";
 
 
@@ -55,17 +58,8 @@ export const Cafe = () => {
         }
     };
 
-    const handleAddToOrder = () => {
-        // Implement your logic for adding to order
-        // This is where you might want to store the order data or perform further actions
-        // For now, let's reset the state to its initial values
-        resetState();
-    };
 
-    const handleDiscard = () => {
-        resetState();
-    };
-
+    
     const resetState = () => {
         setShowCoffeeOptions(false);
         setSelectedCafe(null);
@@ -81,6 +75,46 @@ export const Cafe = () => {
 
         return totalCafePrice * quantity;
     };
+
+
+    const { setUserSelections, userSelections } = useAppContext();
+
+    const handleAddToOrder = () => {
+        // Implementa lógica para agregar al pedido
+        const newSelection = {
+            cafe: selectedCafe,
+            sweetener: selectedSweetener,
+            milk: selectedMilk,
+            quantity,
+            totalPrice: calculateTotalPrice(),
+        };
+
+        // Obtén las selecciones actuales del estado global
+        const currentSelections = userSelections || [];
+
+        // Agrega la nueva selección
+        const updatedSelections = [...currentSelections, newSelection];
+
+        // Actualiza el estado global con las nuevas selecciones
+        setUserSelections(updatedSelections);
+
+        resetState();
+    };
+
+   
+
+    
+    
+    
+
+      const handleDiscard = () => {
+        resetState();
+    };
+
+
+
+
+
 
     return (
 
@@ -236,10 +270,14 @@ export const Cafe = () => {
 
                     <p className="totalprice-menu">Total Price: {calculateTotalPrice().toFixed(2)} €</p>
 
-                    <div style={{ textAlign: "center" }}>
-                        <button className="button-add-comand" onClick={handleAddToOrder} style={{ marginRight: "20px" }}>Añadir a tu Pedido</button>
-                        <button className="button-add-comand" onClick={handleDiscard}>Descartar</button>
+                    <div>
+                        {/* Otras partes de tu componente */}
+                        <div style={{ textAlign: "center" }}>
+                            <button className="button-add-comand" onClick={handleAddToOrder} style={{ marginRight: "20px" }}>Añadir a tu Pedido y Seguir Comprando</button>
+                            <button className="button-add-comand" onClick={handleDiscard}>Descartar</button>
+                        </div>
                     </div>
+
                 </div>
             )}
 
