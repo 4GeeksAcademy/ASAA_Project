@@ -9,13 +9,13 @@ export const ResumenPedido = () => {
 
     const handleRemoveProduct = (index) => {
         const updatedSelections = [...userSelections];
-        updatedSelections.splice(index, 1); // Elimina el producto en la posición index
+        updatedSelections.splice(index, 1); // Elimina producto 
         setUserSelections(updatedSelections);
     };
 
     const calculateSubtotal = () => {
         if (!userSelections || userSelections.length === 0) {
-            return 0; // o cualquier valor predeterminado
+            return 0; 
         }
 
         return userSelections.reduce((total, selection) => total + selection.totalPrice, 0);
@@ -30,10 +30,10 @@ export const ResumenPedido = () => {
 
     const totalAmount = calculateSubtotal() + tipAmount;
 
-    const [isOrderPlaced, setIsOrderPlaced] = useState(false); // Corregido de isOrderProcessed
+    const [isOrderPlaced, setIsOrderPlaced] = useState(false); 
     
     const handlePlaceOrder = () => {
-        // Lógica para enviar el pedido al mostrador
+        // Enviar el pedido al mostrador
         setIsOrderPlaced(true);
     };
 
@@ -51,40 +51,34 @@ export const ResumenPedido = () => {
                 </div>
             </div>
 
+
             {/* Row 1 */}
             <div className="row mb-3 d-flex justify-content-center align-items-center tu-pedido">
                 TU PEDIDO
             </div>
 
 
-            <div className="row border mb-3 bg-success text-white">
+            {/* Row 2 */}
+            <div className="row mb-3 order-zone">
                 {userSelections && userSelections.length > 0 ? (
                     userSelections.map((selection, index) => (
                         <div key={index} className="d-flex justify-content-between align-items-center">
-                            <div>
+                            <div className="price-text-total">
                                 <p>
                                     {selection.quantity} {selection.cafe} con Leche {selection.milk.name} y {selection.sweetener}.
                                 </p>
-                                <p>Total Price: {selection.totalPrice.toFixed(2)} €</p>
-                                {/* ... (otros detalles o botones según sea necesario) */}
+                                <p><strong>Total Price: {selection.totalPrice.toFixed(2)} €</strong></p>
+                              
                             </div>
-                            <button className="btn btn-danger" onClick={() => handleRemoveProduct(index)}>
+                            <button className="btn btn-danger delete-button-order" onClick={() => handleRemoveProduct(index)}>
                                 X
                             </button>
                         </div>
                     ))
                 ) : (
-                    <p>No hay selecciones en el pedido.</p>
+                    <p className="text-no-selection">No hay selecciones en el pedido.</p>
                 )}
             </div>
-
-
-
-
-
-
-
-
 
 
             {/* Row 3 */}
@@ -94,13 +88,6 @@ export const ResumenPedido = () => {
 
                 </Link>
             </div>
-
-
-
-
-
-
-
 
 
             {/* Row 4 */}
@@ -131,53 +118,35 @@ export const ResumenPedido = () => {
             </div>
 
 
-
-
-
-
-
-
-
-
              {/* Row 5 */}
              <div className="row text-dark p-2 mb-2">
-                <div className="col-12 p-0">
-                    <button
-                        className="custom-button-confirm"
-                        onClick={() => handlePlaceOrder()}
-                        disabled={isOrderPlaced}
-                    >
-                        ENVIAR PEDIDO AL MOSTRADOR
-                    </button>
-                </div>
+    <div className="col-12 p-0">
+        <button
+            className="custom-button-confirm"
+            onClick={() => handlePlaceOrder()}
+            disabled={isOrderPlaced || !userSelections || userSelections.length === 0}
+        >
+            ENVIAR PEDIDO AL MOSTRADOR
+        </button>
+    </div>
 
-                {isOrderPlaced && (
-                    <div className="order-placed-message">
-                        <p>¡Gracias por tu pedido! En breves momentos te lo traeremos a tu mesa.</p>
-                    </div>
-                )}
-            </div>
+    {isOrderPlaced && (
+        <div className="order-placed-message">
+            <p>¡Gracias por tu pedido! En breves momentos te lo traeremos a tu mesa.</p>
+        </div>
+    )}
+</div>
+
+
 
             {/* Row 6 */}
             <div className="row  text-dark p-2 mb-2">
-
-
                 <div className="col-12 p-0">
                     <Link to="/resumenPedido" className="custom-button-confirm">
                         PROCEDER AL PAGO
                     </Link>
                 </div>
-
-
             </div>
-
-
-
-
-
-
-
-
 
         </div>
     );

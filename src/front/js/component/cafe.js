@@ -57,8 +57,6 @@ export const Cafe = () => {
             setQuantity(quantity - 1);
         }
     };
-
-
     
     const resetState = () => {
         setShowCoffeeOptions(false);
@@ -76,11 +74,10 @@ export const Cafe = () => {
         return totalCafePrice * quantity;
     };
 
-
     const { setUserSelections, userSelections } = useAppContext();
 
     const handleAddToOrder = () => {
-        // Implementa lógica para agregar al pedido
+        // Agregar al pedido
         const newSelection = {
             cafe: selectedCafe,
             sweetener: selectedSweetener,
@@ -101,19 +98,9 @@ export const Cafe = () => {
         resetState();
     };
 
-   
-
-    
-    
-    
-
       const handleDiscard = () => {
         resetState();
     };
-
-
-
-
 
 
     return (
@@ -203,7 +190,7 @@ export const Cafe = () => {
             )}
 
             {selectedCafe && selectedCafe !== "Cafe" && selectedSweetener && (
-                <div style={{ overflowY: "auto", maxHeight: "150px", display: "flex", flexDirection: "column", marginLeft: "12px" }}>
+                <div style={{ overflowY: "auto", maxHeight: "150px", display: "flex", flexDirection: "column", marginLeft: "12px",marginTop:"5px" }}>
                     <label className="cafe-select">Selecciona Tipo de Leche:</label>
                     <div style={{ display: "flex", justifyContent: "space-between", marginTop: "5px" }}>
 

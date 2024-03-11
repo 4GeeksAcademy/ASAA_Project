@@ -28,62 +28,45 @@ export const Menu = () => {
                     </div>
                 </div>
 
-                {/* First Row */}
-                <div className="row  text-light p-0 mb-0">
 
+                {/* Second Row */}
+                <div className="row text-light p-0 mb-0">
                     <img
                         src={ImageMenu}
                         alt="Selected Image"
                         className="img-fluid border"
-                        style={{ maxWidth: "100%", maxHeight: "250px", objectFit: "fill" }}
+                        style={{ maxWidth: "100%", maxHeight: "250px", objectFit: "fill", borderRadius: "10px" }}
                     />
-
                 </div>
 
-                <div className="row bg-secondary mb-2">
+                <div className="row mt-2 mb-2">
                     <div className="col-12 ti-choose-products">
                         <span style={{ margin: "5px 0 15px 20px" }}>Elige tus Productos</span>
                     </div>
                 </div>
 
+
                 {/* Third Row */}
-                <div className="row bg-info text-light p-2 mb-2">
+                <div className="row border p-2 mb-2" style={{ borderRadius: "10px" }}>
 
                     <Cafe />
 
 
                 </div>
 
+
                 {/* Fourth Row */}
-                <div className="row bg-warning text-dark p-2 mb-2">
-
-
+                <div className="row p-2 mb-2">
                     <div className="col-12 p-0">
                         <Link to="/resumenPedido" className="custom-button-add">
                            FINALIZAR Y VER TU PEDIDO
                         </Link>
                     </div>
-
-
                 </div>
-
 
             </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
         </>
-
 
     );
 }
