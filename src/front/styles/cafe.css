@@ -1,0 +1,91 @@
+.cafe-title {
+  font-size: 20px;
+  color: black;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  letter-spacing: 3px;
+}
+
+.cafe-select {
+  display: block;
+  margin-bottom: 5px;
+  color: black;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  letter-spacing: 3px;
+}
+
+.cafe-label {
+  margin-bottom: 8px;
+  color: black;
+  font-size: 20px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  letter-spacing: 3px;
+}
+
+.cafe-button {
+  margin: 8px 4px;
+}
+
+.cafe-text {
+  color: black;
+  margin: 10px 0;
+}
+
+.cafe-options {
+  margin-left: 12px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.text-tuseleccion {
+  margin-bottom: 10px;
+  color: black;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 3px; 
+}
+
+.totalprice-menu {
+  margin-bottom: 10px;
+  color: black;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+.button-add-comand {
+  margin-bottom: 10px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #d9534f;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 3px;
+}
+
+.button-add-comand:hover {
+  background-color: #383635;
+  color: #FF7058;
+}

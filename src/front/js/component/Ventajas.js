@@ -7,7 +7,7 @@ import IconCorporate from "../../img/icono_empresa.png";
 import IconImage from "../../img/Icon.png";
 
 export const Ventajas = () => {
-    const { store, actions } = useContext(Context);
+   
 
     return (
         <div id="ventajas" className="d-flex flex-wrap justify-content-center align-items-center text-white contenedor">
