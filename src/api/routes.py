@@ -28,9 +28,6 @@ def handle_hello():
 
 
 
-
-
-
 @api.route('/users', methods=['GET'])
 def user_list():
     users = db.session.execute(db.select(User).order_by(User.email)).scalars()
@@ -117,3 +114,5 @@ def get_Private():
     email = get_jwt_identity()
     dictionary = {"Message": email}
     return jsonify(dictionary)
+
+

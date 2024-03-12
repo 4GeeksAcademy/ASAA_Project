@@ -44,12 +44,12 @@ export const Welcome = () => {
 
         <div className="row mb-3">
           <div className="col-md-6 p-0 d-flex justify-content-start">
-            <Link to="#" className="custom-button custom-button-register">
+            <Link to="/SignUp" className="custom-button custom-button-register">
               Regístrate
             </Link>
           </div>
           <div className="col-md-6 p-0 d-flex justify-content-end">
-            <Link to="#" className="custom-button custom-button-login">
+            <Link to="/Login" className="custom-button custom-button-login">
               Login
             </Link>
           </div>

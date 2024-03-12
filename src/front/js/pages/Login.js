@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import { Link, useNavigate } from "react-router-dom";
 import "../../styles/form.css";
 
+
 export const Login = () => {
   const { store, actions } = useContext(Context);
   const [credentials, setCredentials] = useState({
@@ -37,17 +38,9 @@ export const Login = () => {
     setPwShown(!pwShown);
   };
 
+
   return (
-    <div
-      className="text-center"
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        marginTop: "50px",
-        marginBottom: "20px",
-      }}
-    >
+    <div className="text-center" style={{ display: "flex", justifyContent: "center", alignItems: "center", marginTop: "50px", marginBottom: "20px" }}>
       <div className="animated-container">
         <div class="wave"></div>
         <div class="wave"></div>
@@ -56,22 +49,15 @@ export const Login = () => {
         <form>
           <div className="container">
             <header className="head-form mt-5 text-white ">
-              <h2>Date de alta</h2>
+              <h2>Login</h2>
             </header>
             <div className="field-set mt-5">
               <div className="input-group mb-3">
-                <span
-                  className="input-group-text"
-                  style={{ background: "white", borderRight: "none" }}
-                >
+                <span className="input-group-text" style={{ background: "white", borderRight: "none" }}>
                   <i className="fa fa-user-circle"></i>
                 </span>
                 <input
-                  style={{
-                    background: "white",
-                    borderLeft: "none",
-                    borderRight: "none",
-                  }}
+                  style={{ background: "white", borderLeft: "none", borderRight: "none" }}
                   type="text"
                   className="form-control mx-auto"
                   placeholder="@ Email"
@@ -87,18 +73,11 @@ export const Login = () => {
               </div>
 
               <div className="input-group mb-3">
-                <span
-                  className="input-group-text"
-                  style={{ background: "white", borderRight: "none" }}
-                >
+                <span className="input-group-text" style={{ background: "white", borderRight: "none" }}>
                   <i className="fa fa-key"></i>
                 </span>
                 <input
-                  style={{
-                    background: "white",
-                    borderLeft: "none",
-                    borderRight: "none",
-                  }}
+                  style={{ background: "white", borderLeft: "none", borderRight: "none" }}
                   type={pwShown ? "text" : "password"}
                   className="form-control mx-auto"
                   placeholder="Password"
@@ -111,11 +90,7 @@ export const Login = () => {
                   }}
                   required
                 />
-                <span
-                  className="input-group-text eye-icon"
-                  onClick={showHidePassword}
-                  style={{ background: "white", borderLeft: "none" }}
-                >
+                <span className="input-group-text eye-icon" onClick={showHidePassword} style={{ background: "white", borderLeft: "none" }}>
                   <i
                     className={`fa ${pwShown ? "fa-eye-slash" : "fa-eye"}`}
                     aria-hidden="true"
@@ -132,28 +107,24 @@ export const Login = () => {
                   type="button"
                   onClick={handleLogin}
                 >
-                  Date de alta
+                  Login
                 </button>
               </div>
               <span className="text-white">
-                Not a member?{" "}
-                <Link
-                  to="/signup"
-                  style={{
-                    textDecoration: "none",
-                    fontWeight: "bold",
-                    color: "blue",
-                  }}
-                >
-                  Inicia sesion
+                ¿No estás registrado?{" "}
+                <Link to="/signup" style={{ textDecoration: "none", fontWeight: "bold", color: "blue" }}>
+                  Regístrate
                 </Link>
               </span>
+
             </div>
+
           </div>
         </form>
+
       </div>
+
     </div>
+
   );
 };
-
-export default Login;

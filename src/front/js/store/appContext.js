@@ -28,7 +28,8 @@ const injectContext = PassedComponent => {
     );
 
     useEffect(() => {
-      /*state.actions.getMessage();*/
+      state.actions.getMessage();
+      state.actions.syncTokenFromSessionStore();
     }, []);
 
     const contextValue = {

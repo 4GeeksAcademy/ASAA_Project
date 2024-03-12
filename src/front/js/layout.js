@@ -18,16 +18,17 @@ import { Welcome } from "./pages/welcome";
 
 import { Pedidos } from "./pages/pedidos";
 import { ResumenPedido } from "./pages/resumenPedido";
-import Register from "./pages/register";
-import Login from "./pages/login";
 
-import EditPerfil from "./pages/editPerfil";
+import {Login} from "./pages/Login";
+import { SignUp } from "./pages/SignUp";
+
 import Interfaz from "./pages/interfaz";
 
 import { SeleccionarMesa } from "./pages/SeleccionarMesa";
 import {Menu} from "./pages/Menu";
 import {CamareroInterfaz} from "./pages/CamareroInterfaz";
 import {EditProfile_Staff} from "./pages/EditProfile_Staff";
+
 
 //create your first component
 const Layout = () => {
@@ -57,10 +58,13 @@ const Layout = () => {
                         <Route element={<EditProfile_Staff />} path="/EditProfile_Staff" />
 
 
-                        <Route element={<Login />} path="/login" />
-                        <Route element={<Register />} path="/register" />
-                        <Route element={<EditPerfil />} path="/EditPerfil" />
+                        <Route element={<Login />} path="/Login" />
+                        <Route element={<SignUp />} path="/SignUp" />
+                       
                         <Route element={<Interfaz />} path="/interfaz" />
+
+
+
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<h1>Not found!</h1>} />
