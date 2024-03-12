@@ -2,14 +2,22 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Cliente, Mesa, Producto, Pedido
+from api.models import db, User, Cliente, Camarero, Mesa, Producto, Pedido
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
+import uuid
+
+from flask_jwt_extended import create_access_token
+from flask_jwt_extended import get_jwt_identity
+from flask_jwt_extended import jwt_required
+from flask_jwt_extended import JWTManager
 
 api = Blueprint('api', __name__)
 
 # Allow CORS requests to this API
 CORS(api)
+
+
 
 
 @api.route('/hello', methods=['POST', 'GET'])
@@ -20,6 +28,33 @@ def handle_hello():
     }
 
     return jsonify(response_body), 200
+
+
+
+# TOKEN
+
+@api.route('/obtener-token-invitado', methods=['GET'])
+def obtener_token_invitado():
+    # Crear un nuevo cliente invitado en la base de datos
+    nuevo_cliente = Cliente()
+    db.session.add(nuevo_cliente)
+    db.session.commit()
+    
+    # Crear el token JWT usando el UUID como identidad
+    token_acceso = create_access_token(identity=str(nuevo_cliente.uuid_invitado))
+
+    return jsonify(access_token=token_acceso, uuid_invitado=str(nuevo_cliente.uuid_invitado)), 200
+
+
+# Protect a route with jwt_required, which will kick out requests
+# without a valid JWT present.
+@api.route("/protected", methods=["GET"])
+@jwt_required()
+def protected():
+    # Access the identity of the current user with get_jwt_identity
+    current_user = get_jwt_identity()
+    return jsonify(logged_in_as=current_user), 200
+
 
 
 # CLIENTE
@@ -33,6 +68,34 @@ def agregar_cliente():
     db.session.add(nuevo_cliente)
     db.session.commit()
     return jsonify({"mensaje": "Cliente creado exitosamente"})
+
+
+# CAMARERO
+
+
+
+@app.route('/camareros', methods=['GET'])
+def get_all_camareros():
+    camareros = Camarero.query.all()
+    return jsonify([camarero.serialize() for camarero in camareros]), 200
+
+
+@app.route('/camareros/<int:id>', methods=['GET'])
+def get_camarero(id):
+    camarero = Camarero.query.get(id)
+    if camarero:
+        return jsonify(camarero.serialize()), 200
+    else:
+        return jsonify({"message": "Camarero no encontrado"}), 404
+
+
+@api.route('/camareros', methods=['POST'])
+def crear_camarero():
+    data = request.json
+    nuevo_camarero = Camarero(email=data['email'], password=data['password'])
+    db.session.add(nuevo_camarero)
+    db.session.commit()
+    return jsonify({"message": "Camarero registrado exitosamente"}), 201
  
 
 
@@ -125,6 +188,7 @@ def obtener_pedidos():
 
 @api.route('/pedidos', methods=['POST'])
 def crear_pedido():
+    id_guest = get_jwt_identity()
     data = request.get_json()
 
     nuevo_pedido = Pedido( 

@@ -10,6 +10,9 @@ from api.models import db
 from api.routes import api
 from api.admin import setup_admin
 from api.commands import setup_commands
+from flask_jwt_extended import JWTManager
+from flask_mail import Mail, Message
+from flask_cors import CORS
 
 # from models import Person
 
@@ -18,6 +21,30 @@ static_file_dir = os.path.join(os.path.dirname(
     os.path.realpath(__file__)), '../public/')
 app = Flask(__name__)
 app.url_map.strict_slashes = False
+
+app = Flask(__name__)
+CORS(app)
+
+# Setup the Flask-JWT-Extended extension
+app.config["JWT_SECRET_KEY"] = "angel" 
+jwt = JWTManager(app)
+
+mail_settings = {
+    "MAIL_SERVER": 'smtp.gmail.com',
+    "MAIL_PORT": 465,
+    "MAIL_USE_TLS": False,
+    "MAIL_USE_SSL": True,
+    "MAIL_USERNAME": 'teest4geeks12@gmail.com',
+    "MAIL_PASSWORD": 'ahyz rgmy igtb yclg'
+}
+
+# Actualización de la configuración del correo
+app.config.update(mail_settings)
+
+# Inicialización del objeto Mail
+mail = Mail(app)
+
+
 
 # database condiguration
 db_url = os.getenv("DATABASE_URL")
@@ -66,6 +93,24 @@ def serve_any_other_file(path):
     response = send_from_directory(static_file_dir, path)
     response.cache_control.max_age = 0  # avoid cache memory
     return response
+
+
+@app.route('/send-email', methods=['POST'])
+def send_email():
+    email = request.json.get("email", None)
+
+    if email:
+            # Configurar el mensaje de correo electrónico
+            message = Message(
+                subject="Reset your password",
+                sender=app.config.get("MAIL_USERNAME"),
+                recipients=[email],
+                html='Prueba'
+            )
+
+    # Enviar el correo electrónico
+    mail.send(message)
+
 
 
 # this only runs if `$ python src/main.py` is executed

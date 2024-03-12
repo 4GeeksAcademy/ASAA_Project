@@ -82,6 +82,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({contadorPedido: contador -= 1})
               } ,
 
+
+			  sendPassword: (email) => {
+				fetch(process.env.BACKEND_URL + 'send-email',
+					{
+						method: "POST",
+						headers: { "Content-Type": "application/json" },
+						body: JSON.stringify({ email }),
+					}
+				)
+				.then(response => response.json())
+				.then((data) => {
+					if (data.error) alert(data.error)
+					//faltan cosas aqui
+					else (
+						alert ('Verifica tu bandeja de correo electrónico')
+					)
+				})
+					.catch((error) => {
+						alert(error);
+					}); 
+			},
+
 		}
 	};
 };

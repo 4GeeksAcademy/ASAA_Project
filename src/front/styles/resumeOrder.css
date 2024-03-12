@@ -1,0 +1,109 @@
+.custom-button-confirm {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: #d9534f;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 3px;
+  }
+  
+  .custom-button-confirm:hover {
+    background-color: #383635;
+    color: #FF7058;
+  }
+  
+  .tu-pedido {
+    font-size: 18px;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 3px;
+  }
+  
+  .add-more-products {
+    display: block;
+    width: 45%;
+    padding: 10px;
+    text-align: left;
+    background-color: #d9534f;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 12px;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 3px;
+  }
+  
+  .add-more-products:hover {
+    background-color: #383635;
+    color: #FF7058;
+  }
+  
+  .total-section {
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 3px;
+    color: black;
+    margin: "10px 0 10px 0";
+  }
+  
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 999;
+  }
+  
+  
+  
+  /* Zona Pedido */
+  
+  .delete-button-order {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: bold;
+    background-color: #d9534f;
+  }
+  
+  .text-no-selection {
+    color: black;
+    font-size: 14px;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: bold;
+    letter-spacing: 3px;
+    margin-top: 20px;
+  }
+  
+  .price-text-total {
+    color: black;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: bold;
+    letter-spacing: 3px;
+  }
+  
+  .order-zone {
+    border: 1px solid gray;
+    text-align: left;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    margin: 0;
+  }

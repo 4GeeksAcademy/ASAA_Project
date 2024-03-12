@@ -1,0 +1,122 @@
+.container {
+    max-width: 100%;
+}
+
+
+.staff-text {
+    font-size: 24px;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: bold;
+    letter-spacing: 3px;
+    margin-top: 0px;
+}
+
+
+.icons-staff {
+    color: black;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+
+.main-mesa-estado {
+    color: white;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-align: center;
+    background-color: #d9534f;
+}
+
+
+.main-each-mesa {
+    font-size: 15px;
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+
+
+
+
+
+
+
+
+/* CSS Profile Edit */
+
+.icon-return-staff {
+    font-size: 24px;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: bold;
+    letter-spacing: 3px;
+    margin-top: 0px;
+    color: black;
+}
+
+.edit-profile-staff {
+    font-size: 24px;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: bold;
+    letter-spacing: 3px;
+    margin-top: 0px;
+    color: black;
+    text-align: center;
+}
+
+.name-staff {
+    font-size: 24px;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: bold;
+    letter-spacing: 3px;
+}
+
+.staff-information1 {
+    color: white;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-align: center;
+    background-color: #d9534f;
+    border-radius: 10px;
+}
+
+.staff-information2 {
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.custom-button-guardar {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #d9534f;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 3px;
+    padding: 5px;
+  }
+  
+  .custom-button-guardar:hover {
+    background-color: #383635;
+    color: #FF7058;
+  }
