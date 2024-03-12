@@ -27,8 +27,8 @@ export const EditProfile_Staff = () => {
     };
 
     const handleSaveChanges = () => {
-        // Aquí puedes enviar los cambios al servidor o actualizar el estado global, según tus necesidades.
-        // También puedes agregar lógica para manejar otros campos (teléfono, ciudad, posición, etc.).
+        // puedes enviar los cambios al servidor o actualizar el estado global
+        // puedes agregar lógica para manejar otros campos (teléfono, ciudad, posición, etc.)
         console.log("Cambios guardados:", { name, phone, city, position });
     };
 

@@ -15,7 +15,7 @@ export const CamareroInterfaz = () => {
         setShowDetailsParis(!showDetailsParis);
 
         if (!showDetailsParis) {
-            const pedidoParis = obtenerPedido("PARIS"); // Reemplaza con la función adecuada para obtener el pedido
+            const pedidoParis = obtenerPedido("PARIS"); //función  para obtener el pedido??
             setPedidoParis(pedidoParis);
         }
     };
@@ -24,7 +24,7 @@ export const CamareroInterfaz = () => {
         setShowDetailsLyon(!showDetailsLyon);
 
         if (!showDetailsLyon) {
-            const pedidoLyon = obtenerPedido("LYON"); // Reemplaza con la función adecuada para obtener el pedido
+            const pedidoLyon = obtenerPedido("LYON"); 
             setPedidoLyon(pedidoLyon);
         }
     };
@@ -33,7 +33,7 @@ export const CamareroInterfaz = () => {
         setShowDetailsToulouse(!showDetailsToulouse);
 
         if (!showDetailsToulouse) {
-            const pedidoToulouse = obtenerPedido("TOULOUSE"); // Reemplaza con la función adecuada para obtener el pedido
+            const pedidoToulouse = obtenerPedido("TOULOUSE"); 
             setPedidoToulouse(pedidoToulouse);
         }
     };
@@ -41,9 +41,8 @@ export const CamareroInterfaz = () => {
     const toggleDetailsBordeaux = () => {
         setShowDetailsBordeaux(!showDetailsBordeaux);
 
-        // Obtener y almacenar el pedido de la mesa BORDEAUX
         if (!showDetailsBordeaux) {
-            const pedidoBordeaux = obtenerPedido("BORDEAUX"); // Reemplaza con la función adecuada para obtener el pedido
+            const pedidoBordeaux = obtenerPedido("BORDEAUX"); 
             setPedidoBordeaux(pedidoBordeaux);
         }
     };
