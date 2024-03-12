@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "../../styles/camarero_interfaz.css";
 
 
-
 export const CamareroInterfaz = () => {
 
     const [showDetailsParis, setShowDetailsParis] = useState(false);
