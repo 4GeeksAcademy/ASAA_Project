@@ -7,6 +7,7 @@ export const ResumenPedido = () => {
 
     const { userSelections, setUserSelections } = useAppContext();
 
+    
     const handleRemoveProduct = (index) => {
         const updatedSelections = [...userSelections];
         updatedSelections.splice(index, 1); // Elimina producto 

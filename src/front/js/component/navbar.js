@@ -37,28 +37,35 @@ export const Navbar = () => {
                 Home
               </a>
             </li>
-            <li className="nav-item" style={{ margin: "0 10px" }}>
-              <a href="#ventajas" className="nav-link custom-hover" style={{ color: "white", fontFamily: "Lato, sans-serif", fontWeight: 400, textDecoration: "none", transition: "color 0.3s" }}>
-                Ventajas
-              </a>
-            </li>
+                        
             <li className="nav-item" style={{ margin: "0 10px" }}>
               <a href="#ComoFunciona" className="nav-link custom-hover" style={{ color: "white", fontFamily: "Lato, sans-serif", fontWeight: 400, textDecoration: "none", transition: "color 0.3s" }}>
                 Como Funciona
               </a>
             </li>
+                     
+            <li className="nav-item" style={{ margin: "0 10px" }}>
+              <a href="#ventajas" className="nav-link custom-hover" style={{ color: "white", fontFamily: "Lato, sans-serif", fontWeight: 400, textDecoration: "none", transition: "color 0.3s" }}>
+                Ventajas
+              </a>
+            </li>
+            
             <li className="nav-item" style={{ margin: "0 10px" }}>
               <a href="#Afiliados" className="nav-link custom-hover" style={{ color: "white", fontFamily: "Lato, sans-serif", fontWeight: 400, textDecoration: "none", transition: "color 0.3s" }}>
                 Afiliados
               </a>
             </li>
+
             <li className="nav-item" style={{ margin: "0 10px", marginRight: "100px" }}>
               <a href="#contactForm" className="nav-link custom-hover" style={{ color: "white", fontFamily: "Lato, sans-serif", fontWeight: 400, textDecoration: "none", transition: "color 0.3s" }}>
                 Contáctanos
               </a>
             </li>
+
           </ul>
+
         </div>
+        
       </div>
     </nav>
   );

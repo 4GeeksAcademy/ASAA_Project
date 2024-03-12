@@ -23,10 +23,11 @@ import Login from "./pages/login";
 
 import EditPerfil from "./pages/editPerfil";
 import Interfaz from "./pages/interfaz";
+
 import { SeleccionarMesa } from "./pages/SeleccionarMesa";
 import {Menu} from "./pages/Menu";
-
-
+import {CamareroInterfaz} from "./pages/CamareroInterfaz";
+import {EditProfile_Staff} from "./pages/EditProfile_Staff";
 
 //create your first component
 const Layout = () => {
@@ -51,6 +52,10 @@ const Layout = () => {
                         <Route element={<SeleccionarMesa />} path="/seleccionarMesa" />
                         <Route element={<Menu />} path="/Menu" />
                         <Route element={<ResumenPedido />} path="/resumenPedido" />
+
+                        <Route element={<CamareroInterfaz />} path="/CamareroInterfaz" />
+                        <Route element={<EditProfile_Staff />} path="/EditProfile_Staff" />
+
 
                         <Route element={<Login />} path="/login" />
                         <Route element={<Register />} path="/register" />

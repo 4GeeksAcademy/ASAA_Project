@@ -25,7 +25,6 @@ export const LandingPage = () => {
             setCurrentTime(getCurrentTime());
         }, 1000); 
 
-        // Limpia el intervalo cuando el componente se desmonta
         return () => clearInterval(intervalId);
     }, []);
 

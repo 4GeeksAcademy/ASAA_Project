@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import "../../styles/seleccionarMesa.css";
 
 
-
 export const SeleccionarMesa = () => {
     const [mesaSeleccionada, setMesaSeleccionada] = useState('');
     const [respuestaSeleccionada, setRespuestaSeleccionada] = useState('');

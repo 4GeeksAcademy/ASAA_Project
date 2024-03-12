@@ -12,7 +12,7 @@ export const Afiliados = () => {
                 <table >
                     <thead>
                         <tr>
-                            <th className="letra1">Le Petit Café</th>
+                            <th className="letra1"><a href="/welcome" style={{ textDecoration: 'none', color: 'white' }}>Le Petit Café</a></th>
                             <th className="letra2">Parisian Café</th>
                             <th className="letra3">Le Charme Café</th>
                             <th className="letra4">Le Croissant</th>
@@ -29,6 +29,6 @@ export const Afiliados = () => {
                 </table>
             </div>
         </div>
-       
+
     );
 };
