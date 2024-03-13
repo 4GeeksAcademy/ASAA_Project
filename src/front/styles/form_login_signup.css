@@ -1,0 +1,114 @@
+.container {
+  max-width: 100%;
+}
+
+.text-login {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  letter-spacing: 3px;
+
+}
+
+.title-login-signup {
+  padding: 0;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  letter-spacing: 3px;
+  margin-top: 0px;
+  font-size: 28px;
+}
+
+
+
+.subtitle-login-signup {
+  padding: 0;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: bold;
+  letter-spacing: 3px;
+  margin-top: 0px;
+  font-size: 16px;
+  color: gray;
+}
+
+
+.span-title-email-password {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: bold;
+  letter-spacing: 3px; 
+  font-size: 16px;
+  color: gray;
+}
+
+.custom-input-login-signup {
+  background-color: white;
+  border: 1px solid #ccc;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: bold;
+  letter-spacing: 3px; 
+  font-size: 16px;
+  color: gray;
+ }
+
+ .span-forgot-password {
+  display: block;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: bold;
+  letter-spacing: 3px; 
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 10px;
+ }
+ 
+ .span-not-registered {
+  display: block;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: bold;
+  letter-spacing: 3px; 
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 10px;
+ }
+
+ .button-login {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background-color: #d9534f;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 3px;
+}
+
+.button-login:hover {
+  background-color: #383635;
+  color: #FF7058;
+}
+
+
+
+
+
+
+

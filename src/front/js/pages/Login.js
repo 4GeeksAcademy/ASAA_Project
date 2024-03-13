@@ -1,8 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Link, useNavigate } from "react-router-dom";
-import "../../styles/form.css";
-
+import "../../styles/form_login_signup.css";
 
 export const Login = () => {
   const { store, actions } = useContext(Context);
@@ -38,93 +37,103 @@ export const Login = () => {
     setPwShown(!pwShown);
   };
 
-
   return (
-    <div className="text-center" style={{ display: "flex", justifyContent: "center", alignItems: "center", marginTop: "50px", marginBottom: "20px" }}>
-      <div className="animated-container">
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
+    <>
+      <div className="container border mt-2 p-4 " style={{ maxWidth: "600px" }}>
+        <div className="row mb-3 text-login">
+          <div className="col d-flex align-items-center justify-content-center">
+            <Link to="/welcome" style={{ marginRight: "auto", color: "black" }}>
+              <i className="fa-solid fa-chevron-left"></i>
+            </Link>
+            <span className="text-center">
+              <i className="bi bi-arrow-left-circle"></i>
+              <h5 className="d-inline-block ml-2 mb-0">Login</h5>
+            </span>
+          </div>
+        </div>
+
+        {/* Row 2 */}
+        <div className="row mb-3 mt-5">
+          <div className="col text-center ">
+            <h1 className="title-login-signup">Bienvenido a Le Petit Café</h1>
+            <p className="mt-3 subtitle-login-signup">Añade tu Email para registrarte.</p>
+          </div>
+        </div>
 
         <form>
           <div className="container">
-            <header className="head-form mt-5 text-white ">
-              <h2>Login</h2>
-            </header>
             <div className="field-set mt-5">
-              <div className="input-group mb-3">
-                <span className="input-group-text" style={{ background: "white", borderRight: "none" }}>
-                  <i className="fa fa-user-circle"></i>
-                </span>
-                <input
-                  style={{ background: "white", borderLeft: "none", borderRight: "none" }}
-                  type="text"
-                  className="form-control mx-auto"
-                  placeholder="@ Email"
-                  value={credentials.email}
-                  onChange={(event) => {
-                    setCredentials({
-                      ...credentials,
-                      email: event.target.value,
-                    });
-                  }}
-                  required
-                />
+              <div className="form-group">
+                <label htmlFor="email" className="span-title-email-password">
+                  Dirección Email
+                </label>
+                <div className="input-group mt-1 mb-4">
+                  <span className="input-group-text" >
+                    <i className="fa fa-user-circle"></i>
+                  </span>
+                  <input
+                    type="text"
+                    className="form-control custom-input-login-signup"
+                    id="email"
+                    placeholder="@ Email"
+                    value={credentials.email}
+                    onChange={(event) => {
+                      setCredentials({
+                        ...credentials,
+                        email: event.target.value,
+                      });
+                    }}
+                    required
+                  />
+                </div>
               </div>
 
-              <div className="input-group mb-3">
-                <span className="input-group-text" style={{ background: "white", borderRight: "none" }}>
-                  <i className="fa fa-key"></i>
-                </span>
-                <input
-                  style={{ background: "white", borderLeft: "none", borderRight: "none" }}
-                  type={pwShown ? "text" : "password"}
-                  className="form-control mx-auto"
-                  placeholder="Password"
-                  value={credentials.password}
-                  onChange={(event) => {
-                    setCredentials({
-                      ...credentials,
-                      password: event.target.value,
-                    });
-                  }}
-                  required
-                />
-                <span className="input-group-text eye-icon" onClick={showHidePassword} style={{ background: "white", borderLeft: "none" }}>
-                  <i
-                    className={`fa ${pwShown ? "fa-eye-slash" : "fa-eye"}`}
-                    aria-hidden="true"
-                    type="button"
-                    id="eye"
-                    style={{ backgroundColor: "transparent" }}
-                  ></i>
-                </span>
+              <div className="form-group">
+                <label htmlFor="password" className="span-title-email-password">
+                  Contraseña
+                </label>
+                <div className="input-group mb-4 mt-1" >
+                  <span className="input-group-text">
+                    <i className="fa fa-key"></i>
+                  </span>
+                  <input
+                    type={pwShown ? "text" : "password"}
+                    className="form-control custom-input-login-signup"
+                    id="password"
+                    placeholder="Password"
+                    value={credentials.password}
+                    onChange={(event) => {
+                      setCredentials({
+                        ...credentials,
+                        password: event.target.value,
+                      });
+                    }}
+                    required
+                  />
+                  <span className="input-group-text eye-icon" onClick={showHidePassword}>
+                    <i className={`fa ${pwShown ? "fa-eye-slash" : "fa-eye"}`} aria-hidden="true"></i>
+                  </span>
+                </div>
               </div>
 
+
+              <span className="span-forgot-password" style={{ display: "block", textAlign: "center" }}>¿Olvidaste tu Contraseña?</span>
               <div className="text-center pt-1 mb-3 pb-1 d-flex flex-column">
-                <button
-                  className="btn mb-1 btn-primary"
-                  type="button"
-                  onClick={handleLogin}
-                >
-                  Login
+                <button className="btn mb-1 button-login" type="button" onClick={handleLogin}>
+                  LOGIN
                 </button>
               </div>
-              <span className="text-white">
+              <span className="span-not-registered">
                 ¿No estás registrado?{" "}
-                <Link to="/signup" style={{ textDecoration: "none", fontWeight: "bold", color: "blue" }}>
-                  Regístrate
+                <Link to="/signup" style={{ textDecoration: "none", fontWeight: "bold", color: " #d9534f" }}>
+                  Crea tu cuenta
                 </Link>
               </span>
 
             </div>
-
           </div>
         </form>
-
       </div>
-
-    </div>
-
+    </>
   );
 };
