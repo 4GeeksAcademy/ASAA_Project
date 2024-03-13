@@ -15,8 +15,8 @@ export const Cafe = () => {
     const [quantity, setQuantity] = useState(1);
 
     const cafes = [
-        { name: "Capuccino", price: 3.50 },
-        { name: "Espresso", price: 2.50 },
+        { name: "Capuccino", price: 3.50, price_id:"price_1OtF6fCFFXL2ttgG3HeYDjeb" },
+        { name: "Espresso", price: 2.50, price_id:"price_1OtF8OCFFXL2ttgGBFbQfa4z" },
         { name: "Latte", price: 4.00 },
         { name: "Americano", price: 3.00 },
     ];
@@ -28,8 +28,8 @@ export const Cafe = () => {
         { name: "Desnatada", priceIncrement: 0 },
         { name: "Entera", priceIncrement: 0 },
         { name: "Semi-Desnatada", priceIncrement: 0 },
-        { name: "De Soja", priceIncrement: 0.40 },
-        { name: "De Almendras", priceIncrement: 0.40 },
+        { name: "De Soja", priceIncrement: 0.40, price_id:"price_1OtFE6CFFXL2ttgGDaCkXZnn" },
+        { name: "De Almendras", priceIncrement: 0.40, price_id:"price_1OtFEOCFFXL2ttgGtwvn04mR" }, 
     ];
 
     const handleCafeSelection = () => {
@@ -80,6 +80,7 @@ export const Cafe = () => {
         // Agregar al pedido
         const newSelection = {
             cafe: selectedCafe,
+            price_id: cafes.find((cafe) => cafe.name === selectedCafe)?.price_id || null,
             sweetener: selectedSweetener,
             milk: selectedMilk,
             quantity,

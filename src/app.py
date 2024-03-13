@@ -10,6 +10,12 @@ from api.models import db
 from api.routes import api
 from api.admin import setup_admin
 from api.commands import setup_commands
+from flask_jwt_extended import JWTManager
+import stripe
+from flask_cors import CORS
+
+# Configurar la clave secreta de Stripe
+stripe.api_key = 'sk_test_51OtEL7CFFXL2ttgGOoXuuOf9zPUpRVLtI025Ji2mUhEhf41NgRqadXt64huFJAFk4dregOjhpcq7kY59AiaoQFge00a8mhigCP'
 
 # from models import Person
 
@@ -31,6 +37,9 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 MIGRATE = Migrate(app, db, compare_type=True)
 db.init_app(app)
 
+app.config["JWT_SECRET_KEY"] = "super-secret"  # Change this "super secret" to something else!
+jwt = JWTManager(app)
+CORS(app)
 # add the admin
 setup_admin(app)
 
@@ -67,6 +76,20 @@ def serve_any_other_file(path):
     response.cache_control.max_age = 0  # avoid cache memory
     return response
 
+# Ruta para crear una sesión de pago en Stripe
+@app.route('/create-checkout-session', methods=[ 'POST'])
+def create_checkout_session():
+    pedido = request.json["pedido"]
+    print(pedido)
+    session = stripe.checkout.Session.create(
+        payment_method_types=['card'],
+        line_items= pedido,
+        mode='payment',
+        success_url=os.getenv('BACKEND_URL'),
+        cancel_url=os.getenv('BACKEND_URL'),
+    )
+
+    return jsonify({'sessionId': session.id})
 
 # this only runs if `$ python src/main.py` is executed
 if __name__ == '__main__':

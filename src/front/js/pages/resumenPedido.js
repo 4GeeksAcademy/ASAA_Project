@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/resumeOrder.css";
 import { useAppContext } from "../store/appContext";
+import { loadStripe } from "@stripe/stripe-js";
+
 
 export const ResumenPedido = () => {
 
     const { userSelections, setUserSelections } = useAppContext();
+
 
 
     const handleRemoveProduct = (index) => {
@@ -18,6 +21,7 @@ export const ResumenPedido = () => {
         if (!userSelections || userSelections.length === 0) {
             return 0;
         }
+        console.log(userSelections)
 
         return userSelections.reduce((total, selection) => total + selection.totalPrice, 0);
     };
@@ -38,6 +42,35 @@ export const ResumenPedido = () => {
         setIsOrderPlaced(true);
     };
 
+    const handleCheckout = async () => {
+        const stripe = await loadStripe("pk_test_51OtEL7CFFXL2ttgG8Z2FrdRKkvx2LvXstBj8hLwIuWGCDwYdwbckzwIJDIT5C2RzexjgmE6RhknJCNdha85VWl6900vtULDTnN");
+        let pedido = []
+        if (userSelections && userSelections?.length > 0) {
+            userSelections.forEach(u => {
+                if (u.price_id) pedido.push({ price: u.price_id, quantity: u.quantity })
+                if (u.milk && u.milk?.price_id ) pedido.push({ price: u.milk.price_id, quantity: u.quantity })
+                   
+            })
+        }
+
+        // Fetch the checkout session ID from your server
+        const sessionResponse = await fetch(process.env.BACKEND_URL + "/create-checkout-session", {
+            method: "POST",
+            body: JSON.stringify({
+                pedido: pedido
+            }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+        const sessionData = await sessionResponse.json();
+
+        // Redirect to Stripe Checkout
+        const { error } = await stripe.redirectToCheckout({ sessionId: sessionData.sessionId });
+        if (error) {
+            console.error("Error redirecting to checkout:", error);
+        }
+    };
 
     return (
         <div className="container border mt-2 p-4" style={{ maxWidth: "600px" }}>
@@ -142,9 +175,9 @@ export const ResumenPedido = () => {
             {/* Row 6 */}
             <div className="row  text-dark p-2 mb-2">
                 <div className="col-12 p-0">
-                    <Link to="/resumenPedido" className="custom-button-confirm">
-                        PROCEDER AL PAGO
-                    </Link>
+                    <a onClick={handleCheckout} className="custom-button-confirm">
+                        Prodecer al pago
+                    </a>
                 </div>
             </div>
 
