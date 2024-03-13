@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Cliente, Camarero, Mesa, Producto, Pedido
+from api.models import db, User, Cliente, Camarero, Mesa, Producto, Pedido, Menu, ProductoPedido
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
 import uuid
@@ -72,15 +72,13 @@ def agregar_cliente():
 
 # CAMARERO
 
-
-
-@app.route('/camareros', methods=['GET'])
+@api.route('/camareros', methods=['GET'])
 def get_all_camareros():
     camareros = Camarero.query.all()
     return jsonify([camarero.serialize() for camarero in camareros]), 200
 
 
-@app.route('/camareros/<int:id>', methods=['GET'])
+@api.route('/camareros/<int:id>', methods=['GET'])
 def get_camarero(id):
     camarero = Camarero.query.get(id)
     if camarero:
@@ -101,30 +99,37 @@ def crear_camarero():
 
 # MESA
 
-@api.route("/mesa", methods=["GET"])
-def get_users():
+@api.route("/mesas", methods=["GET"])
+def obtener_mesas():
     mesas = Mesa.query.all()
-    mesas = list(map (lambda mesa: mesa.serialize(), mesas))
-    
-    return jsonify(mesas), 200  
+    mesas_info = [{"id": mesa.id, "name": mesa.name} for mesa in mesas]
+    return jsonify(mesas_info), 200
 
 
-@api.route("/mesa", methods=['POST'])
+@api.route("/mesas", methods=['POST'])
 def crear_mesa():
         data = request.json
 
         nueva_mesa = Mesa(
             id=data['id'],
-            name=data['name']
+            name=data['name'],
         )
 
         db.session.add(nueva_mesa)
         db.session.commit()
 
         return jsonify({"message": "Mesa creada exitosamente"})
+
+
+@api.route("/mesa/<int:id>/status", methods=['GET'])
+def obtener_estado_mesa(id):
+    mesa = Mesa.query.get(id)
+    if mesa:
+        return jsonify({"ocupada": mesa.ocupada}), 200
+    else:
+        return jsonify({"message": "Mesa no encontrada"}), 404
+
     
-
-
 
 # PRODUCTOS
 
@@ -171,6 +176,38 @@ def eliminar_producto(producto_id):
 
 
 
+
+# MENU
+
+@api.route('/menu', methods=['GET'])
+
+def obtener_menu():
+        menus = Menu.query.all()
+        return jsonify([menu.serialize() for menu in menus])
+
+
+@api.route('/menu', methods=['POST'])
+def crear_menu():
+        data = request.json
+        nuevo_menu = Menu(
+            name=data['name'],
+            description=data['description']
+        )
+        db.session.add(nuevo_menu)
+        db.session.commit()
+        return jsonify({"mensaje": "Menú creado exitosamente"}), 201
+
+
+@api.route('/menu/<int:menu_id>', methods=['GET'])
+def obtener_idMenu(menu_id):
+        menu = Menu.query.get(menu_id)
+        if menu:
+            return jsonify(menu.serialize())
+        else:
+            return jsonify({"message": "Menú no encontrado"}), 404
+
+
+
 # PEDIDOS
 
 @api.route('/pedidos', methods=['GET'])
@@ -187,12 +224,18 @@ def obtener_pedidos():
 
 
 @api.route('/pedidos', methods=['POST'])
+@jwt_required()
 def crear_pedido():
     id_guest = get_jwt_identity()
     data = request.get_json()
 
+    # Verifica si el cliente invitado existe
+    cliente_invitado = Cliente.query.filter_by(uuid_invitado=id_guest).first()
+    if not cliente_invitado:
+        return jsonify({'mensaje': 'Cliente invitado no encontrado'}), 404
+
     nuevo_pedido = Pedido( 
-        id_cliente=data.get('clienteId'),
+        id_cliente=cliente_invitado.id,  # Utiliza el ID del cliente invitado asociado al token
         id_mesa=data.get('mesaId'),
         date=data.get('date'), 
         total_amount=data.get('total_amount'),
@@ -203,7 +246,6 @@ def crear_pedido():
     db.session.commit()
 
     return jsonify({'mensaje': 'Pedido creado correctamente'}), 201
-
 
 @api.route('/pedido/<int:pedido_id>', methods=['PUT'])
 def actualizar_pedido(pedido_id):
@@ -236,6 +278,16 @@ def eliminar_pedido(pedido_id):
     db.session.delete(pedido)
     db.session.commit()
     return jsonify({'message': 'Pedido eliminado exitosamente'})
+
+
+
+
+# PRODUCTO PEDIDO 
+
+@api.route('/productoPedido', methods=['GET'])
+def obtener_productoPedido(self):
+        productos_pedidos = ProductoPedido.query.all()
+        return jsonify([producto_pedido.serialize() for producto_pedido in productos_pedidos])
 
 
 

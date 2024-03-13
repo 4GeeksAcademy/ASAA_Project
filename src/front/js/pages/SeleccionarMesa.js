@@ -1,62 +1,60 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../styles/seleccionarMesa.css";
-
+import { Context } from "../store/appContext";
 
 export const SeleccionarMesa = () => {
-    const [mesaSeleccionada, setMesaSeleccionada] = useState('');
-    const [respuestaSeleccionada, setRespuestaSeleccionada] = useState('');
+    const [mesaSeleccionada, setMesaSeleccionada] = useState("");
+    const [respuestaSeleccionada, setRespuestaSeleccionada] = useState("");
+    const [mesas, setMesas] = useState([]);
+    const { store, actions } = useContext(Context)
     const history = useNavigate();
 
-    const mesas = [
-        { id: 1, name: 'Mesa PARIS' },
-        { id: 2, name: 'Mesa LYON' },
-        { id: 3, name: 'Mesa TOULOUSE' },
-        { id: 4, name: 'Mesa BORDEAUX' },
-    ];
+    useEffect(() => {
+        // Lógica para obtener las mesas desde el backend
+        fetch(process.env.BACKEND_URL + '/api/mesas',
+            {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' },
+            })
+            .then(response => response.json())
+            .then(response => {
+                setMesas(response);
+            })
+            .catch(error => {
+                alert('Error al enviar la mesa seleccionada:', error);
+            });
+    }, []);
 
-    const handleSeleccionMesa = (e) => {
-        const mesaId = parseInt(e.target.value, 10);
-        const mesaSeleccionada = mesas.find(mesa => mesa.id === mesaId);
-        setMesaSeleccionada(mesaSeleccionada ? mesaSeleccionada.name : '');
-    };
+
 
     const handleSeleccionRespuesta = (e) => {
         setRespuestaSeleccionada(e.target.value);
     };
 
+
+    const handleSeleccionMesa = (e) => {
+        const mesaName = e.target.value;
+        const mesaSeleccionada = mesas.find((mesa) => mesa.name === mesaName);
+        setMesaSeleccionada(mesaSeleccionada);
+    };
+
     const handleContinuar = () => {
         if (mesaSeleccionada && respuestaSeleccionada) {
-            fetch('/mesa', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                  id: mesas.find(mesa => mesa.name === mesaSeleccionada)?.id,
-                  name: mesaSeleccionada,
-                }),
-              })
-                .then(response => response.json())
-                .then(data => {
-                  console.log(data.message);
-                  // Redirigir a la siguiente página
-                  history("/Menu");
-                })
-                .catch(error => {
-                  console.error('Error al enviar la solicitud:', error);
-                  alert('Error al seleccionar la mesa. Inténtelo de nuevo.');
-                });
-            } else {
-              alert("Por favor, seleccione una mesa y responda si es mayor de 18 años.");
-            }
-          };
+            // Lógica para guardar la mesa seleccionada (puedes usar una acción para esto)
+            // actions.guardarMesa(mesaSeleccionada);
+
+            // Redirigir a la siguiente página
+            history("/Menu");
+        } else {
+            alert("Por favor, seleccione una mesa y responda si es mayor de 18 años.");
+        }
+    };
+
 
     return (
         <>
-
-            <div className="container border mt-2 p-4 " style={{ maxWidth: "600px" }}>
-
+            <div className="container border mt-2 p-4" style={{ maxWidth: "600px" }}>
                 <div className="row mb-3">
                     <div className="col d-flex align-items-center justify-content-center">
                         <Link to="/welcome" style={{ marginRight: "auto", color: "black" }}>
@@ -69,27 +67,27 @@ export const SeleccionarMesa = () => {
                     </div>
                 </div>
 
-                {/* Row 2 */}
                 <div className="row mb-3">
                     <div className="col text-center title-business2">
                         <h1 className="">Bienvenido a La Petit Café</h1>
-                        <h2 >Invitado</h2>
+                        <h2>Invitado</h2>
                     </div>
                 </div>
 
-                {/* Row 3 */}
+
                 <div className="row mb-3">
                     <div className="col">
                         <div className="select-tables">
                             <select
                                 className="form-select"
-                                value={mesaSeleccionada ? mesaSeleccionada.id : ''}
+                                value={mesaSeleccionada ? mesaSeleccionada.name : ""}
                                 onChange={handleSeleccionMesa}
                             >
+
                                 <option value="" disabled>Seleccione Mesa</option>
-                                {mesas.map(mesa => (
-                                    <option key={mesa.id} value={mesa.id}>
-                                        {mesa.name}
+                                {mesas.map((mesa) => (
+                                    <option key={mesa.id} value={mesa.name}>
+                                        {mesa.name} - {mesa.status}
                                     </option>
                                 ))}
                             </select>
@@ -97,34 +95,26 @@ export const SeleccionarMesa = () => {
                     </div>
                 </div>
 
-                {/* Row 4 */}
                 <div className="row mb-3">
-
                     <p className="mayor-edad" style={{ width: "100%" }}>
                         Antes de empezar, queremos saber si eres <span style={{ color: "#FF7058", fontWeight: "bold" }}>mayor de 18 años.*</span>
                     </p>
-
                 </div>
 
-                {/* Row 5 */}
                 <div className="row mb-3">
                     <div className="col d-flex justify-content-center gap-5">
                         <div className="form-check form-check-inline custom-large-radio">
-                            <input className="form-check-input" type="radio" id="inlineCheckbox1" name="radioGroup" value="SI"
-                                onChange={handleSeleccionRespuesta} />
+                            <input className="form-check-input" type="radio" id="inlineCheckbox1" name="radioGroup" value="SI" onChange={handleSeleccionRespuesta} />
                             <label className="form-check-label" htmlFor="inlineCheckbox1">SI</label>
                         </div>
                         <div className="form-check form-check-inline custom-large-radio">
-                            <input className="form-check-input" type="radio" id="inlineCheckbox2" name="radioGroup" value="NO"
-                                onChange={handleSeleccionRespuesta} />
+                            <input className="form-check-input" type="radio" id="inlineCheckbox2" name="radioGroup" value="NO" onChange={handleSeleccionRespuesta} />
                             <label className="form-check-label" htmlFor="inlineCheckbox2">NO</label>
                         </div>
                     </div>
                 </div>
 
-                {/* Row 6 */}
                 <div className="row mb-3">
-
                     <div className="col-12 p-0">
                         <button className="custom-button-continue" onClick={handleContinuar}>
                             CONTINUAR
@@ -132,13 +122,12 @@ export const SeleccionarMesa = () => {
                     </div>
                 </div>
 
-                {/* Row 7 */}
-                <div className="row  mb-3">
+                <div className="row mb-3">
                     <div className="col text-responsability">* Responsabilidad: si eres menor de 18 años, verás el menú adaptado a tu edad</div>
                 </div>
             </div>
         </>
-
-
-    )
+    );
 };
+
+

@@ -1,8 +1,9 @@
+import { Alert } from "bootstrap";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			contadorPedido: 0,
-			Mesa: [],
+			mesa: [],
 			dulces: [],
 			cafes: [],
 			tes: [],
@@ -55,20 +56,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ demo: demo });
 			},
 
-			Mesas: (mesaId, Name) => {
+			mesas: (id, name, status) => {
                 fetch(process.env.BACKEND_URL +'/api/mesa', 
                 {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({ mesaId, Name }),
+                  body: JSON.stringify({ id, name, status }),
                 })
                   .then(response => response.json())
                   .then(data => {
-                    console.log('Respuesta del servidor:', data);
+                    alert('Respuesta del servidor:', data);
                     
                   })
                   .catch(error => {
-                    console.error('Error al enviar la mesa seleccionada:', error);
+                    alert('Error al enviar la mesa seleccionada:', error);
                   });
               } ,
 

@@ -81,7 +81,7 @@ class Producto(db.Model):
     id_menu = db.Column(db.Integer, ForeignKey('menu.id'))
     name = db.Column(db.String(80), unique=False, nullable=False)
     description = db.Column(db.String(120), unique=False, nullable=False)
-    price =db.Column(db.String(80), unique=False, nullable=False)
+    price =db.Column(db.Integer, unique=False, nullable=False)
     producto_pedidos = relationship('ProductoPedido', backref='producto', lazy=True)
     
 
@@ -130,8 +130,8 @@ class Mesa(db.Model):
     def serialize(self):
         return {
             "id": self.id,
-            "id_admin": self.id_admin,
             "id_camarero": self.id_camarero,
+            "name": self.name,
         }
        
 

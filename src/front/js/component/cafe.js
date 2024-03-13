@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../styles/cafe.css";
 
 import { useAppContext } from '../store/appContext';
@@ -13,13 +13,23 @@ export const Cafe = () => {
     const [selectedSweetener, setSelectedSweetener] = useState(null);
     const [selectedMilk, setSelectedMilk] = useState(null);
     const [quantity, setQuantity] = useState(1);
+    const [productos, setProductos] = useState([])
 
-    const cafes = [
-        { name: "Capuccino", price: 3.50 },
-        { name: "Espresso", price: 2.50 },
-        { name: "Latte", price: 4.00 },
-        { name: "Americano", price: 3.00 },
-    ];
+    useEffect(() => {
+        // Lógica para obtener las mesas desde el backend
+        fetch(process.env.BACKEND_URL + '/api/productos',
+            {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' },
+            })
+            .then(response => response.json())
+            .then(response => {
+                setProductos(response);
+            })
+            .catch(error => {
+                alert('Error al enviar el producto seleccionado:', error);
+            });
+    }, []);
 
     const sweeteners = ["Sin Endulzantes", "Azúcar", "Azúcar Moreno", "Sacarina"];
     const milks = [
@@ -57,7 +67,7 @@ export const Cafe = () => {
             setQuantity(quantity - 1);
         }
     };
-    
+
     const resetState = () => {
         setShowCoffeeOptions(false);
         setSelectedCafe(null);
@@ -67,12 +77,14 @@ export const Cafe = () => {
     };
 
     const calculateTotalPrice = () => {
-        const baseCafePrice = cafes.find((cafe) => cafe.name === selectedCafe)?.price || 0;
+        const baseCafePrice = productos.find((producto) => producto.name === selectedCafe)?.price || 0;
         const milkPriceIncrement = selectedMilk ? selectedMilk.priceIncrement : 0;
         const totalCafePrice = baseCafePrice + milkPriceIncrement;
 
         return totalCafePrice * quantity;
     };
+
+
 
     const { setUserSelections, userSelections } = useAppContext();
 
@@ -98,9 +110,21 @@ export const Cafe = () => {
         resetState();
     };
 
-      const handleDiscard = () => {
+    const handleDiscard = () => {
         resetState();
     };
+
+    const formatPrice = (price) => {
+        if (Number.isInteger(price)) {
+            return `${price} €`;
+        } else if (typeof price === 'number') {
+            return `${price.toFixed(2)} €`;
+        } else {
+            return 'Precio no disponible';
+        }
+    };
+
+
 
 
     return (
@@ -116,8 +140,8 @@ export const Cafe = () => {
                     <div style={{ marginLeft: "12px", marginBottom: "10px", marginTop: "10px" }}>
                         <label className="cafe-select">Selecciona tu Café:</label>
                     </div>
-                    {cafes.map((cafe) => (
-                        <div key={cafe.name} style={{ marginLeft: "12px", marginBottom: "10px", marginTop: "10px" }}>
+                    {productos.map((cafe) => (
+                        <div key={cafe.id} style={{ marginLeft: "12px", marginBottom: "10px", marginTop: "10px" }}>
                             <label className="cafe-label" style={{ display: "flex", alignItems: "center", fontSize: "16px" }}>
                                 <input
                                     type="radio"
@@ -126,9 +150,15 @@ export const Cafe = () => {
                                     onChange={() => handleCoffeeOptionSelection(cafe.name)}
                                 />
                                 <span style={{ marginLeft: "10px" }}>{cafe.name}</span>
+
                                 <span style={{ marginLeft: "auto" }}>
-                                    Desde <strong>{Number.isInteger(cafe.price) ? cafe.price : cafe.price.toFixed(2)} €</strong>
+                                    <span style={{ marginLeft: "auto" }}>
+                                        Desde <strong>{typeof cafe.price === 'number' ? (Number.isInteger(cafe.price) ? cafe.price : cafe.price.toFixed(2)) + ' €' : ''}</strong>
+                                    </span>
+
                                 </span>
+
+
 
                             </label>
                         </div>
@@ -190,7 +220,7 @@ export const Cafe = () => {
             )}
 
             {selectedCafe && selectedCafe !== "Cafe" && selectedSweetener && (
-                <div style={{ overflowY: "auto", maxHeight: "150px", display: "flex", flexDirection: "column", marginLeft: "12px",marginTop:"5px" }}>
+                <div style={{ overflowY: "auto", maxHeight: "150px", display: "flex", flexDirection: "column", marginLeft: "12px", marginTop: "5px" }}>
                     <label className="cafe-select">Selecciona Tipo de Leche:</label>
                     <div style={{ display: "flex", justifyContent: "space-between", marginTop: "5px" }}>
 
