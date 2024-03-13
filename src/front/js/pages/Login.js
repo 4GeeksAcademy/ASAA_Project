@@ -56,7 +56,7 @@ export const Login = () => {
         <div className="row mb-3 mt-5">
           <div className="col text-center ">
             <h1 className="title-login-signup">Bienvenido a Le Petit Café</h1>
-            <p className="mt-3 subtitle-login-signup">Añade tu Email para registrarte.</p>
+            <p className="mt-3 subtitle-login-signup">Añade tu Email y Contraseña.</p>
           </div>
         </div>
 

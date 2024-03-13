@@ -107,7 +107,15 @@
 }
 
 
-
+.span-conditions {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: bold;
+  letter-spacing: 3px; 
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 10px;
+ }
 
 
 
