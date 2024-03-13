@@ -1,5 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import Column, Integer, ForeignKey, Enum, Boolean
+from sqlalchemy import Column, Integer, ForeignKey, Enum, Boolean, Float
 from sqlalchemy.orm import relationship
 from sqlalchemy.dialects.postgresql import UUID
 import uuid
@@ -26,16 +26,14 @@ class User(db.Model):
 
 class Cliente(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    uuid_invitado = db.Column(UUID(as_uuid=True), default=uuid.uuid4, unique=True, nullable=True)
     pedidos = relationship('Pedido', backref='cliente', lazy=True)
 
-    def __repr__(self):
-        return f'Cliente: {self.id}'
+    def __repr__(self):  
+        return f'Cliente: {self.id}'       
 
     def serialize(self):
         return {
             "id": self.id,
-            "uuid_invitado": self.uuid_invitado
         }
         
 
@@ -81,7 +79,7 @@ class Producto(db.Model):
     id_menu = db.Column(db.Integer, ForeignKey('menu.id'))
     name = db.Column(db.String(80), unique=False, nullable=False)
     description = db.Column(db.String(120), unique=False, nullable=False)
-    price =db.Column(db.Integer, unique=False, nullable=False)
+    price = db.Column(db.Float, unique=False, nullable=False)
     producto_pedidos = relationship('ProductoPedido', backref='producto', lazy=True)
     
 
@@ -159,7 +157,7 @@ class Pedido(db.Model):
     id_cliente = db.Column(db.Integer, ForeignKey('cliente.id'), nullable=True)
     id_mesa = db.Column(db.Integer, ForeignKey('mesa.id'))
     date = db.Column(db.String(80), unique=False, nullable=False)
-    total_amount = db.Column(db.Integer, unique=False, nullable=False)
+    total_amount = db.Column(db.Float, unique=False, nullable=False)
     status = db.Column(db.Boolean, unique=False, nullable=False)
     producto_pedidos = relationship('ProductoPedido', backref='pedido', lazy=True)
     

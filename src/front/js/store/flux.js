@@ -3,6 +3,7 @@ import { Alert } from "bootstrap";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			pedidoActualizado: [],
 			mesa: [],
 			dulces: [],
 			cafes: [],
@@ -82,6 +83,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 				let contador = getStore().contadorPedido
 				setStore({contadorPedido: contador -= 1})
               } ,
+
+			  AñadirPedidoActualizado: (pedidoActualizado) => {
+				let pedido = getStore().pedidoActualizado
+				pedido.push(pedidoActualizado)
+				console.log(pedido)
+			  },
+
+			  BorrarPedido: () => {
+				let pedido = getStore().pedidoActualizado 
+				setStore({pedido : []})
+			  },
 
 
 			  sendPassword: (email) => {

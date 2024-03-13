@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../../styles/cafe.css";
 
-import { useAppContext } from '../store/appContext';
+import { Context, useAppContext } from '../store/appContext';
 
 
 import ImageCoffee from "../../img/img-business-demo/coffee.png";
@@ -14,6 +14,7 @@ export const Cafe = () => {
     const [selectedMilk, setSelectedMilk] = useState(null);
     const [quantity, setQuantity] = useState(1);
     const [productos, setProductos] = useState([])
+    const { store, actions } = useContext(Context)
 
     useEffect(() => {
         // Lógica para obtener las mesas desde el backend
@@ -27,7 +28,7 @@ export const Cafe = () => {
                 setProductos(response);
             })
             .catch(error => {
-                alert('Error al enviar el producto seleccionado:', error);
+                console.log(error)
             });
     }, []);
 
@@ -56,6 +57,7 @@ export const Cafe = () => {
 
     const handleMilkSelection = (milk) => {
         setSelectedMilk(milk);
+        console.log(milk)
     };
 
     const handleIncrement = () => {
@@ -106,6 +108,7 @@ export const Cafe = () => {
 
         // Actualiza el estado global con las nuevas selecciones
         setUserSelections(updatedSelections);
+        actions.AñadirPedidoActualizado(updatedSelections)
 
         resetState();
     };

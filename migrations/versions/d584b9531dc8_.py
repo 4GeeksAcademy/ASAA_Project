@@ -1,16 +1,16 @@
 """empty message
 
-Revision ID: 754b371943ec
+Revision ID: d584b9531dc8
 Revises: 
-Create Date: 2024-03-13 03:02:02.035146
+Create Date: 2024-03-13 16:09:39.052602
 
 """
 from alembic import op
 import sqlalchemy as sa
-from sqlalchemy.dialects import postgresql
+
 
 # revision identifiers, used by Alembic.
-revision = '754b371943ec'
+revision = 'd584b9531dc8'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -27,9 +27,7 @@ def upgrade():
     )
     op.create_table('cliente',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('uuid_invitado', postgresql.UUID(as_uuid=True), nullable=True),
-    sa.PrimaryKeyConstraint('id'),
-    sa.UniqueConstraint('uuid_invitado')
+    sa.PrimaryKeyConstraint('id')
     )
     op.create_table('menu',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -57,7 +55,7 @@ def upgrade():
     sa.Column('id_menu', sa.Integer(), nullable=True),
     sa.Column('name', sa.String(length=80), nullable=False),
     sa.Column('description', sa.String(length=120), nullable=False),
-    sa.Column('price', sa.Integer(), nullable=False),
+    sa.Column('price', sa.Float(), nullable=False),
     sa.ForeignKeyConstraint(['id_menu'], ['menu.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
@@ -66,7 +64,7 @@ def upgrade():
     sa.Column('id_cliente', sa.Integer(), nullable=True),
     sa.Column('id_mesa', sa.Integer(), nullable=True),
     sa.Column('date', sa.String(length=80), nullable=False),
-    sa.Column('total_amount', sa.Integer(), nullable=False),
+    sa.Column('total_amount', sa.Float(), nullable=False),
     sa.Column('status', sa.Boolean(), nullable=False),
     sa.ForeignKeyConstraint(['id_cliente'], ['cliente.id'], ),
     sa.ForeignKeyConstraint(['id_mesa'], ['mesa.id'], ),

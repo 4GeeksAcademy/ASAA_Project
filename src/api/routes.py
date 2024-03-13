@@ -89,15 +89,15 @@ def get_camarero(id):
 
 @api.route('/camareros', methods=['POST'])
 def crear_camarero():
-    data = request.json
-    nuevo_camarero = Camarero(email=data['email'], password=data['password'])
+    data = request.get_json
+    nuevo_camarero = Camarero(email=data.get['email'], password=data.get['password'])
     db.session.add(nuevo_camarero)
     db.session.commit()
     return jsonify({"message": "Camarero registrado exitosamente"}), 201
  
 
 
-# MESA
+# MESA   
 
 @api.route("/mesas", methods=["GET"])
 def obtener_mesas():
@@ -108,7 +108,7 @@ def obtener_mesas():
 
 @api.route("/mesas", methods=['POST'])
 def crear_mesa():
-        data = request.json
+        data = request.get_json()
 
         nueva_mesa = Mesa(
             id=data['id'],
@@ -188,7 +188,7 @@ def obtener_menu():
 
 @api.route('/menu', methods=['POST'])
 def crear_menu():
-        data = request.json
+        data = request.get_json()
         nuevo_menu = Menu(
             name=data['name'],
             description=data['description']
@@ -211,31 +211,19 @@ def obtener_idMenu(menu_id):
 # PEDIDOS
 
 @api.route('/pedidos', methods=['GET'])
-def obtener_pedidos():
-                                                                   
+def get_pedidos():
+    # Obtén todos los pedidos de la base de datos
     pedidos = Pedido.query.all()
+    return jsonify([pedido.serialize() for pedido in pedidos])
 
-    if not pedidos:
-        return jsonify({'mensaje': 'No hay pedidos disponibles'}), 404
-    
-    pedidos = list(map(lambda pedido: pedido.serialize(), pedidos))
-
-    return jsonify(pedidos), 200
-
+   
 
 @api.route('/pedidos', methods=['POST'])
-@jwt_required()
 def crear_pedido():
-    id_guest = get_jwt_identity()
     data = request.get_json()
 
-    # Verifica si el cliente invitado existe
-    cliente_invitado = Cliente.query.filter_by(uuid_invitado=id_guest).first()
-    if not cliente_invitado:
-        return jsonify({'mensaje': 'Cliente invitado no encontrado'}), 404
-
     nuevo_pedido = Pedido( 
-        id_cliente=cliente_invitado.id,  # Utiliza el ID del cliente invitado asociado al token
+        id_cliente=data.get('clienteId'),  # Utiliza el ID del cliente invitado asociado al token
         id_mesa=data.get('mesaId'),
         date=data.get('date'), 
         total_amount=data.get('total_amount'),
@@ -247,9 +235,19 @@ def crear_pedido():
 
     return jsonify({'mensaje': 'Pedido creado correctamente'}), 201
 
+
+@api.route('/pedidos/<int:pedidos_id>', methods=['GET'])
+def obtener_idPedidos(pedidos_id):
+        pedido = Pedido.query.get(pedidos_id)
+        if pedido:
+            return jsonify(pedido.serialize())
+        else:
+            return jsonify({"message": "Pedido no encontrado"}), 404
+
+
 @api.route('/pedido/<int:pedido_id>', methods=['PUT'])
 def actualizar_pedido(pedido_id):
-    data = request.json
+    data = request.get_json()
     pedido = Pedido.query.get(pedido_id)
 
     if not pedido:
