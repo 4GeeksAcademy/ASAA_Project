@@ -89,3 +89,57 @@
   background-color: #383635;
   color: #FF7058;
 }
+
+
+
+@media only screen and (max-width: 765px) {
+  .cafe-title {
+    font-size: 16px;
+  }
+
+  .cafe-select {
+    font-size: 14px;
+  }
+
+  .cafe-label {
+    font-size: 16px;
+  }
+
+  .button-add-comand {
+    font-size: 14px;
+  }
+
+  .text-tuseleccion,
+  .totalprice-menu {
+    font-size: 14px;
+  }
+
+  .text-tuseleccion {
+    letter-spacing: 1px;
+  }
+
+  .totalprice-menu {
+    letter-spacing: 1px;
+  }
+
+  .button-add-comand {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  .cafe-select {
+    font-size: 14px; 
+  }
+
+  .cafe-label input[type="radio"] {
+    transform: scale(0.8); 
+    margin-right: 1px; 
+  }
+
+  .cafe-label {
+    font-size: 12px !important; 
+  }
+
+ 
+  
+}

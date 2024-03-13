@@ -30,9 +30,6 @@
     margin-bottom: 10px;
   }
   
-  
-  
-  
   .title-welcome,
   .sub-title-welcome {
     padding: 0;
@@ -121,3 +118,43 @@
     color: #FF7058;
   }
   
+
+
+/* Media Query para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  .title-business {
+    font-size: 24px;
+  }
+
+  .sub-title-business {
+    font-size: 14px;
+  }
+
+  .title-welcome {
+    font-size: 24px;
+  }
+
+  .sub-title-welcome {
+    font-size: 14px;
+  }
+
+  .custom-button-guest,
+  .custom-button-register,
+  .custom-button-login {
+    font-size: 16px;
+    width: 100%; 
+    display: block; 
+  }
+
+  .custom-button-register {
+    margin-bottom: 0; 
+  }
+
+  .custom-button-login {
+    margin-top: 0;
+  }
+}

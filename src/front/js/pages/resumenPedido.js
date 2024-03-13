@@ -82,13 +82,13 @@ export const ResumenPedido = () => {
             </div>
 
 
-            {/* Row 3 */}
-            <div className="row mb-3 text-white">
-                <Link to="/Menu" className="d-flex justify-content-between align-items-center w-100" style={{ textDecoration: "none" }}>
-                    <span className="add-more-products">AÑADIR MÁS PRODUCTOS <i className="fa-solid fa-chevron-right"></i></span>
+           {/* Row 3 */}
+<div className="row mb-3 text-white add-more-products-row">
+    <Link to="/Menu" className="add-more-products">
+        <i className="fa-solid fa-chevron-left"></i> AÑADIR MÁS PRODUCTOS
+    </Link>
+</div>
 
-                </Link>
-            </div>
 
 
             {/* Row 4 */}

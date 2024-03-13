@@ -56,7 +56,7 @@ export const SeleccionarMesa = () => {
                 {/* Row 2 */}
                 <div className="row mb-3">
                     <div className="col text-center title-business2">
-                        <h1 className="">Bienvenido a La Petit Café</h1>
+                        <h1 className="">Bienvenido a Le Petit Café</h1>
                         <h2 >Invitado</h2>
                     </div>
                 </div>
