@@ -1,0 +1,126 @@
+.container {
+    max-width: 100%;
+}
+
+.title-business2 {
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: bold;
+    letter-spacing: 3px;
+    margin-top: 0px;
+}
+
+.select-tables select {
+    width: 100%;
+    background-color:  #d9534f;
+    border: none;
+    color: white;
+    padding: 10px;   
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: bold;
+    letter-spacing: 3px;
+}
+
+
+
+.mayor-edad {
+    color: gray;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: bold;
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin-left: 5px;
+    text-align: center;
+}
+
+.custom-large-radio .form-check-input {
+    width: 2em;
+    height: 2em;
+    
+}
+
+.custom-large-radio .form-check-label {
+    font-size: 1.5em;
+    margin-left: 0.5em; 
+    color: gray;
+    font-weight: bold;
+}
+
+
+
+.custom-large-radio .form-check-input {
+    width: 2em;
+    height: 2em;
+    /* Estilos adicionales */
+    border: 2px solid gray /* Cambia el color del borde */
+   
+}
+
+.custom-large-radio .form-check-input:checked {
+    background-color:#d9534f;   
+}
+
+
+.custom-button-continue {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: #d9534f;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 3px;
+  }
+  
+  .custom-button-continue:hover {
+    background-color: #383635;
+    color: #FF7058;
+  }
+
+
+.text-responsability {
+    font-size: 12px;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 3px;
+    color: gray;
+
+}
+
+
+@media screen and (max-width: 768px) {
+    .col.d-flex.justify-content-center.gap-5 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px; /* Espacio entre los radios */
+    }
+
+    .custom-large-radio .form-check-input {
+        width: 1.5em;
+        height: 1.5em;
+        border: 2px solid gray;
+        margin-right: 5px; /* Espacio entre los radios y sus etiquetas */
+    }
+
+    .custom-large-radio .form-check-label {
+        font-size: 1.2em;
+        margin-left: 0.5em;
+        color: gray;
+        font-weight: bold;
+    }
+   
+}

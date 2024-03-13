@@ -1,8 +1,9 @@
 .gradient {
-    
+    background-color: transparent;
     background: radial-gradient(at top right, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.981) 40%),
-                radial-gradient(at bottom left, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.999) 40%);
+        radial-gradient(at bottom left, rgba(27, 37, 94, 0.5) 10%, rgba(0, 0, 0, 0.999) 40%);
     background-blend-mode: screen;
+    margin-top: 0;
 }
 
 .main-title-funciona {
@@ -10,7 +11,7 @@
     -webkit-background-clip: text;
     color: transparent;
     background-clip: text;
-    margin-top: 10px;
+    margin-top: 70px;
     font-size: 35px;
     font-family: "Lato", sans-serif;
     font-weight: 700;
@@ -29,7 +30,6 @@
     -webkit-background-clip: text;
     color: transparent;
     background-clip: text;
-    
 }
 
 .text {
@@ -43,27 +43,81 @@
     -webkit-background-clip: text;
     color: transparent;
     background-clip: text;
-    
 }
 
 .img-funciona {
-    border: 5px solid #1B255E;
+    border: 2px solid #1B255E;
     border-radius: 5%;
-    width:300px;
+    width: 300px;
     height: 250px;
     margin-bottom: 10px;
     overflow: hidden;
-    box-shadow: 10px 5px 20px rgba(34, 31, 54, 0.5); 
+    box-shadow: 10px 5px 20px rgba(34, 31, 54, 0.5);
     object-fit: fill;
 }
 
 .container-content {
-    width:85%;
+    width: 85%;
 }
-
 
 .white-line {
     width: 100%;
-    height: 1px; 
+    height: 1px;
     background-image: linear-gradient(45deg, rgba(255, 201, 253, 100%), rgba(37, 138, 192, 0.8));
-  }
+}
+
+.custom-col {
+    margin-left: -50px;
+    padding-left: -50px;
+}
+
+
+/* Media query para dispositivos móviles */
+
+@media (max-width: 767px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .col-6 {
+        width: 100%;
+    }
+
+    .img-funciona {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* Para tabletas en orientación horizontal (landscape) y vertical (portrait) */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .col-6 {
+        width: 100%;
+    }
+
+    .img-funciona {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* Para dispositivos más grandes como monitores de escritorio */
+
+@media (min-width: 1025px) {
+    .row {
+        flex-direction: row;
+    }
+
+    .col-6 {
+        width: 50%;
+    }
+
+    .img-funciona {
+        width: 100%;
+        height: auto;
+    }
+}

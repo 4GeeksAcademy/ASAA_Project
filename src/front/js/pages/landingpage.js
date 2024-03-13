@@ -1,105 +1,141 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
+
 import "../../styles/home.css";
 
 import IconImage from "../../img/Icon.png";
+import IconLogo from "../../img/logo_quickpayqr_white.png";
 import IconPlayDemo from "../../img/IconPlayDemo.png";
 import QRBackground from "../../img/qr_image.png";
-import QRScreen from "../../img/qr_image_recta_white.png";
+import ImageScan from "../../img/qr_image_recta.png";
+
 import { ComoFunciona } from "../component/ComoFunciona";
 import { Ventajas } from "../component/Ventajas";
 import { Afiliados } from "../component/Afiliados";
 import { ContactForm } from "../component/contactForm";
 import { Navbar } from "../component/navbar";
-
+import { Footer } from "../component/footer";
 
 export const LandingPage = () => {
-    const { store, actions } = useContext(Context);
+    
+    const [currentTime, setCurrentTime] = useState(getCurrentTime());
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCurrentTime(getCurrentTime());
+        }, 1000); 
+
+        return () => clearInterval(intervalId);
+    }, []);
+
+    function getCurrentTime() {
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, "0");
+        const minutes = now.getMinutes().toString().padStart(2, "0");
+        return `${hours}:${minutes}`;
+    }
 
     return (
-    <>
-        <Navbar />
-        <div className="d-flex flex-wrap justify-content-center align-items-center text-white contenedor">
+        <>
+            <Navbar />
+            <div id="home" className="d-flex flex-wrap col-12 p-0 m-0 text-white  background-landingpage">
 
-            <div className="background1 w-100 d-flex flex-lg-row flex-column">
-                <div className="contenedor1 col-lg-6">
-                    <div className="p-2">
-                        <div className="contenedor11">
+                <div className="columna1 col-6 p-3 ">
+                    <div className="fila1  mb-3 d-flex align-items-center" >
+                        <img
+                            src={IconLogo}
+                            alt="logo"
+                            className="logo-img"
+                        />
+                        <div className="ml-3">
                             <span className="text-span">SCAN-ORDER-ENJOY-PAY</span>
-                            <div className="main-title">
+                            <div className="main-title-landingpage">
                                 <h1>Quick Pay QR</h1>
                             </div>
-                            <div>
-                                <ul className="my-3">
-                                    <li>
-                                        <div className="icon">
-                                            <img src={IconImage} alt="Icon" />
-                                        </div>
-                                        <div className="text-column">
-                                            <h4>Sumérgete en una nueva era de comodidad.<br />
-                                                Dile adiós a las esperas.</h4>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="icon">
-                                            <img src={IconImage} alt="Icon" />
-                                        </div>
-                                        <div className="text-column">
-                                            <h4>Rompe con la rutina de esperar.<br />
-                                                Pide y paga en segundos con tecnología QR.</h4>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="icon">
-                                            <img src={IconImage} alt="Icon" />
-                                        </div>
-                                        <div className="text-column">
-                                            <h4>Tu tiempo es valioso y nosotros lo entendemos.<br />
-                                                Descubre una experiencia sin igual, donde cada segundo cuenta.</h4>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <span className="demo-container">
-                                <div className="icon-column">
-                                    <a href="#">
-                                        <img src={IconPlayDemo} alt="Icon" style={{ width: '100px' }} />
-                                    </a>
-                                </div>
-                                <div className="text-column hover-effect" style={{ letterSpacing: '3px' }}>
-                                    VER DEMO
-                                </div>
-                            </span>
                         </div>
+                    </div>
+
+                    <div className="fila2">
+                        <ul className="my-3">
+                            <li>
+                                <div className="icon">
+                                    <img src={IconImage} alt="Icon" />
+                                </div>
+                                <div className="text-column">
+                                    <h4>Sumérgete en una nueva era de comodidad.<br />
+                                        Dile adiós a las esperas.</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <div className="icon">
+                                    <img src={IconImage} alt="Icon" />
+                                </div>
+                                <div className="text-column">
+                                    <h4>Rompe con la rutina de esperar.<br />
+                                        Pide y paga en segundos con tecnología QR.</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <div className="icon">
+                                    <img src={IconImage} alt="Icon" />
+                                </div>
+                                <div className="text-column">
+                                    <h4>Tu tiempo es valioso y nosotros lo entendemos.<br />
+                                        Descubre una experiencia sin igual, donde cada segundo cuenta.</h4>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className="fila3">
+                        <span className="demo-container">
+                            <div className="icon-demo-column">
+                                <a href="/welcome">
+                                    <img src={IconPlayDemo} alt="Icon" className="demo-icon" />
+                                </a>
+                            </div>
+                            <div className="text-column hover-effect" style={{ letterSpacing: '3px' }}>
+                                VER DEMO
+                            </div>
+                        </span>
                     </div>
                 </div>
 
-                <div className="contenedor12 col-lg-6 p-2 mb-5">
-                    <div className="container">
-                        <img src={QRBackground} alt="Icon" />
-                    </div>
-                    {/*<div className="temp-wrapper">
-                        <div className="px">
-                            <div className="px__body">
-                                <div className="px__body__cut"></div>
-                                <div className="px__body__speaker"></div>
-                                <div className="px__body__sensor"></div>
-                                <div className="px__body__mute"></div>
-                                <div className="px__body__up"></div>
-                                <div className="px__body__down"></div>
-                                <div className="px__body__right"></div>
-                            </div>
-                            <div className="px__screen">
-                                <div className="px__screen__">
-                                    <div className="center">
-                                        <div className="square"><img src={QRScreen} alt="Icon" />
-                                            <div className="scan"></div>
-                                        </div>
+                <div className="columna2 col-6 p-3  ">
+                    <img src={QRBackground} alt="Icon" className="qr-background" />
+                    <div className="scene">
+                        <div className="phone__wrapper">
+                            <div className="phone__frame">
+                                <div className="camera">
+                                    <div className="camera__lens"></div>
+                                </div>
+                                <div className="screen">
+                                    <div className="time">
+                                    <span>{currentTime}</span>
                                     </div>
+                                    <div className="battery">
+                                        <div className="battery__life"></div>
+                                    </div>
+                                    <div className="screen__active">
+                                        
+                                        <div className="qr-scanner">
+                                            <div className="box">
+                                            <img src={ImageScan} alt="Imagen en pantalla" className="image-scan" />
+                                                <div className="line"></div> 
+                                                <div className="angle"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div className="screen__time">
+                                        <span>¡Hola!</span>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
-                    </div>*/}
+                    </div>
                 </div>
             </div>
 
@@ -107,10 +143,8 @@ export const LandingPage = () => {
             <Ventajas />
             <Afiliados />
             <ContactForm />
+            <Footer />
 
-        </div>
-    </>
+        </>
     );
 };
-
-

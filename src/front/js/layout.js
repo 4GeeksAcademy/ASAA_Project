@@ -11,13 +11,24 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { LandingPage } from "./pages/landingpage";
-import { ComoFunciona } from "./component/ComoFunciona";
-import { Welcome } from "./pages/welcome";
-import Register from "./pages/registrarse";
-import Login from "./pages/login";
 
-import EditPerfil from "./pages/editPerfil";
+
+import { Welcome } from "./pages/welcome";
+
+
+import { Pedidos } from "./pages/pedidos";
+import { ResumenPedido } from "./pages/resumenPedido";
+
+import {Login} from "./pages/Login";
+import { SignUp } from "./pages/SignUp";
+
 import Interfaz from "./pages/interfaz";
+
+import { SeleccionarMesa } from "./pages/SeleccionarMesa";
+import {Menu} from "./pages/Menu";
+import {CamareroInterfaz} from "./pages/CamareroInterfaz";
+import {EditProfile_Staff} from "./pages/EditProfile_Staff";
+
 
 //create your first component
 const Layout = () => {
@@ -25,26 +36,40 @@ const Layout = () => {
     // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
     const basename = process.env.BASENAME || "";
 
-    if(!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL/ >;
+    if (!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL />;
 
     return (
         <div>
             <BrowserRouter basename={basename}>
                 <ScrollToTop>
-                    
+
                     <Routes>
+
                         <Route element={<LandingPage />} path="/" />
-                       
+
+
                         <Route element={<Welcome />} path="/welcome" />
-                        <Route element={<Login />} path="/login" />
-                        <Route element={<Register />} path="/register" />
-                        <Route element={<EditPerfil />} path="/EditPerfil" />
+                      
+                        <Route element={<SeleccionarMesa />} path="/seleccionarMesa" />
+                        <Route element={<Menu />} path="/Menu" />
+                        <Route element={<ResumenPedido />} path="/resumenPedido" />
+
+                        <Route element={<CamareroInterfaz />} path="/CamareroInterfaz" />
+                        <Route element={<EditProfile_Staff />} path="/EditProfile_Staff" />
+
+
+                        <Route element={<Login />} path="/Login" />
+                        <Route element={<SignUp />} path="/SignUp" />
+                       
                         <Route element={<Interfaz />} path="/interfaz" />
+
+
+
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
-                    <Footer />
+                    {/*<Footer />*/}
                 </ScrollToTop>
             </BrowserRouter>
         </div>

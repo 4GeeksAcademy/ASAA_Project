@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none
+}
+
+.pagina-mesa {
+    margin-top: 5%;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+
+.container-mesa {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+h2 {
+    font-style: italic;
+    margin-top: 3%;
+}
+
+
+/*ELEGIR MESA*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 10%;
+}
+
+.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-color: #c0392b;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+}
+
+
+.dropdown-item {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+}
+
+
+
+
+/*SI O NO*/
+
+.dropdown2 {
+    margin-top: 20%;
+    margin-bottom: 10%;
+    font-family: sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+h3, .h3-mesa {
+    font-size: 17px;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+span {
+    color: #c0392b;
+}
+
+input {
+    color: #c0392b;
+}
+
+
+/* BOTON CONTINUAR*/
+.button {
+    text-align: center;
+}
+
+
+.button button {
+    --text-color: #fff;
+    color: var(--text-color);
+    position: relative;
+    width: 150px;
+    border: none;
+    background-color: #c0392b;
+    padding: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.2s;
+    border-radius: 5px;
+    opacity: 0.8;
+    letter-spacing: 1px;
+    box-shadow: #c0392b 0px 7px 2px, #000 0px 8px 5px;
+    margin-bottom: 10%;
+}
+
+.button button:hover {
+    opacity: 1;
+}
+
+
+.button p {
+    margin-top: 10px; 
+    text-align: center;
+    display: flex;
+}
+
+p {
+    font-size: 13px;
+    margin-bottom: 15%;
+}
+
+
+/*MOVIL*/
+
+@media only screen and (max-width: 767px) {
+    .pagina-mesa {
+        width: 100%; /* Ocupa el 100% del ancho disponible en dispositivos móviles */
+        padding: 0 5%; /* Porcentaje en lugar de un valor fijo */
+    }
+
+    .dropdown {
+        width: 100%; /* Ocupa el 100% del ancho disponible en dispositivos móviles */
+        margin-top: 5%;
+    }
+
+}
+
+
+
+
+
