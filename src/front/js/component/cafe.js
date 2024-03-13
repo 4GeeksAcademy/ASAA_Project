@@ -17,8 +17,8 @@ export const Cafe = () => {
     const cafes = [
         { name: "Capuccino", price: 3.50, price_id:"price_1OtF6fCFFXL2ttgG3HeYDjeb" },
         { name: "Espresso", price: 2.50, price_id:"price_1OtF8OCFFXL2ttgGBFbQfa4z" },
-        { name: "Latte", price: 4.00 },
-        { name: "Americano", price: 3.00 },
+        { name: "Latte", price: 4.00, price_id:"price_1OtF8cCFFXL2ttgGxwRuVJmK" },
+        { name: "Americano", price: 3.00, price_id:"price_1OtF8zCFFXL2ttgGROBGnSy3" },
     ];
 
     const sweeteners = ["Sin Endulzantes", "Azúcar", "Azúcar Moreno", "Sacarina"];
