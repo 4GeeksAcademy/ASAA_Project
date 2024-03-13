@@ -7,7 +7,7 @@ export const ResumenPedido = () => {
 
     const { userSelections, setUserSelections } = useAppContext();
 
-    
+
     const handleRemoveProduct = (index) => {
         const updatedSelections = [...userSelections];
         updatedSelections.splice(index, 1); // Elimina producto 
@@ -16,7 +16,7 @@ export const ResumenPedido = () => {
 
     const calculateSubtotal = () => {
         if (!userSelections || userSelections.length === 0) {
-            return 0; 
+            return 0;
         }
 
         return userSelections.reduce((total, selection) => total + selection.totalPrice, 0);
@@ -31,8 +31,8 @@ export const ResumenPedido = () => {
 
     const totalAmount = calculateSubtotal() + tipAmount;
 
-    const [isOrderPlaced, setIsOrderPlaced] = useState(false); 
-    
+    const [isOrderPlaced, setIsOrderPlaced] = useState(false);
+
     const handlePlaceOrder = () => {
         // Enviar el pedido al mostrador
         setIsOrderPlaced(true);
@@ -69,7 +69,7 @@ export const ResumenPedido = () => {
                                     {selection.quantity} {selection.cafe} con Leche {selection.milk.name} y {selection.sweetener}.
                                 </p>
                                 <p><strong>Total Price: {selection.totalPrice.toFixed(2)} €</strong></p>
-                              
+
                             </div>
                             <button className="btn btn-danger delete-button-order" onClick={() => handleRemoveProduct(index)}>
                                 X
@@ -82,12 +82,12 @@ export const ResumenPedido = () => {
             </div>
 
 
-           {/* Row 3 */}
-<div className="row mb-3 text-white add-more-products-row">
-    <Link to="/Menu" className="add-more-products">
-        <i className="fa-solid fa-chevron-left"></i> AÑADIR MÁS PRODUCTOS
-    </Link>
-</div>
+            {/* Row 3 */}
+            <div className="row mb-3 text-white add-more-products-row">
+                <Link to="/Menu" className="add-more-products">
+                    <i className="fa-solid fa-chevron-left"></i> AÑADIR MÁS PRODUCTOS
+                </Link>
+            </div>
 
 
 
@@ -119,25 +119,24 @@ export const ResumenPedido = () => {
             </div>
 
 
-             {/* Row 5 */}
-             <div className="row text-dark p-2 mb-2">
-    <div className="col-12 p-0">
-        <button
-            className="custom-button-confirm"
-            onClick={() => handlePlaceOrder()}
-            disabled={isOrderPlaced || !userSelections || userSelections.length === 0}
-        >
-            ENVIAR PEDIDO AL MOSTRADOR
-        </button>
-    </div>
+            {/* Row 5 */}
+            <div className="row text-dark p-2 mb-2">
+                <div className="col-12 p-0">
+                    <button
+                        className="custom-button-confirm"
+                        onClick={() => handlePlaceOrder()}
+                        disabled={isOrderPlaced || !userSelections || userSelections.length === 0}
+                    >
+                        ENVIAR PEDIDO AL MOSTRADOR
+                    </button>
+                </div>
 
-    {isOrderPlaced && (
-        <div className="order-placed-message">
-            <p>¡Gracias por tu pedido! En breves momentos te lo traeremos a tu mesa.</p>
-        </div>
-    )}
-</div>
-
+                {isOrderPlaced && (
+                    <div className="order-placed-message">
+                        <p>¡Gracias por tu pedido! En breves momentos te lo traeremos a tu mesa.</p>
+                    </div>
+                )}
+            </div>
 
 
             {/* Row 6 */}
