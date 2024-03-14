@@ -14,7 +14,6 @@ import { LandingPage } from "./pages/landingpage";
 
 
 import { Welcome } from "./pages/welcome";
-import { SeleccionarMesa } from "./pages/SeleccionarMesa";
 
 import { ResumenPedido } from "./pages/resumenPedido";
 import Register from "./pages/register";
@@ -29,7 +28,6 @@ import {Menu} from "./pages/Menu";
 
 
 
-import { Menu } from "./pages/menu";
 import {CamareroInterfaz} from "./pages/CamareroInterfaz";
 import {EditProfile_Staff} from "./pages/EditProfile_Staff";
 
@@ -46,14 +44,9 @@ const Layout = () => {
         <div>
             <BrowserRouter basename={basename}>
                 <ScrollToTop>
-<<<<<<< HEAD
 
                     <Routes>
 
-=======
-                    
-                    <Routes>         
->>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
                         <Route element={<LandingPage />} path="/" />
 
 

@@ -49,15 +49,9 @@ export const Login = () => {
       }}
     >
       <div className="animated-container">
-<<<<<<< HEAD
         <div class="wave"></div>
         <div class="wave"></div>
         <div class="wave"></div>
-=======
-        <div className="wave"></div>
-        <div className="wave"></div>
-        <div className="wave"></div>
->>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
 
         <form>
           <div className="container">
@@ -133,13 +127,6 @@ export const Login = () => {
               </div>
 
               <div className="text-center pt-1 mb-3 pb-1 d-flex flex-column">
-<<<<<<< HEAD
-=======
-                <Link to="/forgotPassword">He olvidado mi contraseña</Link>
-              </div>
-
-              <div className="text-center pt-1 mb-3 pb-1 d-flex flex-column">
->>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
                 <button
                   className="btn mb-1 btn-primary"
                   type="button"
