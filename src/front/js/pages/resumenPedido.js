@@ -176,7 +176,7 @@ export const ResumenPedido = () => {
             <div className="row  text-dark p-2 mb-2">
                 <div className="col-12 p-0">
                     <a onClick={handleCheckout} className="custom-button-confirm">
-                        Prodecer al pago
+                        PROCEDER AL PAGO
                     </a>
                 </div>
             </div>
