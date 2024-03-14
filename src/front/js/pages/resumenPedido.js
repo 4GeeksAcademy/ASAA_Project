@@ -1,11 +1,19 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/resumeOrder.css";
 import { useAppContext } from "../store/appContext";
+=======
+import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
+import "../../styles/resumeOrder.css";
+import { Context, useAppContext } from "../store/appContext";
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
 
 export const ResumenPedido = () => {
 
     const { userSelections, setUserSelections } = useAppContext();
+<<<<<<< HEAD
 
     const handleRemoveProduct = (index) => {
         const updatedSelections = [...userSelections];
@@ -20,6 +28,46 @@ export const ResumenPedido = () => {
 
         return userSelections.reduce((total, selection) => total + selection.totalPrice, 0);
     };
+=======
+    const { store, actions } = useContext(Context)
+    const [pedidos, setPedidos] = useState([])
+
+    useEffect(() => {
+        
+        fetch(process.env.BACKEND_URL + '/api/pedidos',
+            {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' },
+            })
+            .then(response => response.json())
+            .then(response => {
+                setPedidos(response);  
+                console.log(response);  // Muestra la respuesta del backend
+            })
+            .catch(error => {
+                alert('Hubo un error al obtener los pedidos');
+                console.error(error);  // Muestra el error en la consola
+            });
+    }, []);
+    
+
+
+    const handleRemoveProduct = (index) => {
+        const updatedSelections = [...pedidos];
+        updatedSelections.splice(index, 1);
+        setPedidos(updatedSelections);
+    };
+    
+    const calculateSubtotal = () => {
+        if (!pedidos || !Array.isArray(pedidos) || pedidos.length === 0) {
+            return 0;
+        }
+    
+
+        return pedidos.reduce((total, pedido) => total + (pedido.price || 0), 0);
+    };
+    
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
 
     const [tipAmount, setTipAmount] = useState(0);
 
@@ -30,8 +78,13 @@ export const ResumenPedido = () => {
 
     const totalAmount = calculateSubtotal() + tipAmount;
 
+<<<<<<< HEAD
     const [isOrderPlaced, setIsOrderPlaced] = useState(false); 
     
+=======
+    const [isOrderPlaced, setIsOrderPlaced] = useState(false);
+
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
     const handlePlaceOrder = () => {
         // Enviar el pedido al mostrador
         setIsOrderPlaced(true);
@@ -53,6 +106,7 @@ export const ResumenPedido = () => {
 
 
             {/* Row 1 */}
+<<<<<<< HEAD
             <div className="row mb-3 d-flex justify-content-center align-items-center tu-pedido">
                 TU PEDIDO
             </div>
@@ -69,6 +123,19 @@ export const ResumenPedido = () => {
                                 </p>
                                 <p><strong>Total Price: {selection.totalPrice.toFixed(2)} €</strong></p>
                               
+=======
+            <div className="row mb-3 order-zone">
+                {pedidos.length > 0 ? (  
+                    pedidos.map((pedido, index) => (
+                        <div key={pedido.id} className="d-flex justify-content-between align-items-center">
+                            <div className="price-text-total">
+                                <p>
+                                    {pedido.quantity} {pedido.cafe} 
+                                </p>
+                                {pedido.totalPrice !== undefined && (
+                                    <p><strong>Total Price: {pedido.totalPrice.toFixed(2)} €</strong></p>
+                                )}
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
                             </div>
                             <button className="btn btn-danger delete-button-order" onClick={() => handleRemoveProduct(index)}>
                                 X
@@ -81,6 +148,10 @@ export const ResumenPedido = () => {
             </div>
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
             {/* Row 3 */}
             <div className="row mb-3 text-white">
                 <Link to="/Menu" className="d-flex justify-content-between align-items-center w-100" style={{ textDecoration: "none" }}>
@@ -118,6 +189,7 @@ export const ResumenPedido = () => {
             </div>
 
 
+<<<<<<< HEAD
              {/* Row 5 */}
              <div className="row text-dark p-2 mb-2">
     <div className="col-12 p-0">
@@ -136,6 +208,26 @@ export const ResumenPedido = () => {
         </div>
     )}
 </div>
+=======
+            {/* Row 5 */}
+            <div className="row text-dark p-2 mb-2">
+                <div className="col-12 p-0">
+                    <button
+                        className="custom-button-confirm"
+                        onClick={() => handlePlaceOrder()}
+                        disabled={isOrderPlaced || !userSelections || userSelections.length === 0}
+                    >
+                        ENVIAR PEDIDO AL MOSTRADOR
+                    </button>
+                </div>
+
+                {isOrderPlaced && (
+                    <div className="order-placed-message">
+                        <p>¡Gracias por tu pedido! En breves momentos te lo traeremos a tu mesa.</p>
+                    </div>
+                )}
+            </div>
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
 
 
 

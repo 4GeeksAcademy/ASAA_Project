@@ -58,6 +58,7 @@ export const Welcome = () => {
       </div>
 
   );
+<<<<<<< HEAD
 };
 
 
@@ -123,3 +124,6 @@ export const Welcome = () => {
 
 
 
+=======
+};
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a

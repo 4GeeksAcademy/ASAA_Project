@@ -1,7 +1,11 @@
 {
     "_meta": {
         "hash": {
+<<<<<<< HEAD
             "sha256": "d793e084e97dc81492403789ea817f62055f3b44673e1a723b280d0d86fdad07"
+=======
+            "sha256": "fcc234c040a26736cfd3af662c16a38556ddea6c8113a4223dea14afa80eff3e"
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
         },
         "pipfile-spec": 6,
         "requires": {
@@ -86,6 +90,7 @@
             ],
             "index": "pypi",
             "version": "==4.6.0"
+<<<<<<< HEAD
         },
         "flask-migrate": {
             "hashes": [
@@ -94,6 +99,23 @@
             ],
             "index": "pypi",
             "version": "==4.0.5"
+=======
+        },
+        "flask-mail": {
+            "hashes": [
+                "sha256:22e5eb9a940bf407bcf30410ecc3708f3c56cc44b29c34e1726fe85006935f41"
+            ],
+            "index": "pypi",
+            "version": "==0.9.1"
+        },
+        "flask-migrate": {
+            "hashes": [
+                "sha256:5c532be17e7b43a223b7500d620edae33795df27c75811ddf32560f7d48ec617",
+                "sha256:dff7dd25113c210b069af280ea713b883f3840c1e3455274745d7355778c8622"
+            ],
+            "index": "pypi",
+            "version": "==4.0.7"
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
         },
         "flask-sqlalchemy": {
             "hashes": [
@@ -275,11 +297,19 @@
         },
         "packaging": {
             "hashes": [
+<<<<<<< HEAD
                 "sha256:048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5",
                 "sha256:8c491190033a9af7e1d931d0b5dacc2ef47509b34dd0de67ed209b5203fc88c7"
             ],
             "markers": "python_version >= '3.7'",
             "version": "==23.2"
+=======
+                "sha256:2ddfb553fdf02fb784c234c7ba6ccc288296ceabec964ad2eae3777778130bc5",
+                "sha256:eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
+            ],
+            "markers": "python_version >= '3.7'",
+            "version": "==24.0"
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
         },
         "psycopg2-binary": {
             "hashes": [

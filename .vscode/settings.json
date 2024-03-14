@@ -7,7 +7,11 @@
     "[javascript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
+<<<<<<< HEAD
     "[css]": {
         "editor.defaultFormatter": "vscode.css-language-features"
     }
+=======
+    "python.analysis.typeCheckingMode": "basic"
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
 }

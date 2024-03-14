@@ -14,18 +14,24 @@ import { LandingPage } from "./pages/landingpage";
 
 
 import { Welcome } from "./pages/welcome";
-import { Bienvenido } from "./pages/bienvenido";
-import { Mesa } from "./pages/mesa";
-import { Pedidos } from "./pages/pedidos";
+import { SeleccionarMesa } from "./pages/SeleccionarMesa";
+
 import { ResumenPedido } from "./pages/resumenPedido";
 import Register from "./pages/register";
 import Login from "./pages/login";
+import { ForgotPassword } from "./pages/forgotPassword";
+
 
 import EditPerfil from "./pages/editPerfil";
 import Interfaz from "./pages/interfaz";
 import { SeleccionarMesa } from "./pages/SeleccionarMesa";
 import {Menu} from "./pages/Menu";
 
+
+
+import { Menu } from "./pages/menu";
+import {CamareroInterfaz} from "./pages/CamareroInterfaz";
+import {EditProfile_Staff} from "./pages/EditProfile_Staff";
 
 
 //create your first component
@@ -40,19 +46,30 @@ const Layout = () => {
         <div>
             <BrowserRouter basename={basename}>
                 <ScrollToTop>
+<<<<<<< HEAD
 
                     <Routes>
 
+=======
+                    
+                    <Routes>         
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
                         <Route element={<LandingPage />} path="/" />
 
 
 
                         <Route element={<Welcome />} path="/welcome" />
-                        <Route element={<Bienvenido />} path="/bienvenido" />
-                        <Route element={<Mesa />} path="/mesa" />
-                        <Route element={<Pedidos />} path="/pedidos" />
+                       
+                        <Route element={<SeleccionarMesa />} path="/seleccionarMesa" />
+                        <Route element={<Menu />} path="/Menu" />
                         <Route element={<ResumenPedido />} path="/resumenPedido" />
+
+                        <Route element={<CamareroInterfaz />} path="/CamareroInterfaz" />
+                        <Route element={<EditProfile_Staff />} path="/EditProfile_Staff" />
+                        
+
                         <Route element={<Login />} path="/login" />
+                        <Route element={<ForgotPassword />} path="/forgotPassword" />
                         <Route element={<Register />} path="/register" />
                         <Route element={<EditPerfil />} path="/EditPerfil" />
                         <Route element={<Interfaz />} path="/interfaz" />

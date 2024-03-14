@@ -25,7 +25,10 @@ export const LandingPage = () => {
             setCurrentTime(getCurrentTime());
         }, 1000); 
 
+<<<<<<< HEAD
         // Limpia el intervalo cuando el componente se desmonta
+=======
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
         return () => clearInterval(intervalId);
     }, []);
 
@@ -148,4 +151,8 @@ export const LandingPage = () => {
 
         </>
     );
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a

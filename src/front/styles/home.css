@@ -575,6 +575,7 @@ li {
     text-align: center;
   }
 }
+<<<<<<< HEAD
 
 /* Media Query para Tamaño de Tablets */
 
@@ -680,4 +681,110 @@ li {
     text-align: center;
   }
 }
+=======
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
 
+/* Media Query para Tamaño de Tablets */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .columna2 {
+    display: none;
+  }
+
+  .columna1 {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .fila1 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .main-title-landingpage {
+    font-size: 36px;
+    margin-top: 10px;
+  }
+
+  .text-span {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .demo-container {
+    margin-left: 0;
+  }
+
+  .demo-icon {
+    width: 80px;
+  }
+
+  h4 {
+    font-size: 16px;
+    margin-top: 12px;
+  }
+
+  .logo-img {
+    width: 80px;
+    margin: 10px auto 0; 
+    display: block;
+  }
+
+  .text-span {
+    text-align: center;
+  }
+}
+
+/* Media Query para iPad Pro (1366px) */
+@media (min-width: 766px) and (max-width: 1023px) {
+  .columna2 {
+    display: none;
+  }
+
+  .columna1 {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .fila1 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .main-title-landingpage {
+    font-size: 36px;
+    margin-top: 10px;
+  }
+
+  .text-span {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .demo-container {
+    margin-left: 0;
+  }
+
+  .demo-icon {
+    width: 80px;
+  }
+
+  h4 {
+    font-size: 16px;
+    margin-top: 12px;
+  }
+
+  .logo-img {
+    width: 80px;
+    margin: 10px auto 0; 
+    display: block;
+  }
+
+  .text-span {
+    text-align: center;
+  }
+}
