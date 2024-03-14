@@ -27,8 +27,13 @@ export const EditProfile_Staff = () => {
     };
 
     const handleSaveChanges = () => {
+<<<<<<< HEAD
         // puedes enviar los cambios al servidor o actualizar el estado global
         // puedes agregar lógica para manejar otros campos (teléfono, ciudad, posición, etc.)
+=======
+        // Aquí puedes enviar los cambios al servidor o actualizar el estado global, según tus necesidades.
+        // También puedes agregar lógica para manejar otros campos (teléfono, ciudad, posición, etc.).
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
         console.log("Cambios guardados:", { name, phone, city, position });
     };
 
@@ -177,4 +182,8 @@ export const EditProfile_Staff = () => {
             </div>
         </div>
     );
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a

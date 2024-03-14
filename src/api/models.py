@@ -1,8 +1,10 @@
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import Column, Integer, ForeignKey
+from sqlalchemy import Column, Integer, ForeignKey, Enum, Boolean, Float
 from sqlalchemy.orm import relationship
+from sqlalchemy.dialects.postgresql import UUID
+import uuid
 
-db = SQLAlchemy()
+db = SQLAlchemy() 
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -15,32 +17,35 @@ class User(db.Model):
  
     def serialize(self):
         return {
-            "id": self.id,
+            "id": self.id, 
             "email": self.email,
             # do not serialize the password, its a security breach
+            
         }
     
 
 class Cliente(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    
+    pedidos = relationship('Pedido', backref='cliente', lazy=True)
 
-    def __repr__(self):
-        return f'<Cliente {self.id}>'
+    def __repr__(self):  
+        return f'Cliente: {self.id}'       
 
     def serialize(self):
         return {
             "id": self.id,
         }
+        
 
 class Camarero(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
+    mesas = relationship('Mesa', backref='camarero', lazy=True)
     
 
     def __repr__(self):
-        return f'<Camarero {self.email}>'
+        return f'Camarero: {self.email}'
 
     def serialize(self):
         return {
@@ -50,49 +55,36 @@ class Camarero(db.Model):
         }
     
 
-class Admin(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-    password = db.Column(db.String(80), unique=False, nullable=False)
-    
 
-    def __repr__(self):
-        return f'<Admin {self.email}>'
-
-    def serialize(self):
-        return {
-            "id": self.id,
-            "email": self.email,
-            # do not serialize the password, its a security breach
-        }
-    
 
 class Menu(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    id_admin = db.Column(Integer, ForeignKey('admin.id'))
     name = db.Column(db.String(80), unique=False, nullable=False)
     description = db.Column(db.String(120), unique=False, nullable=False)
+    productos = relationship('Producto', backref='menu', lazy=True)
+    
 
     def __repr__(self):
-        return f'<Menu {self.name}>'
+        return f'{self.name}'
 
     def serialize(self):
         return {
             "id": self.id,
-            "id_admin": self.id_admin,
             "name" : self.name,
             "description" : self.description
         }
 
 class Producto(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    id_menu = db.Column(Integer, ForeignKey('menu.id'))
+    id_menu = db.Column(db.Integer, ForeignKey('menu.id'))
     name = db.Column(db.String(80), unique=False, nullable=False)
     description = db.Column(db.String(120), unique=False, nullable=False)
-    price =db.Column(db.String(80), unique=False, nullable=False)
+    price = db.Column(db.Float, unique=False, nullable=False)
+    producto_pedidos = relationship('ProductoPedido', backref='producto', lazy=True)
+    
 
     def __repr__(self): 
-        return f'<Producto {self.name}>'
+        return f'{self.name}'
 
     def serialize(self):
         return {
@@ -105,13 +97,13 @@ class Producto(db.Model):
 
 class Pago(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    id_cliente = db.Column(Integer, ForeignKey('cliente.id'))
-    id_pedido = db.Column(Integer, ForeignKey('pedido.id'))
+    id_cliente = db.Column(db.Integer, ForeignKey('cliente.id'))
+    id_pedido = db.Column(db.Integer, ForeignKey('pedido.id'))
     date = db.Column(db.String(80), unique=False, nullable=False)
     metodo = db.Column(db.String(120), unique=False, nullable=False)
 
     def __repr__(self):
-        return f'<Pago {self.name}>'
+        return f'PagoId: {self.id}'
 
     def serialize(self):
         return {
@@ -124,31 +116,32 @@ class Pago(db.Model):
     
 
 class Mesa(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    id_admin = db.Column(Integer, ForeignKey('admin.id'))
-    id_camarero = db.Column(Integer, ForeignKey('camarero.id'))
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    id_camarero = db.Column(db.Integer, ForeignKey('camarero.id'))
     name = db.Column(db.String(80), unique=False, nullable=False)
+    pedidos = relationship('Pedido', backref='mesa', lazy=True)
+    
 
     def __repr__(self):
-        return f'<Mesa {self.id}>'
+        return f'Mesa: {self.id}'
 
     def serialize(self):
         return {
             "id": self.id,
-            "id_admin": self.id_admin,
             "id_camarero": self.id_camarero,
+            "name": self.name,
         }
        
 
 class ProductoPedido(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    id_producto = db.Column(Integer, ForeignKey('producto.id'))
-    id_pedido = db.Column(Integer, ForeignKey('pedido.id'))
-    status = db.Column(db.String(80), unique=False, nullable=False)
+    id_producto = db.Column(db.Integer, ForeignKey('producto.id'))
+    id_pedido = db.Column(db.Integer, ForeignKey('pedido.id'))
+    status = db.Column(db.Enum('Preparando', 'Listo', 'Servido', name='status_enum'), unique=False, nullable=False)
     
 
     def __repr__(self):
-        return f'<ProductoPedido {self.id}>'
+        return f'ProductoPedido: {self.id}'
 
     def serialize(self):
         return {
@@ -161,20 +154,22 @@ class ProductoPedido(db.Model):
 
 class Pedido(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    id_cliente = db.Column(Integer, ForeignKey('producto.id'))
-    id_mesa = db.Column(Integer, ForeignKey('pedido.id'))
+    id_cliente = db.Column(db.Integer, ForeignKey('cliente.id'), nullable=True)
+    id_mesa = db.Column(db.Integer, ForeignKey('mesa.id'))
     date = db.Column(db.String(80), unique=False, nullable=False)
-    total_amount = db.Column(db.String(80), unique=False, nullable=False)
-    status = db.Column(db.String(80), unique=False, nullable=False)
+    total_amount = db.Column(db.Float, unique=False, nullable=False)
+    status = db.Column(db.Boolean, unique=False, nullable=False)
+    producto_pedidos = relationship('ProductoPedido', backref='pedido', lazy=True)
+    
     
 
     def __repr__(self):
-        return f'<Pedido {self.id}>'
+        return f'PedidoId: {self.id}'
 
     def serialize(self):
         return {
             "id": self.id,
-            "id_cliente": self.id_cliente,
+            "id_cliente": self.id_cliente,  
             "id_mesa": self.id_mesa,
             "date" : self.date,
             "total_amount" : self.total_amount,

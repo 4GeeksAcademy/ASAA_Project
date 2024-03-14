@@ -1,7 +1,11 @@
 {
     "_meta": {
         "hash": {
+<<<<<<< HEAD
             "sha256": "88b6797278090468c06a2e35d71bd14cebf18baa81367c14c91b9f1cc01a5401"
+=======
+            "sha256": "fcc234c040a26736cfd3af662c16a38556ddea6c8113a4223dea14afa80eff3e"
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
         },
         "pipfile-spec": 6,
         "requires": {
@@ -39,6 +43,7 @@
             ],
             "markers": "python_version >= '3.6'",
             "version": "==2024.2.2"
+<<<<<<< HEAD
         },
         "charset-normalizer": {
             "hashes": [
@@ -135,6 +140,8 @@
             ],
             "markers": "python_full_version >= '3.7.0'",
             "version": "==3.3.2"
+=======
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
         },
         "click": {
             "hashes": [
@@ -182,6 +189,16 @@
             ],
             "index": "pypi",
             "version": "==4.6.0"
+<<<<<<< HEAD
+=======
+        },
+        "flask-mail": {
+            "hashes": [
+                "sha256:22e5eb9a940bf407bcf30410ecc3708f3c56cc44b29c34e1726fe85006935f41"
+            ],
+            "index": "pypi",
+            "version": "==0.9.1"
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
         },
         "flask-migrate": {
             "hashes": [
@@ -278,6 +295,7 @@
             ],
             "index": "pypi",
             "version": "==21.2.0"
+<<<<<<< HEAD
         },
         "idna": {
             "hashes": [
@@ -286,6 +304,8 @@
             ],
             "markers": "python_version >= '3.5'",
             "version": "==3.6"
+=======
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
         },
         "itsdangerous": {
             "hashes": [
@@ -535,6 +555,7 @@
             ],
             "markers": "python_version >= '3.6'",
             "version": "==6.0.1"
+<<<<<<< HEAD
         },
         "requests": {
             "hashes": [
@@ -543,6 +564,8 @@
             ],
             "markers": "python_version >= '3.0'",
             "version": "==2.31.0"
+=======
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
         },
         "six": {
             "hashes": [
@@ -601,6 +624,7 @@
         },
         "stripe": {
             "hashes": [
+<<<<<<< HEAD
                 "sha256:cf3dbb2591b04a92dfc616d0fe062a4d393ed826ba66412b9a92dbbb57dcdfe0",
                 "sha256:f60eccf7ecacb49e063213a4c4ecfbff38dbf52dc0a93c662740994d9d38447e"
             ],
@@ -613,6 +637,12 @@
                 "sha256:b0abd7c89e8fb96f98db18d86106ff1d90ab692004eb746cf6eda2682f91b3cb"
             ],
             "index": "pypi",
+=======
+                "sha256:69b1a937c3a517342112fb4c6df7e72fc39a38e7891a5730ed4985b5214b5475",
+                "sha256:b0abd7c89e8fb96f98db18d86106ff1d90ab692004eb746cf6eda2682f91b3cb"
+            ],
+            "index": "pypi",
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
             "version": "==4.10.0"
         },
         "urllib3": {

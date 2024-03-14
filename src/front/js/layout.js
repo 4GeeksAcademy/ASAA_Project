@@ -14,18 +14,32 @@ import { LandingPage } from "./pages/landingpage";
 
 
 import { Welcome } from "./pages/welcome";
+<<<<<<< HEAD
 
 
 import { Pedidos } from "./pages/pedidos";
 import { ResumenPedido } from "./pages/resumenPedido";
+=======
+import { SeleccionarMesa } from "./pages/SeleccionarMesa";
+
+import { ResumenPedido } from "./pages/resumenPedido";
+import Register from "./pages/registrarse";
+import Login from "./pages/login";
+import { ForgotPassword } from "./pages/forgotPassword";
+
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
 
 import {Login} from "./pages/Login";
 import { SignUp } from "./pages/SignUp";
 
 import Interfaz from "./pages/interfaz";
 
+<<<<<<< HEAD
 import { SeleccionarMesa } from "./pages/SeleccionarMesa";
 import {Menu} from "./pages/Menu";
+=======
+import { Menu } from "./pages/menu";
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
 import {CamareroInterfaz} from "./pages/CamareroInterfaz";
 import {EditProfile_Staff} from "./pages/EditProfile_Staff";
 
@@ -42,25 +56,43 @@ const Layout = () => {
         <div>
             <BrowserRouter basename={basename}>
                 <ScrollToTop>
+<<<<<<< HEAD
 
                     <Routes>
 
+=======
+                    
+                    <Routes>         
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
                         <Route element={<LandingPage />} path="/" />
 
 
                         <Route element={<Welcome />} path="/welcome" />
+<<<<<<< HEAD
                       
+=======
+                       
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
                         <Route element={<SeleccionarMesa />} path="/seleccionarMesa" />
                         <Route element={<Menu />} path="/Menu" />
                         <Route element={<ResumenPedido />} path="/resumenPedido" />
 
                         <Route element={<CamareroInterfaz />} path="/CamareroInterfaz" />
                         <Route element={<EditProfile_Staff />} path="/EditProfile_Staff" />
+<<<<<<< HEAD
 
 
                         <Route element={<Login />} path="/Login" />
                         <Route element={<SignUp />} path="/SignUp" />
                        
+=======
+                        
+
+                        <Route element={<Login />} path="/login" />
+                        <Route element={<ForgotPassword />} path="/forgotPassword" />
+                        <Route element={<Register />} path="/register" />
+                        <Route element={<EditPerfil />} path="/EditPerfil" />
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
                         <Route element={<Interfaz />} path="/interfaz" />
 
 

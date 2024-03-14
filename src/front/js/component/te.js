@@ -7,6 +7,10 @@ export const Te = () => {
 
     const [contador, setContador] = useState([]);
     const [imagenSeleccionada, setImagenSeleccionada] = useState(null);
+<<<<<<< HEAD
+=======
+    const { store, actions } = useContext(Context);
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
 
     const [tes, setTes] = useState([
         { id: 1, nombre: 'Té Negro', precio: 2.50, imagen: 'https://www.gastrolabweb.com/u/fotografias/m/2021/3/15/f850x638-10066_87555_5050.jpg' },
@@ -17,27 +21,47 @@ export const Te = () => {
 
 
     const incrementar = (productoId, precio) => {
+<<<<<<< HEAD
         setContador((prevContadores) => {
+=======
+        console.log('hola')
+        actions.IncrementarContadorPedido()
+        setContador ((prevContadores) => {
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
             const nuevoContador = (prevContadores[productoId] || 0) + 1;
             return { ...prevContadores, [productoId]: nuevoContador };
         });
     };
+<<<<<<< HEAD
 
     const decrementar = (productoId, precio) => {
         if (contador[productoId] && contador[productoId] > 0) {
+=======
+  
+    const decrementar = (productoId, precio) => {
+      actions.DecrementarContadorPedido()
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
             setContador((prevContadores) => {
                 const nuevoContador = prevContadores[productoId] - 1;
                 return { ...prevContadores, [productoId]: nuevoContador };
             });
+<<<<<<< HEAD
         }
     };
+=======
+        };
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
 
     const mostrarImagen = (imagen) => {
         setImagenSeleccionada(imagen);
     };
 
     return (
+<<<<<<< HEAD
         <div className="cafes">
+=======
+        <div className="tes">
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
             <button
                 className="btn-warning"
                 type="button"
@@ -61,7 +85,11 @@ export const Te = () => {
                             <button onClick={() => incrementar(producto.id, producto.precio)}>+</button>
                             <span className="contador">{contador[producto.id] || 0}</span>
                             <button onClick={() => decrementar(producto.id, producto.precio)}>-</button>
+<<<<<<< HEAD
                         </div>
+=======
+                        </div>  
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
                         <div className="precio-pedido">
                             <p>{(contador[producto.id] || 0) * producto.precio.toFixed(2)}€</p>
                         </div>

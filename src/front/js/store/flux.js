@@ -1,6 +1,15 @@
+import { Alert } from "bootstrap";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			pedidoActualizado: [],
+			mesa: [],
+			dulces: [],
+			cafes: [],
+			tes: [],
+			otras: [],
+			pedidos: [], 
 			message: null,
 			demo: [
 				{
@@ -48,6 +57,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ demo: demo });
 			},
 
+<<<<<<< HEAD
 			syncTokenFromSessionStore: () => {
 				const token = sessionStorage.getItem("token");
 				const user = sessionStorage.getItem("user");
@@ -121,6 +131,68 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return toPage;
 				}
 			},
+=======
+			mesas: (id, name, status) => {
+                fetch(process.env.BACKEND_URL +'/api/mesa', 
+                {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ id, name, status }),
+                })
+                  .then(response => response.json())
+                  .then(data => {
+                    alert('Respuesta del servidor:', data);
+                    
+                  })
+                  .catch(error => {
+                    alert('Error al enviar la mesa seleccionada:', error);
+                  });
+              } ,
+
+			  IncrementarContadorPedido: () => {
+                let contador = getStore().contadorPedido
+				setStore({contadorPedido: contador += 1})
+              } ,
+
+			  DecrementarContadorPedido: () => {
+				let contador = getStore().contadorPedido
+				setStore({contadorPedido: contador -= 1})
+              } ,
+
+			  AñadirPedidoActualizado: (pedidoActualizado) => {
+				let pedido = getStore().pedidoActualizado
+				pedido.push(pedidoActualizado)
+				console.log(pedido)
+			  },
+
+			  BorrarPedido: () => {
+				let pedido = getStore().pedidoActualizado 
+				setStore({pedido : []})
+			  },
+
+
+			  sendPassword: (email) => {
+				fetch(process.env.BACKEND_URL + 'send-email',
+					{
+						method: "POST",
+						headers: { "Content-Type": "application/json" },
+						body: JSON.stringify({ email }),
+					}
+				)
+				.then(response => response.json())
+				.then((data) => {
+					if (data.error) alert(data.error)
+					//faltan cosas aqui
+					else (
+						alert ('Verifica tu bandeja de correo electrónico')
+					)
+				})
+					.catch((error) => {
+						alert(error);
+					}); 
+			},
+
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
 		}
 	};
 	};

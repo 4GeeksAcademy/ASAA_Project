@@ -42,6 +42,7 @@
 
 
 
+<<<<<<< HEAD
 .icon-return-staff {
     font-size: 24px;
     font-family: "Lato", sans-serif;
@@ -147,6 +148,15 @@
     font-weight: 500;
     letter-spacing: 3px;
 }
+=======
+
+
+
+
+
+
+/* CSS Profile Edit */
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
 
 .icon-return-staff {
     font-size: 24px;
@@ -212,6 +222,7 @@
     font-style: normal;
     letter-spacing: 3px;
     padding: 5px;
+<<<<<<< HEAD
 }
 
 .custom-button-guardar:hover {
@@ -248,3 +259,11 @@
         font-size: 14px;
     }
 }
+=======
+  }
+  
+  .custom-button-guardar:hover {
+    background-color: #383635;
+    color: #FF7058;
+  }
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a

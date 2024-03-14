@@ -47,12 +47,20 @@
 
 .custom-large-radio .form-check-label {
     font-size: 1.5em;
+<<<<<<< HEAD
     margin-left: 0.5em; 
+=======
+    margin-left: 0.5em; /* Puedes ajustar el margen según tus necesidades */
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
     color: gray;
     font-weight: bold;
 }
 
+<<<<<<< HEAD
 
+=======
+/* En tu archivo de estilos CSS (por ejemplo, styles.css) */
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
 
 .custom-large-radio .form-check-input {
     width: 2em;
@@ -101,6 +109,7 @@
 }
 
 
+<<<<<<< HEAD
 @media screen and (max-width: 768px) {
     .col.d-flex.justify-content-center.gap-5 {
         display: flex;
@@ -124,3 +133,27 @@
     }
    
 }
+=======
+
+
+/*
+
+
+
+
+/*MOVIL*/
+/*
+@media only screen and (max-width: 767px) {
+    .pagina-mesa {
+        width: 100%; 
+        padding: 0 5%;
+    }
+
+    .dropdown {
+        width: 100%; 
+        margin-top: 5%;
+    }
+
+}
+*/
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a

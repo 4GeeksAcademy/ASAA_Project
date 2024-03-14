@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 import "../../styles/cafe.css";
 
 import { useAppContext } from '../store/appContext';
+=======
+import React, { useState, useEffect, useContext } from "react";
+import "../../styles/cafe.css";
+
+import { Context, useAppContext } from '../store/appContext';
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
 
 
 import ImageCoffee from "../../img/img-business-demo/coffee.png";
@@ -13,6 +20,7 @@ export const Cafe = () => {
     const [selectedSweetener, setSelectedSweetener] = useState(null);
     const [selectedMilk, setSelectedMilk] = useState(null);
     const [quantity, setQuantity] = useState(1);
+<<<<<<< HEAD
 
     const cafes = [
         { name: "Capuccino", price: 3.50, price_id:"price_1OtF6fCFFXL2ttgG3HeYDjeb" },
@@ -20,6 +28,26 @@ export const Cafe = () => {
         { name: "Latte", price: 4.00, price_id:"price_1OtF8cCFFXL2ttgGxwRuVJmK" },
         { name: "Americano", price: 3.00, price_id:"price_1OtF8zCFFXL2ttgGROBGnSy3" },
     ];
+=======
+    const [productos, setProductos] = useState([])
+    const { store, actions } = useContext(Context)
+
+    useEffect(() => {
+        // Lógica para obtener las mesas desde el backend
+        fetch(process.env.BACKEND_URL + '/api/productos',
+            {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' },
+            })
+            .then(response => response.json())
+            .then(response => {
+                setProductos(response);
+            })
+            .catch(error => {
+                console.log(error)
+            });
+    }, []);
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
 
     const sweeteners = ["Sin Endulzantes", "Azúcar", "Azúcar Moreno", "Sacarina"];
     const milks = [
@@ -28,8 +56,13 @@ export const Cafe = () => {
         { name: "Desnatada", priceIncrement: 0 },
         { name: "Entera", priceIncrement: 0 },
         { name: "Semi-Desnatada", priceIncrement: 0 },
+<<<<<<< HEAD
         { name: "De Soja", priceIncrement: 0.40, price_id:"price_1OtFE6CFFXL2ttgGDaCkXZnn" },
         { name: "De Almendras", priceIncrement: 0.40, price_id:"price_1OtFEOCFFXL2ttgGtwvn04mR" }, 
+=======
+        { name: "De Soja", priceIncrement: 0.40 },
+        { name: "De Almendras", priceIncrement: 0.40 },
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
     ];
 
     const handleCafeSelection = () => {
@@ -46,6 +79,10 @@ export const Cafe = () => {
 
     const handleMilkSelection = (milk) => {
         setSelectedMilk(milk);
+<<<<<<< HEAD
+=======
+        console.log(milk)
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
     };
 
     const handleIncrement = () => {
@@ -57,7 +94,11 @@ export const Cafe = () => {
             setQuantity(quantity - 1);
         }
     };
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
     const resetState = () => {
         setShowCoffeeOptions(false);
         setSelectedCafe(null);
@@ -67,20 +108,32 @@ export const Cafe = () => {
     };
 
     const calculateTotalPrice = () => {
+<<<<<<< HEAD
         const baseCafePrice = cafes.find((cafe) => cafe.name === selectedCafe)?.price || 0;
+=======
+        const baseCafePrice = productos.find((producto) => producto.name === selectedCafe)?.price || 0;
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
         const milkPriceIncrement = selectedMilk ? selectedMilk.priceIncrement : 0;
         const totalCafePrice = baseCafePrice + milkPriceIncrement;
 
         return totalCafePrice * quantity;
     };
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
     const { setUserSelections, userSelections } = useAppContext();
 
     const handleAddToOrder = () => {
         // Agregar al pedido
         const newSelection = {
             cafe: selectedCafe,
+<<<<<<< HEAD
             price_id: cafes.find((cafe) => cafe.name === selectedCafe)?.price_id || null,
+=======
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
             sweetener: selectedSweetener,
             milk: selectedMilk,
             quantity,
@@ -95,14 +148,37 @@ export const Cafe = () => {
 
         // Actualiza el estado global con las nuevas selecciones
         setUserSelections(updatedSelections);
+<<<<<<< HEAD
+=======
+        actions.AñadirPedidoActualizado(updatedSelections)
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
 
         resetState();
     };
 
+<<<<<<< HEAD
       const handleDiscard = () => {
         resetState();
     };
 
+=======
+    const handleDiscard = () => {
+        resetState();
+    };
+
+    const formatPrice = (price) => {
+        if (Number.isInteger(price)) {
+            return `${price} €`;
+        } else if (typeof price === 'number') {
+            return `${price.toFixed(2)} €`;
+        } else {
+            return 'Precio no disponible';
+        }
+    };
+
+
+
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
 
     return (
 
@@ -117,8 +193,13 @@ export const Cafe = () => {
                     <div style={{ marginLeft: "12px", marginBottom: "10px", marginTop: "10px" }}>
                         <label className="cafe-select">Selecciona tu Café:</label>
                     </div>
+<<<<<<< HEAD
                     {cafes.map((cafe) => (
                         <div key={cafe.name} style={{ marginLeft: "12px", marginBottom: "10px", marginTop: "10px" }}>
+=======
+                    {productos.map((cafe) => (
+                        <div key={cafe.id} style={{ marginLeft: "12px", marginBottom: "10px", marginTop: "10px" }}>
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
                             <label className="cafe-label" style={{ display: "flex", alignItems: "center", fontSize: "16px" }}>
                                 <input
                                     type="radio"
@@ -127,10 +208,23 @@ export const Cafe = () => {
                                     onChange={() => handleCoffeeOptionSelection(cafe.name)}
                                 />
                                 <span style={{ marginLeft: "10px" }}>{cafe.name}</span>
+<<<<<<< HEAD
                                 <span style={{ marginLeft: "auto" }}>
                                     Desde <strong>{Number.isInteger(cafe.price) ? cafe.price : cafe.price.toFixed(2)} €</strong>
                                 </span>
 
+=======
+
+                                <span style={{ marginLeft: "auto" }}>
+                                    <span style={{ marginLeft: "auto" }}>
+                                        Desde <strong>{typeof cafe.price === 'number' ? (Number.isInteger(cafe.price) ? cafe.price : cafe.price.toFixed(2)) + ' €' : ''}</strong>
+                                    </span>
+
+                                </span>
+
+
+
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
                             </label>
                         </div>
                     ))}
@@ -191,7 +285,11 @@ export const Cafe = () => {
             )}
 
             {selectedCafe && selectedCafe !== "Cafe" && selectedSweetener && (
+<<<<<<< HEAD
                 <div style={{ overflowY: "auto", maxHeight: "150px", display: "flex", flexDirection: "column", marginLeft: "12px",marginTop:"5px" }}>
+=======
+                <div style={{ overflowY: "auto", maxHeight: "150px", display: "flex", flexDirection: "column", marginLeft: "12px", marginTop: "5px" }}>
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
                     <label className="cafe-select">Selecciona Tipo de Leche:</label>
                     <div style={{ display: "flex", justifyContent: "space-between", marginTop: "5px" }}>
 
@@ -271,6 +369,10 @@ export const Cafe = () => {
 
         </div>
     );
+<<<<<<< HEAD
 };
 
 
+=======
+};
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a

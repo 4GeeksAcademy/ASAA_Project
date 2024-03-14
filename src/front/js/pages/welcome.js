@@ -44,12 +44,20 @@ export const Welcome = () => {
 
         <div className="row mb-3">
           <div className="col-md-6 p-0 d-flex justify-content-start">
+<<<<<<< HEAD
             <Link to="/SignUp" className="custom-button custom-button-register">
+=======
+            <Link to="#" className="custom-button custom-button-register">
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
               Regístrate
             </Link>
           </div>
           <div className="col-md-6 p-0 d-flex justify-content-end">
+<<<<<<< HEAD
             <Link to="/Login" className="custom-button custom-button-login">
+=======
+            <Link to="#" className="custom-button custom-button-login">
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
               Login
             </Link>
           </div>
@@ -58,8 +66,12 @@ export const Welcome = () => {
       </div>
 
   );
+<<<<<<< HEAD
 };
 
 
 
 
+=======
+};
+>>>>>>> 1cf83a2fd7019556e50de560c531dcd24577266a
