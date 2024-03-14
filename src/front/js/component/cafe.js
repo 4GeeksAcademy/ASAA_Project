@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState } from "react";
 import "../../styles/cafe.css";
 
-import { Context, useAppContext } from '../store/appContext';
+import { useAppContext } from '../store/appContext';
 
 
 import ImageCoffee from "../../img/img-business-demo/coffee.png";
@@ -13,24 +13,13 @@ export const Cafe = () => {
     const [selectedSweetener, setSelectedSweetener] = useState(null);
     const [selectedMilk, setSelectedMilk] = useState(null);
     const [quantity, setQuantity] = useState(1);
-    const [productos, setProductos] = useState([])
-    const { store, actions } = useContext(Context)
 
-    useEffect(() => {
-        // Lógica para obtener las mesas desde el backend
-        fetch(process.env.BACKEND_URL + '/api/productos',
-            {
-                method: 'GET',
-                headers: { 'Content-Type': 'application/json' },
-            })
-            .then(response => response.json())
-            .then(response => {
-                setProductos(response);
-            })
-            .catch(error => {
-                console.log(error)
-            });
-    }, []);
+    const cafes = [
+        { name: "Capuccino", price: 3.50, price_id: "price_1OtF6fCFFXL2ttgG3HeYDjeb" },
+        { name: "Espresso", price: 2.50, price_id: "price_1OtF8OCFFXL2ttgGBFbQfa4z" },
+        { name: "Latte", price: 4.00, price_id: "price_1OtF8cCFFXL2ttgGxwRuVJmK" },
+        { name: "Americano", price: 3.00, price_id: "price_1OtF8zCFFXL2ttgGROBGnSy3" },
+    ];
 
     const sweeteners = ["Sin Endulzantes", "Azúcar", "Azúcar Moreno", "Sacarina"];
     const milks = [
@@ -39,8 +28,8 @@ export const Cafe = () => {
         { name: "Desnatada", priceIncrement: 0 },
         { name: "Entera", priceIncrement: 0 },
         { name: "Semi-Desnatada", priceIncrement: 0 },
-        { name: "De Soja", priceIncrement: 0.40 },
-        { name: "De Almendras", priceIncrement: 0.40 },
+        { name: "De Soja", priceIncrement: 0.40, price_id: "price_1OtFE6CFFXL2ttgGDaCkXZnn" },
+        { name: "De Almendras", priceIncrement: 0.40, price_id: "price_1OtFEOCFFXL2ttgGtwvn04mR" },
     ];
 
     const handleCafeSelection = () => {
@@ -57,7 +46,6 @@ export const Cafe = () => {
 
     const handleMilkSelection = (milk) => {
         setSelectedMilk(milk);
-        console.log(milk)
     };
 
     const handleIncrement = () => {
@@ -79,14 +67,12 @@ export const Cafe = () => {
     };
 
     const calculateTotalPrice = () => {
-        const baseCafePrice = productos.find((producto) => producto.name === selectedCafe)?.price || 0;
+        const baseCafePrice = cafes.find((cafe) => cafe.name === selectedCafe)?.price || 0;
         const milkPriceIncrement = selectedMilk ? selectedMilk.priceIncrement : 0;
         const totalCafePrice = baseCafePrice + milkPriceIncrement;
 
         return totalCafePrice * quantity;
     };
-
-
 
     const { setUserSelections, userSelections } = useAppContext();
 
@@ -94,6 +80,7 @@ export const Cafe = () => {
         // Agregar al pedido
         const newSelection = {
             cafe: selectedCafe,
+            price_id: cafes.find((cafe) => cafe.name === selectedCafe)?.price_id || null,
             sweetener: selectedSweetener,
             milk: selectedMilk,
             quantity,
@@ -108,7 +95,6 @@ export const Cafe = () => {
 
         // Actualiza el estado global con las nuevas selecciones
         setUserSelections(updatedSelections);
-        actions.AñadirPedidoActualizado(updatedSelections)
 
         resetState();
     };
@@ -116,18 +102,6 @@ export const Cafe = () => {
     const handleDiscard = () => {
         resetState();
     };
-
-    const formatPrice = (price) => {
-        if (Number.isInteger(price)) {
-            return `${price} €`;
-        } else if (typeof price === 'number') {
-            return `${price.toFixed(2)} €`;
-        } else {
-            return 'Precio no disponible';
-        }
-    };
-
-
 
 
     return (
@@ -143,8 +117,8 @@ export const Cafe = () => {
                     <div style={{ marginLeft: "12px", marginBottom: "10px", marginTop: "10px" }}>
                         <label className="cafe-select">Selecciona tu Café:</label>
                     </div>
-                    {productos.map((cafe) => (
-                        <div key={cafe.id} style={{ marginLeft: "12px", marginBottom: "10px", marginTop: "10px" }}>
+                    {cafes.map((cafe) => (
+                        <div key={cafe.name} style={{ marginLeft: "12px", marginBottom: "10px", marginTop: "10px" }}>
                             <label className="cafe-label" style={{ display: "flex", alignItems: "center", fontSize: "16px" }}>
                                 <input
                                     type="radio"
@@ -153,15 +127,9 @@ export const Cafe = () => {
                                     onChange={() => handleCoffeeOptionSelection(cafe.name)}
                                 />
                                 <span style={{ marginLeft: "10px" }}>{cafe.name}</span>
-
                                 <span style={{ marginLeft: "auto" }}>
-                                    <span style={{ marginLeft: "auto" }}>
-                                        Desde <strong>{typeof cafe.price === 'number' ? (Number.isInteger(cafe.price) ? cafe.price : cafe.price.toFixed(2)) + ' €' : ''}</strong>
-                                    </span>
-
+                                    Desde <strong>{Number.isInteger(cafe.price) ? cafe.price : cafe.price.toFixed(2)} €</strong>
                                 </span>
-
-
 
                             </label>
                         </div>
@@ -238,7 +206,7 @@ export const Cafe = () => {
                                         onChange={() => handleMilkSelection(milk)}
                                         style={{ marginRight: "10px" }}
                                     />
-                                    {milk.name} {milk.priceIncrement !== 0 && `(+${milk.priceIncrement} €)`}
+                                    {milk.name} {milk.priceIncrement !== 0 && `(+${milk.priceIncrement.toFixed(2)} €)`}
                                 </label>
                             ))}
                         </div>
@@ -254,7 +222,7 @@ export const Cafe = () => {
                                         onChange={() => handleMilkSelection(milk)}
                                         style={{ marginRight: "10px" }}
                                     />
-                                    {milk.name} {milk.priceIncrement !== 0 && `(+${milk.priceIncrement} €)`}
+                                    {milk.name} {milk.priceIncrement !== 0 && `(+${milk.priceIncrement.toFixed(2)} €)`}
                                 </label>
                             ))}
                         </div>
@@ -270,7 +238,7 @@ export const Cafe = () => {
                                         onChange={() => handleMilkSelection(milk)}
                                         style={{ marginRight: "10px" }}
                                     />
-                                    {milk.name} {milk.priceIncrement !== 0 && `(+${milk.priceIncrement.toFixed(2)}€)`}
+                                    {milk.name} {milk.priceIncrement !== 0 && `(+${milk.priceIncrement.toFixed(2)} €)`}
                                 </label>
                             ))}
                         </div>

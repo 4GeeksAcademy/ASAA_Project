@@ -89,11 +89,14 @@ def get_camarero(id):
 
 @api.route('/camareros', methods=['POST'])
 def crear_camarero():
-    data = request.get_json
-    nuevo_camarero = Camarero(email=data.get['email'], password=data.get['password'])
+    data = request.get_json()  
+    nuevo_camarero = Camarero(
+         email=data.get('email'),  
+         password=data.get('password'))
     db.session.add(nuevo_camarero)
     db.session.commit()
     return jsonify({"message": "Camarero registrado exitosamente"}), 201
+
  
 
 

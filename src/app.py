@@ -14,6 +14,7 @@ from flask_jwt_extended import JWTManager
 from flask_mail import Mail, Message
 from flask_cors import CORS
 
+
 # from models import Person
 
 ENV = "development" if os.getenv("FLASK_DEBUG") == "1" else "production"
@@ -93,6 +94,22 @@ def serve_any_other_file(path):
     response = send_from_directory(static_file_dir, path)
     response.cache_control.max_age = 0  # avoid cache memory
     return response
+
+
+# Ruta para crear una sesión de pago en Stripe
+@app.route('/create-checkout-session', methods=[ 'POST'])
+def create_checkout_session():
+    pedido = request.json["pedido"]
+    print(pedido)
+    session = stripe.checkout.Session.create(
+        payment_method_types=['card'],
+        line_items= pedido,
+        mode='payment',
+        success_url=os.getenv('BACKEND_URL'),
+        cancel_url=os.getenv('BACKEND_URL'),
+    )
+
+    return jsonify({'sessionId': session.id})
 
 
 @app.route('/send-email', methods=['POST'])
